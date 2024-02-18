@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Template -->
+    <base href="/">
+    <script src="/JS/app.js" defer></script>
+    <link rel="icon" href="/Assets/Images/gaurav-logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/Images/Favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/work.css">
+    <script src="/JS/utilities.js" defer></script>
+    <script src="/JS/work.js" defer></script>
+
+    <title>Case Study - InvestMint</title>
+</head>
+
+<body>
+    <!-- Customize Path -->
+    <nav-content></nav-content>
+    <header>
+        <img src="/Works/InvestMint/header.png" alt="InvestMint">
+    </header>
+
+    <!-- <h1 class="project-heading">InvestMint</h1> -->
+    <section class="details">
+        <div class="detail"><b>Role:</b> UX and Marketing Lead</div>
+        <div class="detail"><b>Timeline:</b> Summer 2022, 3 months</div>
+        <div class="detail"><b>Software:</b> Figma & Google forms</div>
+    </section>
+    <div class="tab">
+        <button class="tablinks active" id="link1" onclick="openTab(1, 2, 'overview', 'case-study')" role="tab"
+            aria-selected="true" aria-controls="tabpanel-id">Overview</button>
+        <button class="tablinks" id="link2" onclick="openTab(2, 1, 'case-study', 'overview')" role="tab"
+            aria-selected="false" aria-controls="tabpanel-id">Case&nbsp;Study</button>
+        <div class="tablinks empty-tab"></div>
+    </div>
+    <main id="overview">
+        <h2>Problem</h2>
+        <p>With rising inflation, traditional saving methods became ineffective, making investing a necessity. Our
+            survey indicated that 56% of young individuals expressed interest in investing but didn't take action due to
+            factors like lack of knowledge, income, fear of loss, and limited time. Negative emotions and a sense of
+            alienation further discouraged them from exploring investment opportunities.</p>
+        <h2>Solution</h2>
+        <p>To shift users' mindset towards investing, we leveraged their positive association with e-commerce websites.
+            Instead of tying investing to income, we associated it with their spending habits. By asking if they could
+            set aside a small percentage of their planned purchase, we gradually introduced them to investing. Our
+            browser extension allowed users to save while shopping, offering practical application of learned concepts.
+            Our unique value proposition was to help beginners learn and save slowly, ultimately becoming confident
+            investors. The browser extension streamlined the process, linking to a website and app for investment
+            monitoring and financial education.</p>
+        <img src="/Works/InvestMint/Investmint.gif" alt="Browser Extension Demo">
+        <h2>Impact</h2>
+        <p>Our project stood out, being selected in the top 4% worldwide. We achieved an impressive 80% user adoption
+            rate, generated over 20 promising leads, and identified a total available market of $151M. My key takeaways
+            include the significance of process, the nuances of copywriting, and the remarkable benefits of auto-layout
+            in Figma.</p>
+
+    </main>
+    <main id="case-study" class="hide">
+        <aside>
+        </aside>
+        <section class="content">
+            <h2>Background</h2>
+            <p>Ever since I was a high school student, finance has captivated me. I thrive on analyzing markets and
+                constructing robust portfolios through qualitative and quantitative methods. Yet, I've observed a
+                puzzling trend among my college friends who, despite their interest in personal finance, shy away from
+                investing. This has piqued my curiosity and led me to wonder, <b>"What is the reason behind the
+                    disconnect between young people and investing?”</b></p>
+            <p> During the Young Tycoons Business Competition, where I led as the CEO and managed UX and Marketing for
+                our team, we tackled this very issue. As students of Indian descent, our focus was on the Indian market,
+                evident through the presence of <b>₹</b> symbols and Indian news headlines throughout our project.</p>
+            <h3>Process</h3>
+            <p>While I stuck to the overarching principles of the double diamond process, I tailored and adapted my
+                approach to align with the specific business requirements and time constraints of the competition.</p>
+            <!-- <h3>//ADD PROCESS DIAGRAM</h3> -->
+
+            <h2>Problem Validation</h2>
+            <p>I undertook problem validation through two distinct stages: extensive news research and conducting a
+                comprehensive survey.</p>
+            <img src="/Works/InvestMint/1.png" alt="News reports from Indian news channels">
+            <h3>Research Insights</h3>
+            <p>With rising inflation, saving like we did 30 years ago no longer works. Investing is increasingly
+                becoming a necessity. News reports and mass population studies only confirmed our hypothesis that the
+                lack of investing among the youth was a widespread issue.</p>
+            <p>After conducting a survey among the alumni and current students of our high school, We also found out
+                that
+                <b>56% (43 respondents)</b> expressed an interest in investing their money but are not yet doing so.
+                This data
+                implies that there is a potential market for investment opportunities among young people, but that they
+                may need education or support to get started.
+            </p>
+
+            <h2>Identifying Pain Points</h2>
+            <p>Our survey and empathy map revealed some key pain points that prevented people from investing. They are
+                listed below in the order of decreasing popularity.</p>
+            <div class="callout heads-up-callout">
+                <div class="callout-emoji">💡</div>
+                <div class="callout-content">
+                    <p class="heads-up">While we all helped draw conclusions, another team member was responsible for
+                        collecting and compiling the data of this survey.</p>
+                </div>
+            </div>
+            <img src="/Works/InvestMint/2.svg" alt="Understanding Pain Points - Survey Response">
+            <div class="callout">
+                <div class="callout-emoji">🤔</div>
+                <div class="callout-content">
+                    <b>Empathizing with the user</b>
+                    <p>Our assumption was that the root cause lies in their mindset. We drew analogies to the
+                        psychological factors that cause procrastination, as the reasons that many choose not to invest
+                        are also emotional. People hear about how everyone around them is investing and feel alienated.
+                        This causes them to develop negative feelings towards investing and keeps them trapped in a
+                        negative feedback loop.</p>
+                </div>
+            </div>
+            <h2>HMW Statements</h2>
+            <p class="first"><input type="checkbox"> How might we practically educate users about investing concepts?
+            </p>
+            <p><input type="checkbox"> How might we encourage gradual savings in an investment account? </p>
+            <p><input type="checkbox"> How might boost user confidence in investing decisions? </p>
+            <p><input type="checkbox"> How might we make the investing process quick and intuitive? </p>
+            <p><br>These how might we statements gave us a clear road to defining a solution. However, before proceeding
+                further, I needed to conduct a market analysis of the market to understand the customers, current
+                players and the gap in the market.</p>
+
+
+
+            <!-- <div class="callout warning">
+                <div class="callout-emoji">⚠️</div>
+                <div class="callout-content">
+                    <b>Skip ahead for more UX</b>
+                    <p>The next section focuses on some marketing aspects of the venture. The information gained from
+                        these steps used was helpful in the design process, however if you need to skip to the next step
+                        in the UX process, you can read more about the user research <a href="#5">here</a>.</p>
+                </div>
+            </div> -->
+
+            <h2>Market Analysis</h2>
+            <h3>Market Segmentation</h3>
+            <p>I segmented the market based on intention, level of knowledge and income. I firmly believe that this
+                behavioral and psychographic segmentation approach surpasses a simple demographic segmentation, allowing
+                us to reach a broader audience.</p>
+            <img src="/Works/InvestMint/3.svg" alt="Psychographic and Behavioral Market Segmentation">
+            <h3>Perceptual Map</h3>
+            <div class="callout heads-up-callout no-top-margin">
+                <div class="callout-emoji">💡</div>
+                <div class="callout-content">
+                    <p class="heads-up">While I supported the research for this artifact, it was created by another team
+                        member.</p>
+                </div>
+            </div>
+            <p>The idea of investing apps in India is relatively new and hence most apps are targeted towards
+                knowledgeable investors. We saw a <b>clear need</b> for more education focused investment services. With
+                the gap in the market clear, we were ready to develop our product further.</p>
+            <img src="/Works/InvestMint/4.svg" alt="Existing players graphed based on convenience and level of target audience ">
+
+            <h2>Understanding the user</h2>
+            <p>
+                Sita Patel, a recent college graduate, became our guiding persona through user interviews and in-depth
+                survey analysis. Understanding her financial behaviors, goals, pain points, and motivations allowed us
+                to empathize with her and develop a product that resonated with Sita and others seeking to improve their
+                financial habits.</p>
+            <img src="/Works/InvestMint/5.png" alt="User Persona - Sita Patel" class="small-image">
+            <h2>Defining the Solution</h2>
+            <h3>Brainstorming a Solution</h3>
+            <p>A trend that we noticed among our target audience was a heavy reliance on e-commerce websites. What if we
+                could piggyback off the positive associations they had with them?</p>
+            <h3>High Level Concept</h3>
+            <p class="main-p"><b>Honey + Khan Academy for investing</b></p>
+            <p>We needed to create a shift in the users’ mindset. So instead of tying investing to their income, we
+                associated it with their spending. We asked the question, <b>"If you have $1,000 to spend on a new
+                    iPhone, do you think you can set aside 10% ($100) to invest?"</b></p>
+            <p>We could enhance this further by partnering with coupon code extensions such as Honey. By doing this, any
+                money saved during online shopping can be redirected to their investment account.</p>
+            <p>We could then gradually introduce investing concepts and let them invest using the money they saved up in
+                this account. This would also enable them to practically apply the concepts they learned for better
+                understanding and retention.</p>
+            <p>This shift in mindset would be our unique value proposition.</p>
+
+            <div class="callout">
+                <div class="callout-emoji">🤔</div>
+                <div class="callout-content">
+                    <b>Unique Value Proposition</b>
+                    <p>We are investing service for the beginner, helping them learn and save slowly as you shop so that
+                        one day, you can become a confident investor.</p>
+                </div>
+            </div>
+            <h3>A Change in Medium</h3>
+            <p>To effectively reach customers on e-commerce sites, we would have to change the way that we deliver our
+                solution. Instead of an app or website, we needed to primarily be a <b>browser extension.</b> This
+                intentional decision effectively <b>reduced friction points</b>, enabling effortless savings during
+                online shopping. We could then link a website and app so that the users could monitor their investments
+                and educate themselves on financial concepts.</p>
+
+            <h2>Developing the Solution</h2>
+            <h3>Information Architecture</h3>
+            <p>In addition to the browser extension, InvestMint offered a comprehensive suite of services. This
+                information architecture diagram showcases the linked website, which allows users to effortlessly
+                monitor their portfolio, make investments, access concise educational resources, and manage account
+                settings.</p>
+            <div class="callout heads-up-callout">
+                <div class="callout-emoji">💡</div>
+                <div class="callout-content">
+                    <p class="heads-up">This diagram was refined after the competition period.</p>
+                </div>
+            </div>
+
+            <img src="/Works/InvestMint/6.png" alt="Information Architecture Diagram">
+
+
+            <h3>Onboarding Flow</h3>
+            <p>Based on the information architecture, I identified the necessary user information during initial
+                sign-in. Our goal was to uphold our value of simplicity, ensuring an effortless onboarding flow while
+                gathering all essential data from the user.</p>
+            <div class="callout heads-up-callout">
+                <div class="callout-emoji">💡</div>
+                <div class="callout-content">
+                    <p class="heads-up">This diagram was refined after the competition period.</p>
+                </div>
+            </div>
+            <img src="/Works/InvestMint/7.png" alt="Onboarding Flow">
+
+
+            <h3>Prototype</h3>
+            <p>
+                When designing a prototype for a browser extension like Investmint, UI design plays a crucial role in
+                creating a seamless and user-friendly experience. The extension must be easy to navigate, with clear
+                calls to action and intuitive functionality. Users should have no difficulty understanding how to use
+                the extension and accomplishing their desired goals.</p>
+
+            <p>I started with a basic content inventory for the browser extension and progressed to designing
+                <b>multiple iterations</b>. Throughout each stage, I sought <b>feedback from our target demographic</b>,
+                continuously improving our design to enhance functionality.
+            </p><br>
+            <img src="/Works/InvestMint/8.png" alt="Multiple design iterations for the UI prototype">
+            <br>
+            <p>Below, you can see how we envision our extension to function. This GIF was created by prototyping the
+                design in Figma. Users can easily check the order amount and the corresponding percentage and dollar
+                value allocated to their investment account. They can then confirm the transaction, initiating a
+                transfer of funds from their bank account to their investment wallet.</p><br>
+            <img src="/Works/InvestMint/Investmint.gif" alt="Demonstration of the browser extension">
+
+            <h2>Assessing the Solution</h2>
+            <h3>Addressing the HMW Statements</h3>
+            <p>At this stage, we thought it would be best to look back at out HMW statements and see if our solution was
+                able to achieve the goals we set out to accomplish. </p>
+
+
+            <p class="first hmw-checked"><b><input type="checkbox" checked>How might we practically educate users about investing
+                    concepts?</b></p>
+            <p class="no-top-margin">We drew inspiration from the Google Primer app and implemented 5-minute lessons to
+                teach investing concepts in smaller, easily digestible chunks. Busy users like our persona, Sita, can
+                learn at their own pace. Your progress is saved and you can also choose from various levels based on
+                your existing knowledge level.</p>
+
+            <p class="first hmw-checked"><b><input type="checkbox" checked>How might we encourage gradual savings in an investment
+                    account?</b></p>
+            <p class="no-top-margin">By linking investing to a part of our users routine life, we can make investing a
+                habit easily. In addition to this, we also gave them the option to add funds directly from their bank
+                accounts to make additional investments once they felt comfortable. </p>
+            <p class="first hmw-checked"><b><input type="checkbox" checked>How might we boost user confidence in investing
+                    decisions?</b></p>
+            <p class="no-top-margin">In the beginning, we don’t expect our users to save a lot. The small amount saved
+                can be invested gradually as they learn more. This exposure should build up confidence.</p>
+            <p>By displaying minimal information and graphs in favour of more average long term statistics, we can also
+                prevent anxiety while making the decision. Once they complete certain modules, we can encourage them to
+                perform research beyond the app to figure out which stocks and ETFs might be a good fit for them.</p>
+            <p>In the future, we also need to consider effective copy to inspire confidence and eliminate panic during
+                poor economic conditions.</p>
+            <p class="first hmw-checked"><b><input type="checkbox" checked>How might we make the investing process quick and
+                    intuitive?</b></p>
+            <p class="no-top-margin">While our original idea was to provide stock recommendations, we soon decided
+                against it to prevent liability. A portfolio should be chosen based on personal goals, risk tolerance
+                and other factors, not because of a recommendation.</p>
+            <p>Thus, we settled on creating a simple user flow and testing it to ensure that it met the design goals. We
+                feel that making the process any more quick or intuitive may cross ethical boundaries. </p>
+
+
+            <h3>Scalability Analysis</h3>
+            <p>While developing a good product was a priority, we also had to make sure that we could build a scalable
+                business as well. Therefore performing a market analysis at this stage was necessary.</p>
+
+            <img src="/Works/InvestMint/9.png" alt="TAM-SAM-SOM Analysis in Rupees (₹) - the Indian currency">
+            <p>My analysis shows that our product could have great potential for revenue and encouraged us to continue
+                building it as previously envisioned.</p>
+
+
+
+
+            <div class="impact-wrapper">
+                <h2 class="impact-title">Impact</h2>
+                <div class="impact-container vertical">
+                    <div class="impact">
+                        <h3 class="big-number">Top 4%</h3>
+                        <p>We advanced to the quarter-finals, ranking among the top 4% globally in the competition's
+                            multiple rounds.</p>
+                    </div>
+                    <div class="callout heads-up-callout">
+                        <div class="callout-emoji">🧐</div>
+                        <div class="callout-content">
+                            <p class="heads-up">The following is based on surveys done during the competition.</p>
+                        </div>
+                    </div>
+                    <div class="impact-container impact-container-grid">
+                        <div class="impact">
+                            <h3 class="big-number">80%</h3>
+                            <p>80% user adoption rate</p>
+                        </div>
+                        <div class="impact">
+                            <h3 class="big-number">20</h3>
+                            <p>Generated over 20 promising leads </p>
+                        </div>
+                        <div class="impact">
+                            <h3 class="big-number">$151M</h3>
+                            <p>A total availible market of 151M USD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Key Takeaways</h2>
+            <h3>🔍 Process is important</h3>
+            <p>I never fully understood the importance of following the steps in the UX design process until this
+                project. Having a user to empathize with and conducting firsthand research (such as surveys) made
+                brainstorming a solution much easier. Utilizing an information architecture map, sketches, and
+                wireframes guided our design process and saved us numerous hours.</p>
+
+            <h3>✍️ Copywriting is tricky</h3>
+            <p>The words on an interface can make or break the user experience. We went through several brainstorming
+                sessions on how to write effective copy but it was tricky to balance simplicity and useful information.
+                In fact, if I had more time, I would work on this further.</p>
+
+            <h3>🤩 Auto-layout is amazing</h3>
+            <p>I had the opportunity to learn auto-layout in Figma for this project. After having it used it here, I
+                don’t think I can ever go back to absolutely positioning things again. It worked so well when I needed
+                to adjust components, making them fit just right.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+    </main>
+    <button class="scroll-to-top" aria-label="Scroll to Top"><span
+            class="material-symbols-outlined">arrow_upward</span></button>
+    <footer-content></footer-content>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+:root {
+    --fz-h1: 10vw;
+    --fz-h2: 5vw;
+    --fz-h3: 3.25vw;
+    --fz-h4: 2vw;
+    --fz-big-body: 22px;
+    --fz-body: 18px;
+    --fz-small-body: 16px;
+
+    --background: #111;
+    --background-light: #222;
+    --text-color: #fff;
+    --text-color-light: #ddd;
+    --text-color-lighter: #aaa;
+    --text-color-lightest: #444;
+    --primary: #01e5b4;
+    --accent2: #ee8d00;
+}
+
+/* Code copied from: https://codepen.io/yp786/pen/MWodGVr
+Author: yash
+Name: Custom Cursor - Circle Follows The Mouse Pointer
+Description: Makes a yellow cursor circle that follows the mouse pointer with delay
+Date retrieved: Nov. 18, 2023 */
+
+/* Copied Code Starts */
+
+#cursor {
+    position: fixed;
+    background-color: transparent;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    will-change: transform;
+    mix-blend-mode: difference;
+    cursor: none;
+}
+
+@media (hover: hover) {
+    .cursor__circle {
+        width: 10px;
+        background-color: transparent;
+        height: 10px;
+        margin-top: -50%;
+        margin-left: -50%;
+        border-radius: 50%;
+        border: solid 1px #01e5b4a3;
+        transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1),
+            background-color 0.3s cubic-bezier(1, 1, 1, 1),
+            border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+            height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    #cursor.arrow .cursor__circle {
+        width: 128px;
+        height: 128px;
+        background-color: var(--primary);
+        border: none;
+        color: #111;
+    }
+
+    #cursor.arrow::after {
+        content: 'EXPLORE \a PROJECTS';
+        white-space: pre;
+        text-align: center;
+        font-size: var(--fz-small-body);
+        font-weight: 400;
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        line-height: 100%;
+        cursor: pointer;
+    }
+
+    #cursor.subtle .cursor__circle {
+        opacity: 0.16;
+    }
+
+    #cursor.overlay .cursor__circle {
+        width: 48px;
+        height: 48px;
+        background-color: #00000011;
+        border-color: transparent;
+        z-index: -1;
+    }
+
+    /* Copied code ends */
+
+    #cursor.find-out-why-pm{
+        cursor: pointer;
+    }
+
+    #cursor.find-out-why-pm::after {
+        content: 'WHY?';
+        white-space: pre;
+        text-align: center;
+        font-size: var(--fz-big-body);
+        font-weight: 400;
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        width: 128px;
+        height: 128px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        background-color: var(--primary);
+        mix-blend-mode: normal;
+        border-radius: 500px;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+
+    #cursor.stratford::after {
+        content: "";
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        width: 128px;
+        height: 128px;
+        background: url("https://uwaterloo.ca/news/sites/ca.news/files/styles/feature_large/public/stratford_campus.jpeg?itok=wJ0AwmB-");
+        background-size: cover;
+        background-position: center;
+        transform: translate(-50%, -50%);
+        cursor: initial;
+    }
+}
+
+/* Copied code ends */

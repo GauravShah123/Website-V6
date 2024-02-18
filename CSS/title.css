@@ -1,0 +1,31 @@
+.title-section {
+    color: var(--text-color);
+    width: calc(100% - (var(--fz-h3) * 2));
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: var(--fz-small-body) 4px;
+    margin: var(--fz-h3);
+    border-bottom: 1px solid var(--text-color-lightest);
+    /* margin-bottom: var(--fz-h4); */
+}
+
+.title-section .title {
+    font-size: var(--fz-h4);
+    font-family: 'General Sans', sans-serif;
+    margin: 0;
+}
+
+.title-section .cta {
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+    cursor: pointer;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.title-section .cta:hover {
+    opacity: 1;
+}

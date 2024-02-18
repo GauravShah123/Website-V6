@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/utilities.css">
+    <link rel="icon" href="/Assets/Images/gaurav-logo.svg" type="image/x-icon">
+
+
+    <title>Case Study - Nav Menu Redesign</title>
+    <link rel="stylesheet" href="/work.css">
+    <script src="/work.js" defer></script>
+    <style>
+        .content img {
+            margin-top: var(--fz-18);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N86RSZZ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Customize Path -->
+    <nav-content></nav-content>
+    <header>
+        <img src="header.svg" alt="UW Marketing Association">
+    </header>
+    <!-- <h1 class="project-heading">UW Marketing Association</h1> -->
+    <section class="details">
+        <div class="detail"><b>Role:</b> Solo Designer & Developer</div>
+        <div class="detail"><b>Timeline:</b> Spring 2023, 1 month</div>
+        <div class="detail"><b>Software:</b> Figma & VS Code</div>
+    </section>
+    <div class="tab">
+        <button class="tablinks active" id="link1" onclick="openTab(1, 2, 'overview', 'case-study')" role="tab"
+            aria-selected="true" aria-controls="tabpanel-id">Overview</button>
+        <button class="tablinks" id="link2" onclick="openTab(2, 1, 'case-study', 'overview')" role="tab"
+            aria-selected="false" aria-controls="tabpanel-id">Case&nbsp;Study</button>
+        <div class="tablinks empty-tab"></div>
+    </div>
+    <main id="overview" >
+        <h2>Problem</h2>
+        <p>Traditional hamburger menus used in portfolio websites present several usability challenges, including low
+            discoverability, lack of contextual awareness, and increased interaction cost. These limitations hinder user
+            experience and conversions, calling for a redesign that addresses these issues while adhering to
+            accessibility best practices.</p>
+        <h2>Solution</h2>
+        <p>This case study outlines a nine-step redesign process that significantly improves the usability and
+            accessibility of the navigation menu. Backed by extensive research and industry conventions, the solution
+            focuses on enhancing discoverability, contextual awareness, and interaction efficiency. Key modifications
+            include simplifying navigation titles, using visible desktop navigation, integrating impactful logos, adding
+            strategic CTAs, incorporating color and visual cues, and optimizing mobile navigation for thumb-friendly
+            interaction.
+        </p>
+        <div></div>
+        <p>By implementing these research-backed changes, the redesigned navigation menu offers a functional, reliable,
+            usable, and pleasurable experience for users. Moreover, the development process ensures accessibility
+            through proper semantic structure, alternative text for images, ARIA labels and attributes, responsive
+            design, keyboard accessibility, and dynamic updates.</p>
+        <div></div>
+
+        <p>The case study presents a comprehensive solution to improve usability and accessibility, setting a new
+            standard for portfolio website navigation.</p>
+        <div></div>
+        <div><img src="Overview.png" alt="Before & After Comparision"></div>
+
+    </main>
+    <main id="case-study" class="hide">
+        <aside>
+        </aside>
+        <section class="content">
+            <h2>Background</h2>
+            <p>Throughout my journey of designing and developing websites, I've encountered a recurring challenge:
+                navigation menus. Creating a menu that is both visually appealing and user-friendly has proven to be
+                quite a daunting task. I've come across countless beautifully designed navigation menus online, but
+                sadly, their usability often left much to be desired. These experiences inspired me to take a closer
+                look at one of my previous portfolio's navigation menus, determined to enhance it. To achieve this, I
+                delved into extensive research, seeking out the best UX practices that would guide its transformation.
+            </p>
+            <h3>Mobile First Frenzy</h3>
+            <p>A few years ago, I stumbled upon the concept of "mobile-first" design - crafting websites with mobile
+                phones in mind. It made sense, especially when it came to coding websites. Starting with the bare
+                essentials and then progressively adding more content using media queries seemed like a smart approach.
+                However, I soon found myself juggling two different versions of the navigation menu for mobile and
+                desktop. Unlike other page elements, transforming a horizontal navigation menu into a hamburger menu
+                proved to be far from straightforward. In an attempt to streamline my workflow and save time, I made the
+                decision to use hamburger menus exclusively for most of my projects. But little did I know, this choice
+                came with its own set of drawbacks.</p>
+            <h2>The Problem</h2>
+            <p>So, here's the challenge: how can we leverage research-backed modifications to enhance the usability and
+                conversions of the traditional hamburger menu commonly used on portfolio websites?</p>
+            <h2>The Original</h2>
+            <p>Unfortunately, the transition to hamburger menus brought forth several disadvantages that significantly
+                affected the overall user experience:</p>
+            <img src="original.png" alt="The Original">
+
+            <ol>
+                <li>
+                    <p><b> Discoverability </b>became a major concern, as the ambiguous hamburger icon often went
+                        unnoticed
+                        by users, making it difficult for them to find and access navigation options.</p>
+                </li>
+                <li>
+                    <p>The <b>lack of visibility</b> and <b>contextual awareness</b> within the menu compounded the
+                        problem. Users struggled to understand where they were in the website's structure, leading to
+                        delays
+                        in finding the desired content.</p>
+                </li>
+                <li>
+                    <p>On top of that, the <b> interaction cost</b> increased. Users had to perform an extra tap or
+                        click
+                        to access essential navigation options, which could be frustrating and time-consuming.</p>
+                </li>
+            </ol>
+            <p>Clearly, a nav menu redesign based on accessibility and UX principles was necessary to ensure a
+                functional, reliable, usable, and pleasurable experience for users.</p>
+            <h2>Revamping the Hamburger Menu</h2>
+            <a class="figma-button"
+                href="https://www.figma.com/file/4DuUiqWG0q5fI2AxdIXDqP/UX-Case-Study---Improving-Navigation-Menus?type=design&node-id=0%3A1&t=wi94q3jH5EPZ7k6g-1">
+                <img src="../../Assets/Images/figma-icon.svg"> View in Figma
+                <span class="material-symbols-outlined">
+                    north_east
+                </span>
+            </a>
+            <p>To tackle the UX issues with the navigation menu, I embarked on a series of steps that would
+                significantly improve its usability. Let's dive into each of these steps:</p>
+            <!-- Point -->
+            <h3 class="list-h3">Simpler Navigation Titles</h3>
+            <p>By using concise and scannable text, I could improve user scanning speed and reduce reaction time.
+                According to the Nielsen Norman Group, this approach resulted in a remarkable 58% and 47% improvement in
+                usability.</p>
+            <p class="source">(Source: <a
+                    href="https://www.nngroup.com/articles/concise-scannable-and-objective-how-to-write-for-the-web/">Nielsen
+                    Norman Group</a>)</p>
+            <img src="Edit 1.png" alt="Simpler Navigation Titles">
+            <!-- Point -->
+            <h3 class="list-h3">Visible Desktop Navigation</h3>
+            <p>Here's an interesting finding: visible navigation menus outperformed hidden hamburger menus in terms of
+                discoverability. Studies from the Nielsen Norman Group showed a significant 43% disparity in navigation
+                usage between a hamburger menu and a visible navigation menu on desktop sites.</p>
+            <p class="source">(Source: <a href="https://www.nngroup.com/articles/hamburger-menus/">Nielsen
+                    Norman Group</a>)</p>
+            <p> So, I decided to make the navigation menu visible, not only enhancing usability but also improving
+                accessibility, saving precious time for users and even benefiting SEO.</p>
+            <img src="Edit 2.png" alt="Visible Desktop Navigation">
+            <!-- Point -->
+            <h3 class="list-h3">Logo Integration</h3>
+            <p>It turns out that prominently displaying the logo in the navigation menu is absolutely critical. Research
+                by the Nielsen Norman Group found that placing the logo in the top left corner resulted in a staggering
+                89% higher brand recall compared to other placement locations.</p>
+            <p class="source">(Source: <a href="https://www.nngroup.com/articles/logo-placement-brand-recall/">Nielsen
+                    Norman Group</a>)</p>
+            <p> Over the years, the logo has also taken on a secondary role as a link to the home page.</p>
+            <img src="Edit 3.png" alt="Logo Integration">
+            <!-- Point -->
+            <h3 class="list-h3">Adding the CTA</h3>
+            <p>To drive user engagement and boost conversions, I strategically placed CTAs within the navigation menu.
+                While the exact increase in conversions varied based on factors such as the website's target audience,
+                industry, and design, studies have shown improvements ranging from 10% to 30% or more.</p>
+            <img src="Edit 4.png" alt="Adding the CTA">
+
+            <!-- Point -->
+            <h3 class="list-h3">Adding Color</h3>
+            <p>By adding color to the mix, I effectively highlighted important elements, making the logo and
+                call-to-action stand out. Color is particularly effective at aiding scannability, ensuring that sighted
+                users can easily distinguish and focus on these crucial elements.</p>
+            <img src="Edit 5.png" alt="Adding Color">
+            <!-- Point -->
+            <h3 class="list-h3">Adding Active and Hover States</h3>
+            <p>To enhance user understanding of component status, I incorporated visual signals for active and hover
+                states. Clear visual cues communicate the current page and indicate the destination, making navigation
+                more intuitive and reducing confusion. Without hover states, interactive portions may go unnoticed,
+                resulting in missed content and disrupted conversion paths.</p>
+            <img src="Edit 6.png" alt="Adding Active and Hover States">
+            <!-- Point -->
+            <h3 class="list-h3">Adding a Subtle Drop Shadow</h3>
+            <p>By creating the illusion of the navigation menu being "on top of" the page content, I improved its
+                visibility and ensured clear differentiation from the rest of the page.</p>
+            <img src="Edit 7.png" alt="Adding a Subtle Drop Shadow">
+            <!-- Point -->
+            <h3 class="list-h3">Moving Mobile Navigation to the Bottom</h3>
+            <p>Recognizing user behavior, research revealed that most users navigate with a single thumb on their
+                phones. So, I shifted the mobile navigation menu to the bottom. This change acknowledges the way users
+                interact with their devices making sure they can easily reach the menu without straining. It might
+                challenge established mental models, but I strongly believe the trade-off is well worth it.</p>
+            <img src="Edit 8.png" alt="Moving Mobile Navigation to the Bottom">
+            <!-- Point -->
+            <h3 class="list-h3">Modifying the Mobile Navigation</h3>
+            <p>When it came to the mobile navigation, I explored two approaches:</p>
+            <ol>
+                <li>
+                    <p><b>Version 1:</b> I replaced the hamburger with icons and labels, creating a navigation style
+                        reminiscent of mobile apps. This approach maintains mental models and enhances discoverability,
+                        as many mobile apps use bottom navigation with labels. I also added active states to provide
+                        user feedback.</p>
+                    <img src="Edit 9 - Version 1.png" alt="Modifying the Mobile Navigation - Version 1">
+                </li>
+                <li>
+                    <p><b>Version 2:</b> In this version, I transformed the navigation into a combination of visible and
+                        hidden links. Studies have shown that combination menus outperform hamburgers by 1.5 times.
+                    </p>
+                    <p class="source">(Source: <a href="https://www.nngroup.com/articles/hamburger-menus/">Nielsen
+                            Norman Group</a>)</p>
+                    <p>
+                        Visible links improve discoverability and support scalability for additional website pages.
+                        These modifications optimize user experience and navigation efficiency on mobile devices.</p>
+                    <img src="Edit 9 - Version 2.png" alt="Modifying the Mobile Navigation - Version 2">
+                </li>
+            </ol>
+            <h2>Development</h2>
+            <p>To enhance accessibility, I implemented various modifications and adhered to best practices. Take a look
+                at the modified website to see the improvements I made and discover the steps taken to enhance its
+                accessibility.</p>
+            <button class="read button-flex" onclick="window.open('/NavBar/index.html', '_blank');">View Modified Site <span class="material-symbols-outlined">arrow_forward</span></button>
+            <h3>Source Code Snippet</h3><br>
+            <img src="Code.png" alt="Source Code for the Updated Navigation Menu">
+            <p>Here's a rundown of the key changes:</p>
+            <h3 class="list-h3">Proper Semantic Structure</h3>
+            <p>I utilized semantic HTML elements such as <code>nav</code>, <code>a</code>, <code>button</code>,
+                <code>ul</code>, and <code>li</code> to provide a clear and meaningful structure for the navigation
+                menu, ensuring that it's well-organized and accessible.
+            </p>
+            <h3 class="list-h3">Alternative Text for Images</h3>
+            <p>To cater to screen readers, I added descriptive alternative text to the <code>&lt;img&gt;</code> element
+                using the <code>alt</code> attribute. This ensures that users who cannot view the images can still
+                understand their purpose.</p>
+            <h3 class="list-h3">ARIA Labels and Attributes</h3>
+            <p>To assist users with disabilities, I included appropriate ARIA labels and attributes in the navigation
+                elements. For example, the logo's <code>&lt;a&gt;</code> element has an <code>aria-label</code>
+                attribute providing a descriptive label ("Home") for screen readers. The hamburger menu button includes
+                attributes such as <code>aria-label</code>, <code>aria-expanded</code>, and <code>aria-hidden</code> to
+                convey its purpose and state to assistive technologies.</p>
+            <h3 class="list-h3">Responsive Design</h3>
+            <p>By implementing responsive design techniques, I ensured that the navigation menu adapts seamlessly to
+                different screen sizes. On mobile devices, a compact and accessible hamburger menu is used, making it
+                easier for users to navigate the website.</p>
+            <h3 class="list-h3">Keyboard Accessibility</h3>
+            <p>I made the hamburger menu button (<code>&lt;button&gt;</code>) focusable and activatable using the
+                keyboard, guaranteeing that users who rely on keyboard navigation can easily access the menu
+                functionality.</p>
+            <h3 class="list-h3">Dynamic ARIA Label Updates</h3>
+            <p>To provide accurate and up-to-date information to screen readers, I dynamically update the ARIA label of
+                the navigation button when the menu is expanded or collapsed. This gives users real-time feedback on the
+                current state of the navigation menu.</p>
+            <h3 class="list-h3">Proper Focus Management</h3>
+            <p>When the navigation menu is opened, I ensure that the focus is automatically shifted to the first menu
+                item, allowing keyboard users to continue navigating the menu without any interruption.</p>
+            <h2>Conclusion</h2>
+            <p>In conclusion, by challenging the limitations of the traditional hamburger menu and incorporating
+                research-backed modifications, I transformed a clunky and hidden navigation into an engaging and
+                accessible experience. After all the modifications, I am still left with a few next steps and questions.
+            </p>
+            <h3>Next Steps</h3>
+            <p>To further assess the impact of these modifications, I plan to conduct a multivariate test comparing the
+                original and final versions. This test will help determine whether the combined changes amplify the
+                benefits or potentially negate each other. Additionally, there are several questions that require deeper
+                investigation:</p>
+            <h3>Further Questions</h3>
+            <ol>
+                <li>
+                    <p>Does the mobile navigation menu perform better when at the top or bottom of the page?</p>
+                </li>
+                <li>
+                    <p>Does a mobile navigation perform better if it includes icons and labels or a combination of links
+                        and a hamburger menu? </p>
+                </li>
+                <li>
+                    <p>What would be the best way to incorporate a search bar into the menu?</p>
+                </li>
+                <li>
+                    <p>How can we improve the experience when dropdown menus are used?</p>
+                </li>
+            </ol>
+        </section>
+    </main>
+    <button class="scroll-to-top" aria-label="Scroll to Top"><span
+            class="material-symbols-outlined">arrow_upward</span></button>
+    <footer-content></footer-content>
+</body>
+
+</html>

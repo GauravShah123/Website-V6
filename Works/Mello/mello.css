@@ -1,0 +1,46 @@
+header{
+    display: flex;
+    background-color: #3271BE;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.header-content{
+    height: 40%;
+    object-fit: contain;
+    width: fit-content;
+}
+
+.header-image{
+    height: 100%;
+    object-fit: contain;
+    width: fit-content;
+}
+
+.content h2 {
+    margin-top: var(--fz-h3);
+}
+
+.callout{
+    background-color: #3271be22;
+}
+
+@media (max-width: 700px) {
+    .header-image{
+        display: none;
+    }
+    .header-content{
+        height: 50%;
+    }
+}
+
+header{
+    height: 400px;
+}
+
+@media (max-width:700px) {
+    header{
+        height: 250px;
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Code Syntax Highlighting Example</title>
+
+</head>
+
+<body>
+    <pre>
+        <code class="language-html">
+&lt;nav aria-hidden="true"&gt;
+    &lt;a href="index.html" aria-label="Home"&gt;
+        &lt;img src="Logo.svg" alt="John Doe Logo" class="nav-img"&gt;
+    &lt;/a&gt;
+    &lt;div class="nav-right"&gt;
+        &lt;button 
+            class="hamburger-container priority" 
+            role="button" 
+            aria-label="Toggle Menu" 
+            aria-expanded="false" 
+            aria-hidden="true"&gt;
+                &lt;div class="hamburger"&gt;&lt;/div&gt;
+        &lt;/button&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="404.html" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="priority"&gt;&lt;a href="404.html"&gt;Work&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="404.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="404.html"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="priority"&gt;
+                &lt;a href="404.html" class="cta"&gt;Let's Talk →&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+        </code>
+    </pre>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
+
+    <style>
+        /* Import Prism theme styles */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css');
+
+        /* Set pre and code styles */
+        pre {
+            background-color: #f7f7f7;
+            padding: 40px;
+            overflow: auto;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        code.language-html {
+            color: #333;
+        }
+
+        /* Optional: Adjust body margin for better presentation */
+        body {
+            margin: 0;
+        }
+    </style>
+</body>
+
+</html>

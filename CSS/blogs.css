@@ -1,0 +1,42 @@
+.blogs{
+    padding-top: 0;
+}
+
+.blogs-qualifier{
+    width: 66%;
+    color: var(--text-color-lighter);
+    display: none;
+
+}
+
+.blogs-cards .card{
+    position: relative;
+}
+
+.blogs-cards .card{
+    padding: 0;
+    border: none;
+    height: 350px;
+}
+
+.blogs-cards .card.work img{
+    height: 350px;
+    object-fit: cover;
+}
+
+.blogs-cards .card .card-content{
+    position: absolute;
+    left: 0;
+    top: -4px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: var(--fz-small-body) var(--fz-big-body);
+    background: linear-gradient(0deg, #111111f5, #11111166);
+}
+
+.blogs-cards .card .card-content .tag{
+    background-color: transparent;
+    /* border: 1px solid var(--text-color-lighter); */
+}

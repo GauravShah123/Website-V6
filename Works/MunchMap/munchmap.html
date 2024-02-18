@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <script src="/JS/app.js" defer></script>
+    <link rel="icon" href="/Assets/Images/gaurav-logo.svg" type="image/x-icon">
+
+    <!-- Template -->
+    <link rel="shortcut icon" href="./Images/Favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/work.css">
+    <script src="/JS/utilities.js" defer></script>
+    <script src="/JS/work.js" defer></script>
+
+    <title>Case Study - Munch Map</title>
+    <link rel="stylesheet" href="/Works/MunchMap/munchmap.css">
+
+</head>
+
+<body>
+    <!-- Customize Path -->
+    <nav-content></nav-content>
+    <header>
+        <img src="/Works/MunchMap/header-content.svg" alt="Munch Map" class="header-content">
+        <img src="/Works/MunchMap/header.png" class="header-image">
+    </header>
+    <section class="details">
+        <div class="detail"><b>Role:</b> Solo Team</div>
+        <div class="detail"><b>Timeline:</b> 5 hour design-a-thon</div>
+        <div class="detail"><b>Software:</b> Figma</div>
+    </section>
+    <aside>
+        <h2>Table of Contents</h2>
+
+    </aside>
+    <main>
+
+        <section class="content">
+
+            <p>The TILE Design-a-thon, hosted by UW Blueprint and UW UX, challenged participants to create socially
+                impactful solutions with a gamified twist. In response, I designed MunchMap, an app aiming to reduce
+                food insecurity on campus.</p>
+            <h2>The Problem</h2>
+            <p>Here's the deal: College campuses contribute significantly to food waste in North America, with an
+                estimated 22 million pounds of edible food thrown away each year. At this very design-a-thon, I
+                witnessed firsthand the excess pizza ordered by clubs, many of which were bound to be left uneaten. It
+                bothered me to see all that food going to waste when there are so many people who could benefit from it.
+                Inspired by this and the number of other club events I had been to with extra food, I had an idea.</p>
+            <h2>The Solution</h2>
+            <a class="figma-button"
+                href="https://www.figma.com/file/YCDzyGojRtPDnvAxgZFhGW/TILE-Hackathon?type=design&node-id=0%3A1&t=RVScsEA09OXCxgyh-1"><img
+                    src="./Assets/Images/figma-icon.svg"> View in Figma <span class="material-symbols-outlined">
+                    north_east
+                </span></a>
+            <p>Introducing MunchMap, the solution I designed to tackle food waste on college campuses. There are 3 main
+                user flows I'd like to demonstrate.</p>
+            <h3>User Flow 1 - If you have extra food</h3>
+            <p>If a club has extra food, the organizer can simply click on the button on the home page. This takes them
+                to a page where they can upload a picture of the food, provide details about what it is, and share their
+                location. That's it! The information is then broadcasted to all those seeking food on campus. To speed
+                up the process, users can also share the details about the free food on their social media stories,
+                especially in the initial stages when we have fewer users. </p>
+            <img src="/Works/MunchMap/user-flow-1.svg" alt="User Flow 1 - If you have extra food">
+            <h3>User Flow 2 - If you’re looking for food</h3>
+            <p>If you’re looking for food, you can start by selecting your location and setting a search radius in the
+                app. MunchMap will then provide you with a list of available food options in your vicinity, along with
+                their respective locations. Once you've chosen the food you want, the app will guide you to the place.
+                After you've received the food, you have the option to let the organization or club know whether you
+                successfully obtained it. This feedback helps them improve the process for future distributions and
+                ensures a smoother experience if any issues arise.</p>
+            <img src="/Works/MunchMap/user-flow-2.svg" alt="User Flow 2 - If you’re looking for food">
+
+            <h3>User Flow 3 - Gamification through Munch Coins</h3>
+            <p>Whenever someone gives away or collects food through the app, they earn Munch Coins, symbolizing their
+                contribution to waste reduction. Additionally, special achievements unlock badges, adding a sense of
+                accomplishment. Users can track their Munch Coins and badges in the profile section of the app.
+                Furthermore, at the end of each term, a progress report displays the user's overall performance. While
+                Munch Coins serve as a mild motivator for the clubs involved, it's worth considering attaching external
+                incentives, such as club funding, if the app becomes a reality.</p>
+            <img src="/Works/MunchMap/user-flow-3.svg" alt="User Flow 3 - Gamification through Munch Coins">
+
+
+            <h2>Reflection</h2>
+            <p>Upon reflection, I recognize that my initial design for the MunchMap app during the design-a-thon
+                primarily focused on the happy path, overlooking potential challenges that may arise during its actual
+                implementation. Here are some issues that need to be addressed for the app's large-scale adoption and
+                smooth functionality:</p>
+            <ol>
+                <li>
+                    <p><b>Adoption:</b> To ensure the success of MunchMap, it is crucial to achieve widespread adoption
+                        from both the clubs and individuals seeking food. Encouragement and support from the student
+                        clubs'
+                        governing bodies can play a significant role in promoting the app's usage. Additionally, placing
+                        informative posters around the campus can raise awareness and encourage participation.</p>
+                </li>
+                <li>
+                    <p><b>Protecting the food:</b> A key concern is ensuring the safety and integrity of the shared
+                        food. Implementing a system that prevents food from being left unattended is vital to prevent
+                        potential risks, such as contamination or tampering. Setting up designated safe drop-off and
+                        pickup locations around campus can help mitigate these concerns and ensure the food remains
+                        secure.</p>
+                </li>
+                <li>
+                    <p><b>Tracking food availability:</b>It is crucial to update the app in real-time to reflect the
+                        availability of food. Once a user selects a particular food item, it should be promptly removed
+                        from the list of options to prevent others from traveling to the location only to find that it
+                        has already been claimed. Implementing an efficient tracking system will enhance user experience
+                        and prevent unnecessary travel.</p>
+                </li>
+                <li>
+                    <p><b>Balancing incentives and food management:</b> Introducing incentives like club funding based
+                        on food donations raises the concern of potential overordering by clubs to meet the criteria for
+                        rewards. This can be seen as a waste of funds if it results in excess food. Striking the right
+                        balance between incentives and responsible food management is crucial to ensure that clubs
+                        remain mindful of their actual food needs and avoid unnecessary waste.</p>
+                </li>
+            </ol>
+            <h2>Impact</h2>
+            <p>I'm thrilled to have secured <b>2nd place</b> among over a 100 participants by leveraging my product
+                thinking and providing a solution that aligned with the social good prompt.</p>
+
+            <h2>Key Takeaways</h2>
+            <h3 class="no-margin-top">⏳ Investing time in the solution</h3>
+            <p>
+                Despite the time constraint of just 5 hours to create the entire app, I made a conscious effort
+                to deeply understand the problem at hand. By devoting time to grasp its nuances and developing a
+                solution that could truly address it, I was able to produce a more refined and effective
+                outcome.</p>
+            <h3>🗝️ Leveraging existing resources</h3>
+            <p>
+                The availability of a material UI kit proved to be a game-changer. It significantly reduced the design
+                time and effort required, allowing me to focus on the core aspects of the solution. It underscored the
+                importance of assessing available resources and utilizing them strategically to optimize the design
+                process.</p>
+            <h3>🤨 Considering edge cases</h3>
+            <p>
+                Feedback I received after the competition shed light on the significance of designing for edge cases.
+                Although I mentioned their importance in the hindsight section, I realized that incorporating them into
+                the initial design process would have resulted in a more comprehensive and well-thought-out solution.
+                Taking into account various scenarios and potential outliers enhances the overall usability and user
+                experience of the app.</p>
+        </section>
+    </main>
+    <button class="scroll-to-top" aria-label="Scroll to Top"><span
+            class="material-symbols-outlined">arrow_upward</span></button>
+    <footer-content></footer-content>
+</body>
+
+</html>
