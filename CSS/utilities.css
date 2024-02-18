@@ -142,6 +142,139 @@ nav .active {
 }
 
 
+.modal-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000000;
+    background-color: #111111f6;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-bg-overlay.modal-closed {
+    opacity: 0;
+    transform: translateY(-10%);
+    visibility: hidden;
+}
+
+.modal-bg-overlay .close-modal {
+    position: fixed;
+    top: var(--fz-big-body);
+    right: var(--fz-big-body);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: var(--fz-small-body);
+}
+
+.modal-bg-overlay .close-modal span {
+    font-size: var(--fz-h4) !important;
+    pointer-events: none;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    gap: var(--fz-big-body);
+    /* background-color: var(--dark-alt); */
+    padding: var(--fz-big-body);
+    transition: 0s;
+}
+
+.modal a {
+    text-decoration: none;
+}
+
+.modal button {
+    padding: var(--fz-body) calc(var(--fz-big-body) * 1.5);
+    font-size: var(--fz-body);
+    cursor: pointer;
+    transition: 0s;
+}
+
+.modal-calendly {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--fz-small-body);
+    border-radius: var(--fz-h1);
+    background: var(--background);
+    font-weight: 300;
+}   
+
+.modal-calendly:hover {
+    background-color: var(--primary);
+    color: var(--background);
+    font-weight: 500;
+}
+
+.email-copy {
+    display: flex;
+    border: 1px solid var(--text-color-lightest);
+    border-radius: var(--fz-h1);
+    padding: 0;
+    gap: 0;
+    position: relative;
+    background-color: var(--background);
+    color: var(--light);
+    
+}
+
+.email-copy p{
+    font-size: var(--fz-body);
+    padding-inline: calc(var(--fz-big-body) * 1.5);
+}
+
+.email-copy::before {
+    content: "Shoot me a quick email";
+    position: absolute;
+    top: calc(var(--fz-small-body) * -2.5);
+    left: 50%;
+    transform: translate(-50%);
+    width: max-content;
+    color: var(--light);
+    opacity: 0.5;
+    padding: 0 var(--fz-small-body);
+}
+
+.modal .email-copy p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.email-copy-button {
+    border-radius: 0 var(--fz-h1) var(--fz-h1) 0;
+    background-color: var(--text-color);
+    width: calc(var(--fz-big-body) * 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: var(--background);
+}
+
+.email-copy-button:hover {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+/* .email-copy:has(.email-copy-button:hover) {
+    color: var(--primary);
+    border: 2px solid var(--primary);
+} */
+
 
 section {
     width: 100%;
@@ -236,7 +369,7 @@ footer {
 }
 
 .footer-contact ul li a span.material-icons-outlined {
-    font-size: calc(var(--fz-20) * .8) !important
+    font-size: calc(var(--fz-body) * .8) !important
 }
 
 .footer-contact button {

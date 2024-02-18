@@ -42,12 +42,13 @@ section.header{
 section.header img{
     width: 100%;
     padding: 10vw;
+    padding-top: 0;
 }
 
 section.header h1{
     font-size: var(--fz-h1);
     font-family: "Clash Display";
-    margin-top: var(--fz-h1);
+    margin-top: calc(var(--fz-h1) + var(--fz-small-body));
 }
 
 section.header p{
@@ -120,6 +121,6 @@ section.header img.mini-internships{
     width: 40vw;
     padding: 0;
     position: absolute;
-    top: 105vw;
+    top: 77vw;
     left: 30vw;
 }

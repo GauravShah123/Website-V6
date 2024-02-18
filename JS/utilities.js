@@ -3,34 +3,49 @@ class nav extends HTMLElement {
         super()
         this.innerHTML = `
         <nav class="inactive">
-        <a href="/" class="logo-wapper"><img src="./Images/Logo.svg" alt="Gaurav Shah Logo" class="nav-logo"></a>
-        <ul>
-            <li>
-                <a id="nav-menu-home" href="#">Home</a>
-            </li>
-            <!--<li>
-                <a href="#selected-works" id="nav-menu-projects">Projects</a>
-            </li>-->
-            <li>
-                <a id="nav-menu-about" href="/About/about.html">About</a>
-            </li>
-            <li>
-                <a href="/Resume.pdf" target="_blank" id="nav-menu-resume">Résumé</a>
-            </li>
-            <li class="cta-wrapper">
-                <button class="cta">Let's Talk<span class="material-symbols-outlined">arrow_forward</span></button>
-            </li>
-        </ul>
-        <span class="material-symbols-outlined nav-hamburger hide-desktop" onclick="navOpen()">menu</span>
-    </nav>
+            <a href="/" class="logo-wapper"><img src="./Images/Logo.svg" alt="Gaurav Shah Logo" class="nav-logo"></a>
+            <ul>
+                <li>
+                    <a id="nav-menu-home" href="#">Home</a>
+                </li>
+                <!--<li>
+                    <a href="#selected-works" id="nav-menu-projects">Projects</a>
+                </li>-->
+                <li>
+                    <a id="nav-menu-about" href="/About/about.html">About</a>
+                </li>
+                <li>
+                    <a href="/Resume.pdf" target="_blank" id="nav-menu-resume">Résumé</a>
+                </li>
+                <li class="cta-wrapper">
+                    <button class="cta lets-talk">Let's Talk<span class="material-symbols-outlined">arrow_forward</span></button>
+                </li>
+            </ul>
+            <span class="material-symbols-outlined nav-hamburger hide-desktop" onclick="navOpen()">menu</span>
+        </nav>
+
+        <!-- Let's Talk Modal -->
+        <div class="modal-bg-overlay modal-closed">
+            <div class="modal">
+
+                <div class="email-copy">
+                    <p>gshah@uwaterloo.ca</p>
+                    <button class="email-copy-button" id="email-copy-button">Copy</button>
+                </div>
+                <p>OR</p>
+                <a href="https://calendly.com/gs336/30min"><button class="modal-calendly">Schedule a meeting via Calendly</button></a>
+                
+            </div>
+            <button class="close-modal"><span class="material-symbols-outlined">close</span></button>
+        </div>
         `
     }
 }
 
-function navOpen(){
+function navOpen() {
 
     document.querySelector("nav").classList.toggle("inactive");
-    
+
 }
 
 class footer extends HTMLElement {
@@ -68,3 +83,57 @@ class footer extends HTMLElement {
 customElements.define("nav-content", nav);
 customElements.define("footer-content", footer);
 
+// Close the Modal
+const modalBgOverlay = document.querySelector('.modal-bg-overlay');
+const modal = document.querySelector('.modal');
+
+function closeModal() {
+    modalBgOverlay.classList.add('modal-closed');
+    modalBgOverlay.setAttribute('aria-hidden', 'true');
+}
+
+modalBgOverlay.addEventListener('click', function (event) {
+    if (event.target === modalBgOverlay) {
+        closeModal();
+    }
+});
+
+document.querySelector('.close-modal').addEventListener('click', function (event) {
+    closeModal();
+});
+
+// Open the Modal
+const letsTalkButtons = document.querySelectorAll('.lets-talk');
+letsTalkButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        console.log("HI")
+        modalBgOverlay.classList.remove('modal-closed');
+        modalBgOverlay.setAttribute('aria-hidden', 'false');
+    });
+});
+
+
+// Copy Email
+const emailCopyButton = document.getElementById('email-copy-button');
+const emailCopyText = document.querySelector('.email-copy p');
+
+emailCopyButton.addEventListener('click', function () {
+    // Create a temporary textarea element
+    const textarea = document.createElement('textarea');
+    textarea.value = emailCopyText.textContent;
+    document.body.appendChild(textarea);
+
+    // Copy the email text to the clipboard
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    // Update the button text
+    emailCopyButton.textContent = 'Copied!';
+    setTimeout(closeModal, 1000);
+    setTimeout(copyTexttoNormal, 1500);
+});
+
+function copyTexttoNormal() {
+    emailCopyButton.textContent = 'Copy';
+}
