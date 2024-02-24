@@ -9,7 +9,7 @@
 @import url("./blogs.css");
 @import url("./product-compass.css");
 
-:root {
+/* :root {
     --fz-h1: 10vw;
     --fz-h2: 5vw;
     --fz-h3: 3.25vw;
@@ -26,37 +26,34 @@
     --text-color-lightest: #444;
     --primary: #01e5b4;
     --accent2: #ee8d00;
-}
+} */
 
 section {
     padding: 0 var(--fz-h3);
 }
 
-@media (max-width: 1200px) {
-    .project-hero-image {
-        height: 100%;
-        object-fit: cover;
-    }
+
+.project-hero-image{
+    position: relative;
+    width: 50%;
 }
 
-@media only screen and (max-width: 900px) {
-    .hero-text-p {
-        display: none;
-    }
+.project-hero-content{
+    width: 50%;
+}
 
-    .projects-hero {
-        flex-direction: column-reverse;
-        height: fit-content;
-    }
+.project-hero-image #investmint-gif{
+    height: 35vw;
+    position: absolute;
+    top: calc(var(--fz-h4) + var(--fz-small-body));
+    right: 8vw;
+}
 
-    .projects-hero#investmint {
-        flex-direction: column;
-    }
-
-    .project-hero-image {
-        width: 100%;
-        height: auto;
-    }
+.project-hero-image #laptop{
+    width: 150%;
+    right: 0;
+    top: var(--fz-h4);
+    position: absolute;
 }
 
 .big-footer {
@@ -127,6 +124,37 @@ section {
     color: var(--primary);
 }
 
+
+@media (max-width: 1200px) {
+    .project-hero-image {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .hero-text-p {
+        display: none;
+    }
+
+    .projects-hero {
+        flex-direction: column-reverse;
+        height: fit-content;
+    }
+
+    .projects-hero#investmint {
+        flex-direction: column;
+    }
+
+    .project-hero-image {
+       display: none;
+    }
+
+    .project-hero-content{
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     :root {
         --fz-h1: 18vw;
@@ -164,4 +192,22 @@ section {
     .big-footer h1 {
         display: none;
     }
+
+    .project-hero-image {
+        display: block;
+        width: 100%;
+        height: fit-content;
+     }
+
+     .project-hero-image #laptop{
+        position: relative;
+        display: none;
+     }
+     .project-hero-image #investmint-gif{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+     }
 }

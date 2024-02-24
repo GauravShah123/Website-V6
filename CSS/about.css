@@ -24,11 +24,13 @@
     height: 70vh;
     display: flex;
     text-align: left;
-    align-items: end;
-    justify-content: start;
+    align-items: start;
+    justify-content: end;
     padding: var(--fz-h3);
     margin-top: 70px;
     background-position: center;
+    flex-direction: column;
+    gap: var(--fz-small-body);
     position: relative;
     background-blend-mode: multiply;
     background-image: linear-gradient(#01e5b43d, #11111100);
@@ -53,11 +55,11 @@
     color: var(--text-color);
     font-size: calc(var(--fz-h1));
     font-family: "General Sans", sans-serif;
-    line-height: 40%;
+    line-height: 90%;
     z-index: 10;
 }
 
-.facts h1 .facts-inner {
+.facts .facts-inner {
     color: var(--text-color-lighter);
     text-shadow: none;
     font-weight: 300;
@@ -121,6 +123,20 @@
     font-size: var(--fz-big-body);
     color: var(--background);
     grid-column: 1/4;
+}
+
+.why-pm{
+    padding: var(--fz-h3);
+}
+
+.why-pm h1{
+    color: var(--text-color);
+    font-size: var(--fz-h2);
+    margin-bottom: var(--fz-small-body);
+}
+
+.why-pm p{
+    width: 75%;
 }
 
 @media only screen and (max-width: 767px) {

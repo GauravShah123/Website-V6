@@ -11,6 +11,11 @@ document.querySelector(".about-text").addEventListener("mousemove", function (ev
     }
 })
 
+function scrollToPM() {
+    let yPos = document.getElementById('why-pm').getBoundingClientRect().top + window.scrollY - 77;
+    window.scrollTo({ top: yPos, behavior: 'smooth' });
+}
+
 const factsInnerElement = document.querySelector('.facts-inner');
 const factsOptions = [
     'wears red jackets.',

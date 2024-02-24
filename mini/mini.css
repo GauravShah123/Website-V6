@@ -10,7 +10,7 @@
     color: var(--text-color);
 }
 
-:root {
+/* :root {
     --fz-h1: 11vw;
     --fz-h2: 7.5vw;
     --fz-h3: 3.25vw;
@@ -27,7 +27,7 @@
     --text-color-lightest: #444;
     --primary: #01e5b4;
     --accent2: #ee8d00;
-}
+} */
 
 body {
     background-color: var(--background);
