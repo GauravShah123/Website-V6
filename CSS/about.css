@@ -1,7 +1,7 @@
 @import url("./utilities.css");
 @import url("./cursor.css");
 
-:root {
+/* :root {
     --fz-h1: 10vw;
     --fz-h2: 5vw;
     --fz-h3: 3.25vw;
@@ -18,7 +18,7 @@
     --text-color-lightest: #444;
     --primary: #01e5b4;
     --accent2: #ee8d00;
-}
+} */
 
 .facts {
     height: 70vh;
@@ -155,4 +155,12 @@
         font-weight: 400;
     }
 
+    .why-pm p{
+        width: 100%;
+        font-size: var(--fz-body);
+    }
+
+    .facts h1{
+        line-height: 115%;
+    }
 }

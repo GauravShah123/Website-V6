@@ -517,6 +517,7 @@ footer {
 
     footer {
         flex-direction: column;
+        padding: var(--fz-h3);
     }
 
     footer .ending {

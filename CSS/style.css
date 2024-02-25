@@ -45,8 +45,8 @@ section {
 .project-hero-image #investmint-gif{
     height: 35vw;
     position: absolute;
-    top: calc(var(--fz-h4) + var(--fz-small-body));
-    right: 8vw;
+    top: calc(var(--fz-h4) + (var(--fz-small-body) * 9 / 10));
+    right: 7.8vw;
 }
 
 .project-hero-image #laptop{

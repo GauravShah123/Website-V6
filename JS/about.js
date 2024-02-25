@@ -12,7 +12,7 @@ document.querySelector(".about-text").addEventListener("mousemove", function (ev
 })
 
 function scrollToPM() {
-    let yPos = document.getElementById('why-pm').getBoundingClientRect().top + window.scrollY - 77;
+    let yPos = document.getElementById('why-pm').getBoundingClientRect().top + window.scrollY - 70;
     window.scrollTo({ top: yPos, behavior: 'smooth' });
 }
 

@@ -2,13 +2,14 @@
 
 let container = document.querySelector(".content");
 let headers = container.querySelectorAll('h2');
+let currentURLWithoutHash = window.location.href.split('#')[0];
 
-let aside = document.querySelector("aside");
-
+let aside = document.querySelector("aside");        
+aside.innerHTML += `<h2>Table of Contents</h2>`
 for (let i = 0; i < headers.length; i++) {
     let element = headers[i];
     element.setAttribute("id", i);
-    aside.innerHTML += `<a href="#` + i + `">` + headers[i].innerText + `</a>`;
+    aside.innerHTML += `<a href="`+currentURLWithoutHash+`#` + i + `">` + headers[i].innerText + `</a>`;
 }
 
 // Show Nav Bar when user scrolls up
