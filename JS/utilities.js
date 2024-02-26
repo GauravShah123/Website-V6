@@ -8,9 +8,9 @@ class nav extends HTMLElement {
                 <li>
                     <a id="nav-menu-home" href="#">Home</a>
                 </li>
-                <!--<li>
-                    <a href="#selected-works" id="nav-menu-projects">Projects</a>
-                </li>-->
+                <li>
+                    <a id="nav-menu-home hide-desktop" href="#selected-works" onclick="toggleNavClassAndNavigate();">Projects</a>
+                </li>
                 <li>
                     <a id="nav-menu-about" href="/About/about.html">About</a>
                 </li>
@@ -21,7 +21,11 @@ class nav extends HTMLElement {
                     <button class="cta lets-talk">Let's Talk<span class="material-symbols-outlined">arrow_forward</span></button>
                 </li>
             </ul>
-            <span class="material-symbols-outlined nav-hamburger hide-desktop" onclick="navOpen()">menu</span>
+            <div class="hamburger nav-hamburger hide-desktop" id="hamburger-6" onclick="navOpen()">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
         </nav>
 
         <!-- Let's Talk Modal -->
@@ -45,7 +49,20 @@ class nav extends HTMLElement {
 function navOpen() {
 
     document.querySelector("nav").classList.toggle("inactive");
+    document.querySelector(".hamburger").classList.toggle("is-active");
 
+}
+
+function toggleNavClassAndNavigate() {
+    // Toggle the class on the <nav> element
+    document.querySelector("nav").classList.toggle("inactive");
+    document.querySelector(".hamburger").classList.toggle("is-active");
+
+    // Get the href attribute of the clicked link
+    var linkHref = document.getElementById("nav-menu-home").getAttribute("href");
+
+    // Navigate to the link
+    window.location.href = linkHref;
 }
 
 class footer extends HTMLElement {
@@ -137,3 +154,8 @@ emailCopyButton.addEventListener('click', function () {
 function copyTexttoNormal() {
     emailCopyButton.textContent = 'Copy';
 }
+
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);

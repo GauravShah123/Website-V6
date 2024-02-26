@@ -659,4 +659,8 @@ button.read.read.read.read:hover {
     aside a {
         font-size: var(--fz-body);
     }
+
+    header{
+        height: 250px;
+    }
 }
