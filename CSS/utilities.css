@@ -321,7 +321,7 @@ footer {
     gap: var(--fz-h3);
     color: var(--white);
     background-color: var(--background);
-    padding: var(--fz-h2);
+    padding: var(--fz-h3);
     border-top: 1px solid var(--text-color-lightest);
 }
 

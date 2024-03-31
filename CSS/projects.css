@@ -8,7 +8,7 @@
     max-width: calc(100vw - (var(--fz-h3) * 2));
     border-radius: 8px;
     overflow: hidden;
-    height: 55vh;
+    height: fit-content;
     cursor: pointer;
     text-decoration: none;
 }
@@ -42,7 +42,7 @@
 
 .case-study-button-wrapper {
     margin-top: auto;
-    padding-top: 20px;
+    padding-top: var(--fz-h3);
 }
 
 .project-hero-content .case-study {

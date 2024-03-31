@@ -8,8 +8,8 @@ class nav extends HTMLElement {
                 <li>
                     <a id="nav-menu-home" href="#">Home</a>
                 </li>
-                <li>
-                    <a id="nav-menu-home hide-desktop" href="#selected-works" onclick="toggleNavClassAndNavigate();">Projects</a>
+                <li class="hide-desktop">
+                    <a id="nav-menu-home" href="#selected-works" onclick="toggleNavClassAndNavigate();">Projects</a>
                 </li>
                 <li>
                     <a id="nav-menu-about" href="/About/about.html">About</a>
