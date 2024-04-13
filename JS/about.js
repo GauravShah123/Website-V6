@@ -1,3 +1,6 @@
+window.onload = function() {
+    document.body.scrollLeft = 0;
+};
 // GBDA Expander Text
 document.querySelector(".GBDA").addEventListener("mouseover", function () {
     var width = this.offsetWidth;
@@ -43,3 +46,30 @@ setInterval(() => {
     const randomIndex = getRandomIndex();
     factsInnerElement.textContent = factsOptions[randomIndex];
 }, 2500);
+
+function pause(){
+    const marqueeContent = document.querySelectorAll('.marquee-content');
+    marqueeContent.forEach(content => content.classList.toggle('paused'));
+
+    const icon = document.getElementById('icon');
+    if (icon.textContent.trim() === 'pause_circle') {
+        icon.textContent = 'play_circle';
+    } else {
+        icon.textContent = 'pause_circle';
+    }
+}
+
+// Function to create caption below each image
+function createCaptions() {
+    const marqueeItems = document.querySelectorAll('.marquee-item');
+    marqueeItems.forEach(item => {
+        const imgAlt = item.querySelector('img').getAttribute('alt');
+        const caption = document.createElement('p');
+        caption.classList.add('caption');
+        caption.textContent = imgAlt;
+        item.appendChild(caption);
+    });
+}
+
+// Call the function to create captions
+createCaptions();
