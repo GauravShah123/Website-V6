@@ -169,8 +169,8 @@ aside {
     align-items: start;
     justify-content: end;
     gap: calc(var(--fz-small-body) * 0.5);
-    padding: var(--fz-h4) calc(var(--fz-h1) * 2.5);
-    display: none;
+    padding: var(--fz-h4) calc(var(--fz-h1));
+    /* display: none; */
 }
 
 aside h2 {
@@ -184,11 +184,12 @@ aside h2 {
 } */
 
 aside a {
-    display: block;
+    /* display: block; */
     color: var(--text-color-light);
     text-decoration: none;
     font-size: var(--fz-18);
     margin-bottom: calc(var(--fz-18) * 0.75);
+    padding-left: calc(var(--fz-small-body) * 0.5);
 }
 
 aside a:hover {
@@ -301,6 +302,23 @@ main img {
     padding: 0;
     margin-top: var(--fz-h4);
     margin-bottom: var(--fz-small-body);
+}
+
+main video{
+    width: 100%;
+    border-radius: calc(var(--fz-small-body) * 0.5);
+    padding: 0;
+    margin-top: var(--fz-h4);
+    margin-bottom: var(--fz-small-body);
+}
+
+main iframe{
+    width: 100%;
+    border-radius: calc(var(--fz-small-body) * 0.5);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: var(--fz-small-body);
+    min-height: 80vh;
 }
 
 main#overview img {
@@ -570,6 +588,14 @@ button.read.read.read.read:hover {
 .small-image {
     margin: var(--fz-h3) 15vw var(--fz-h4) 15vw;
     width: 40vw;
+}
+
+details{
+    color: var(--text-color-lighter);
+}
+
+details summary{
+    color: var(--text-color)
 }
 
 @media (max-width: 700px) {

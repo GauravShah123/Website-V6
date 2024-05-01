@@ -28,6 +28,10 @@
     --accent2: #ee8d00;
 } */
 
+/* *{
+    outline: 1px solid greenyellow;
+} */
+
 section {
     padding: 0 var(--fz-h3);
 }
@@ -40,6 +44,13 @@ section {
 
 .project-hero-content{
     width: 50%;
+}
+
+#photobooth-project-hero-image{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    /* object-position: left; */
 }
 
 .project-hero-image #investmint-gif{
@@ -209,5 +220,8 @@ section {
         left: 0;
         width: 100%;
         height: auto;
+     }
+     .project-image-containter{
+        width: 100%;
      }
 }

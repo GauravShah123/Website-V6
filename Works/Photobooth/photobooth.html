@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Template -->
+    <base href="/">
+    <script src="/JS/app.js" defer></script>
+    <link rel="icon" href="/Assets/Images/gaurav-logo.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Images/Favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/work.css">
+    <script src="/JS/utilities.js" defer></script>
+    <script src="/JS/work.js" defer></script>
+
+    <title>Case Study - Photobooth</title>
+    <style>
+        .details{
+            margin-bottom: calc(var(--fz-body)*2);
+        }
+        .design-process{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: var(--fz-small-body)
+        }
+
+        .step{
+            padding: calc(var(--fz-small-body)/2) var(--fz-body);
+            background-color: var(--background-light);
+            border: 1px solid var(--background-light);
+
+            border-radius: 4px;
+        }
+
+        .step:hover{
+            border: 1px solid var(--text-color-lightest);
+            background-color: transparent;
+        }
+
+        .design-process a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                height: fit-content;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Customize Path -->
+    <nav-content></nav-content>
+    <header>
+        <img src="/Assets/Images/Photobooth.svg" alt="InvestMint">
+    </header>
+
+    <!-- <h1 class="project-heading">InvestMint</h1> -->
+    <section class="details">
+        <div class="detail"><b>Role:</b> Team Lead and Visual Design</div>
+        <div class="detail"><b>Timeline:</b> Fall 2023, 3 months</div>
+        <div class="detail"><b>Software:</b> Miro, Figjam & Figma</div>
+    </section>
+    <!-- <div class="tab">
+        <button class="tablinks" id="link1" onclick="openTab(1, 2, 'overview', 'case-study')" role="tab"
+            aria-selected="true" aria-controls="tabpanel-id">Overview</button>
+        <button class="tablinks active" id="link2" onclick="openTab(2, 1, 'case-study', 'overview')" role="tab"
+            aria-selected="false" aria-controls="tabpanel-id">Case&nbsp;Study</button>
+        <div class="tablinks empty-tab"></div>
+    </div> -->
+    <main id="overview" class="hide">
+        <h2>Problem</h2>
+        <p>With rising inflation, traditional saving methods became ineffective, making investing a necessity. Our
+            survey indicated that 56% of young individuals expressed interest in investing but didn't take action due to
+            factors like lack of knowledge, income, fear of loss, and limited time. Negative emotions and a sense of
+            alienation further discouraged them from exploring investment opportunities.</p>
+        <h2>Solution</h2>
+        <p>To shift users' mindset towards investing, we leveraged their positive association with e-commerce websites.
+            Instead of tying investing to income, we associated it with their spending habits. By asking if they could
+            set aside a small percentage of their planned purchase, we gradually introduced them to investing. Our
+            browser extension allowed users to save while shopping, offering practical application of learned concepts.
+            Our unique value proposition was to help beginners learn and save slowly, ultimately becoming confident
+            investors. The browser extension streamlined the process, linking to a website and app for investment
+            monitoring and financial education.</p>
+        <img src="/Works/InvestMint/Investmint.gif" alt="Browser Extension Demo">
+        <h2>Impact</h2>
+        <p>Our project stood out, being selected in the top 4% worldwide. We achieved an impressive 80% user adoption
+            rate, generated over 20 promising leads, and identified a total available market of $151M. My key takeaways
+            include the significance of process, the nuances of copywriting, and the remarkable benefits of auto-layout
+            in Figma.</p>
+
+    </main>
+    <main id="case-study">
+<aside></aside>
+        <section class="content">
+            <h2>Problem Space</h2>
+            <h4>Freelance Photography</h4>
+            <p>According to the <a href="https://my.ibisworld.com/ca/en/industry/54192ca/at-a-glance">IBISWorld Industry
+                    Report</a>, photography is a $1.3 billion industry. As the world becomes more digital, the industry
+                is becoming larger and more profitable. However, the industry lacks process innovation, is highly
+                volatile, and unstructured. While a few individual photographers have developed solutions to combat
+                their problems, most still struggle with the inefficiencies of the process.</p>
+                <p>That's why we chose the problem space of freelance photography. Many in the group, being freelance photographers
+                    ourselves, realized that it was a broken industry and wanted to find a solution to some of its common
+                    problems.</p>
+            <p>We believe that creating a marketplace platform connecting photographers and freelancers with a focus on
+                effective communication has great potential.</p>
+
+            <h2>Design Process</h2>
+            <p>We followed the 5-step design thinking process. My contribution to the team was highest in the defining
+                and prototyping phases. In this case study, I will walk you through all the steps we took while
+                highlighting the challenges and trade-offs we made along the way. To skip to a section, click on one of
+                the links below.</p>
+
+            <div class="design-process">
+                <a href="/Works/Photobooth/photobooth.html#3"><div class="step">Empathize</div></a>
+                <a href="/Works/Photobooth/photobooth.html#4"><div class="step">Define</div></a>
+                <a href="/Works/Photobooth/photobooth.html#5"><div class="step">Ideate</div></a>
+                <a href="/Works/Photobooth/photobooth.html#6"><div class="step">Prototype</div></a>
+                <a href="/Works/Photobooth/photobooth.html#7"><div class="step">Test</div></a>
+            </div>
+
+            <h2>Empathize</h2>
+            <h3>Semi-structured interviews with photographers & clients</h3>
+            <p>We decided to interview people from these 5 groups:</p>
+            <p>
+            <ol>
+                <li>Freelance Photographer - Novice</li>
+                <li>Freelance Photographer - Professional</li>
+                <li>Client - Personal Work</li>
+                <li>Client - Professional Work</li>
+                <li>Client - Model</li>
+            </ol>
+            </p>
+
+            <p>We cast a wide net to understand the industry from different perspectives and find the various problems
+                plaguing the industry. This diverse group would also help us design a solution that could assist the
+                most users. </p>
+            <p>Since this research was exploratory in nature, we decided to use a semi-structured interview format to
+                allow room for discussion and tangents. So, we scripted a few questions that would help guide the
+                conversation.</p>
+            <p>
+            <details>
+                <summary>Interview Questions - For Freelance Photographers</summary>
+                <ol>
+                    <li>Can you briefly describe your experience as a freelancer photographer? How long have you been
+                        working
+                        in this field?</li>
+                    <li>How do you typically find and communicate with clients currently?</li>
+                    <li>Could you walk us through your typical workflow when you engage with a new client? What steps
+                        are
+                        involved?</li>
+                    <li>How do you handle project briefs, contracts, and payments with your clients currently?</li>
+                    <li>What tools or methods do you currently use for sharing your work and receiving feedback from
+                        clients?</li>
+                    <li>How do you keep track of project deadlines and deliverables?</li>
+                    <li>Are there any common misunderstandings or miscommunications that arise during the
+                        client-photographer
+                        interaction?</li>
+                    <li>Have you ever used any photography-related apps or platforms for client communication and
+                        portfolio
+                        sharing? If so, what did you like or dislike about them?</li>
+                    <li>How do you establish trust and credibility with your clients when they are not familiar with
+                        your
+                        work?</li>
+                    <li> How often do you use mobile devices or desktop computers for managing your photography
+                        projects, and
+                        do you have a preference for a mobile app, a web app, or both?</li>
+                </ol>
+            </details>
+            </p>
+            <p>
+            <details>
+                <summary>Interview Questions - For Clients</summary>
+                <ol>
+                    <li>Can you tell us a bit about your experience working with photographers for various projects</li>
+                    <li>What are the most significant challenges or frustrations you've encountered when trying to
+                        communicate with photographers or review their work?</li>
+                    <li>Walk us through your typical process when working with a photographer. How do you usually
+                        communicate your requirements and expectations?</li>
+                    <li>Are there any concerns or issues you've encountered when providing feedback to photographers or
+                        receiving feedback on your projects?</li>
+                    <li>What features or functionalities would make your experience of working with photographers more
+                        efficient and enjoyable?</li>
+                    <li>Have you ever used any apps or platforms for hiring and communicating with photographers? If so,
+                        what worked well, and what could have been better? Are there any specific features or tools you
+                        would like to see in an app designed for clients like yourself?</li>
+                    <li>What concerns do you have regarding the privacy and security of your project details and
+                        communication with photographers when using an app?</li>
+                    <li>How often do you use mobile devices or desktop computers for managing your photography projects,
+                        and do you have a preference for a mobile app, a web app, or both?</li>
+                </ol>
+            </details>
+            </p>
+            <p>Our next step was recruiting interview participants. We reached out to friends of friends or contacted
+                professionals via LinkedIn to ensure unbiased interviews. We then screened them to make sure they fit
+                our target groups and representing both clients and photographers effectively.</p>
+            <p>Once we were confident in our participants, each of us chose one of them and conducted a virtual
+                interview. During the interview, some us took notes, while some preferred to record the interview and
+                transcribe it later. </p>
+            <p>To summarize these interviews and clarify our interviewees’ pain points, we created user personas. These
+                really helped us draw out exact pain points and jobs to be done for each type of user.</p>
+
+            <img src="/Assets/Images/Persona.svg" alt="Novice Photographer User Persona">
+
+            <div class="callout heads-up-callout">
+                <div class="callout-emoji">📌</div>
+                <div class="callout-content">
+                        <b>My Contributions:</b>
+                        <p>I was in charge of interviewing the novice freelance photographer and created a user persona based on the interview. Over the course of the project, I became an advocate for this type of user and made sure that the product could support their unique needs.</p>
+                </div>
+            </div>
+
+            <h2>Define</h2>
+            <b>The Problem - Ineffective communication between photographers & clients</b>
+            <p>Given the multitude of pain points each type of user expressed during interviews, we found it helpful to condense them using a Venn diagram. Communication emerged as a primary theme for all our user groups.</p>
+            <p>Currently, clients often resort to a multitude of platforms to convey their ideas to photographers. Each aspect of the process is scattered across various applications, leading to a fragmented experience. Issues can stem from factors like an information gap, lack of effective project management, fragmented communication, lack of feedback mechanisms, and technological barriers.</p>
+            <img src="/Works/Photobooth/Problem.svg" alt="Problem Venn Diagram for Clients and Photographers">
+            
+            <h3>How Might We Statements</h3>
+            <p>Building from our research insights, we came up with our HMW statements</p>
+            <p class="first"><input type="checkbox" >How might we streamline the presentation of photographers' work to captivate potential clients?</p>
+
+                <p><input type="checkbox"> How might we ensure seamless communication of the shoot's vision between clients and photographers?</p>
+                <p><input type="checkbox"> How might we simplify logistics planning for photo shoots to enhance coordination? </p>
+                <p><input type="checkbox"> How might we empower clients to effortlessly convey their brand identity and vision to photographers? </p>
+
+            <p>These statements helped us ideate our list of requirements and also served a measure of success. During the ideation phase, the team kept coming back to these statements to see how well we solved them.</p>
+    
+            <div class="callout heads-up-callout">
+                <div class="callout-emoji">📌</div>
+                <div class="callout-content">
+                        <b>My Contributions:</b>
+                        <p>I was fully in charge of this phase of the process. That meant summarizing research insights from all the user personas, creating the diagram and the HMW statements.</p>
+                </div>
+            </div>
+
+            <h2>Ideate</h2>
+            <h3>Primary Concept</h3>
+            <p>What if there was an app that helped connect freelance photographers and clients and made communication between them easy?</p>
+
+            <h3>Tentative List of Requirements</h3>
+            <p>We broke down our HMW statements into simple tasks and features to draw up a list of requirements for our app. The process began with an open team discussion and brainstorm.</p>
+            <img src="/Works/Photobooth/Requirements.png" alt="Requirements Brainstorm">
+            <p>We then formalized this list and sorted it via an impact-effort matrix into must, should, could and won’t (the MOSCOW framework) to create our tentative list of requirements:</p>
+            <img src="/Works/Photobooth/Table of Contents.svg" alt="Tentative List of Requirements">
+
+            <h3>Crazy 8s</h3>
+            <p>Now that we had a list of concrete features, we did our best to come up with innovative ways to implement them. So, we broke out our pens and paper and created crazy 8s to help us brainstorm various implementation ideas.</p>
+
+            <img src="/Works/Photobooth/Crzy 8.png" alt="Crazy 8s - By Coco and Nikaash">
+
+            <h3>Storyboards</h3>
+            <p>We also created low and high fidelity storyboards to better understand and communicate our user’s journey through the process. Later in the process, the high fidelity storyboard helped us map early iterations of the user flow.</p>
+
+            <img src="/Works/Photobooth/Storyboards.png" alt="Storyboards - By Cece, Monia and Afreen">
+
+            <h3>Our Potential Solutions</h3>
+            <p>Our Potential Solutions</p>
+            <p><ol>
+                <li>What if clients submitted a project and were matched with a photographer by our algorithm?</li>
+                <li>What if the client is able to add a brand kit and inspiration photos to their profile for reference?</li>
+                <li>Clients swipe left or right on photographer’s pictures.</li>
+            </ol></p>
+            <p>While not all of these were used, our brainstorming helped us think out of the box when creating our prototypes. In fact, you may even see their influence in our prototypes.</p>
+
+            <h3>Feedback</h3>
+            <p>Once we were happy with the range of ideas we came up with, we went back to our user groups from the interviews for feedback. Here is some of the feedback:</p>
+            <p><ol><li>Once we were happy with the range of ideas we came up with, we went back to our user groups from the interviews for feedback. Here is some of the feedback:</li>
+            <li>Clients wanted to see the photographers' previous work to check for alignment.</li>
+            <li>Photographers wanted to showcase their variety of styles, not just one image.</li></ol></p>
+
+            <h4>Feedback Analysis</h4>
+            <p>We realized that beyond all, our users needed simplicity. They prioritized a simple flow with maximum user control. Simple design would also help us accommodate the most people. Not everyone used the same terms, process or selection criteria so we had to design in a way that would let users make their own decisions. </p>
+            <p>Armed with feedback, we moved onto the prototyping phase to develop the best ideas.</p>
+
+            <div class="callout heads-up-callout">
+                <div class="callout-emoji">📌</div>
+                <div class="callout-content">
+                        <b>My Contributions:</b>
+                        <p>For this stage of the process, I helped create the list of requirements and gather feedback on our potential solutions by consulting with novice photographer from our interviews.</p>
+                </div>
+            </div>
+
+            <h2>Prototype</h2>
+            <h3>The butchering of scope 😱</h3>
+            <p>Pretty early on in the prototype phase, we realized that we may have been a little too ambitious in our list of requirements. Given the time remaining, we cut down the list. To do this, we prioritized the biggest pain points from user interviews and the feedback that we got after the ideation phase.</p>
+
+            <img src="/Works/Photobooth/Butchering.png" alt="The butchering of scope 😱">
+
+            <h3>Low-Fi Interactive Paper Prototypes</h3>
+            <p>We created multiple paper prototypes for desktop and mobile versions of the app. This helped us properly map out the user flow before moving to digital high fidelity prototypes.</p>
+            <video src="/Works/Photobooth/P1.mp4" controls></video>
+            <p class="caption">Project Booking Flow - Client's Perspective</p>
+
+            <h3>Testing our paper prototypes - Cognitive Walkthrough</h3>
+            <p>To ensure optimal usability, the rest of team the conducted a cognitive walkthrough of the interface. Since I made the prototype, I decided to sit this one out to avoid introducing any bias. Here is what we found:</p>
+            <img src="/Works/Photobooth/Cognitive Walkthrough.svg" alt="Congnitive Walkthrough Findings">
+            <h4>A reflection on the cognitive walkthrough</h4>
+            <p>Here is some of the primary feedback from the cognitive walkthrough:</p>
+            <p>
+                <ol>
+                    <li>Booking details page layout dense; considering splitting into two pages, reducing icons.</li>
+                    <li>Confusion with "View Booking" and "Edit Booking" button.</li>
+                    <li>Navigation could be simplified.</li>
+                </ol>
+            </p>
+
+            <h3>High Fidelity Prototype</h3>
+            <p>Due to time constraints, we were only able to design the client side of the interface for the course. This involved flows for booking a shoot, creating brand guidelines for photographer’s reference and messaging the photographer.</p>
+            <h4>Building our design system and component library</h4>
+            <p>To ensure future scalability and ease of design, using a design system was crucial. From the colours and fonts we decided on as a group, I created local styles in our Figma file. To build out our component library, I took inspiration from Google’s Material Design components since they have a proven track record of usability and simplicity.</p>
+
+            <img src="/Works/Photobooth/Components.svg" alt="A Peek into a Portion of Our Component Library">
+
+            <h4>Introducing Photobooth!</h4>
+
+            <p>To explore the working Figma file, click on the link below. If you want to experience the mobile version of the prototype, keep scrolling to the Figma embed.</p>
+            <a class="figma-button"
+                href="https://www.figma.com/file/dimX5pDQXXfcHFHYd8ndfu/Milestone-3?type=design&node-id=1%3A2&mode=design&t=FBKvxlvXbZNW2JaV-1"><img
+                    src="./Assets/Images/figma-icon.svg"> View in Figma <span class="material-symbols-outlined">
+                    north_east
+                </span></a>
+
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FdimX5pDQXXfcHFHYd8ndfu%2FMilestone-3%3Fpage-id%3D1%253A2%26type%3Ddesign%26node-id%3D34-1134%26viewport%3D62%252C389%252C0.13%26t%3D8n2FZNPDT2C8Vjyv-1%26scaling%3Dscale-down%26starting-point-node-id%3D34%253A1134%26mode%3Ddesign" allowfullscreen></iframe>
+            
+            <h4>Considering Accessibility</h4>
+            <p>While designing, I placed accessibility at the forefront. From basics like checking colour contrast ratios to including context wherever possible, we made sure that our app could be used by many more people.</p>
+            
+            <div class="callout heads-up-callout">
+                <div class="callout-emoji">📌</div>
+                <div class="callout-content">
+                        <b>My Contributions:</b>
+                        <p>For this stage, I created the desktop version of our paper prototype. Once the cognitive walkthrough was complete, I also created the entire high fidelity prototype, including mobile and desktop versions. This included setting up the design system, font styles, colour styles and the component library.</p>
+                </div>
+            </div>
+
+            <h2>Test</h2>
+            <p>While we prioritized continuous testing throughout the process, we used this phase to validate our design decisions and go back to our original user groups for feedback. We conducted 2 forms of testing:</p>
+            <h3>Heuristic Evaluations</h3>
+            <p>Our experts (UX professors and upper year students) helped us catch some overlooked parts of the UI that could cause usability issues down the line. Our experts went through Nielson’s 10 heuristics while we presented our prototype to to assess the severity and frequency of issues. Here is what they said:</p>
+            <img src="/Works/Photobooth/h-eval-1.svg" alt="Heuristic Evaluation Feedback">
+            Based on their feedback, we made a few changes:
+            <img src="/Works/Photobooth/h-eval-2.svg" alt="Example of an Edit Made Based on Heuristic Evaluation Feedback">
+            <img src="/Works/Photobooth/h-eval-3.svg" alt="Example of an Edit Made Based on Heuristic Evaluation Feedback">
+            <h3>Summative Evaluations</h3>
+            <p>Finally, we went back to our users with the finished prototype and set of tasks to assess the usability of our app. </p>
+            <p>
+                <details><summary>User Tasks</summary>
+                    <ol>
+                        <li>Add to the branding kit (multiple ways: edit brand guidelines, press on update brand guidelines, go on profile settings)</li>
+                        <li>Find a photographer (above four stars, budget does not matter)</li>
+                        <li>Messaging a photographer (go to messages, find the person and message them)</li>
+                    </ol>
+                </details>
+            </p>
+            <p>We received tons of positive feedback and a few suggestions to improve on.</p>
+
+            <img src="/Works/Photobooth/sum-eval.svg" alt="Summative Evaluation Feedback">
+            <p>For example, one of the users noted that they might want to edit the project details after submitting. Here is the change we made based on that recommendation.</p>
+            <img src="/Works/Photobooth/sum-eval-2.svg" alt="Example of an Edit Made Based on Summative Evaluation Feedback">
+
+            <div class="callout heads-up-callout">
+                <div class="callout-emoji">📌</div>
+                <div class="callout-content">
+                        <b>My Contributions:</b>
+                        <p>I conducted 2 heuristic evaluations with experts. However, I opted out of leading the summative evaluations to avoid potential bias, given my role as the designer of the prototype under scrutiny. After testing, I was also responsible for editing the prototype based on their feedback.</p>
+                </div>
+            </div>
+        
+
+        <h2>Key Takeaways</h2>
+        <h3>🧪 The Importance of Continuous Testing</h3>
+        <p>Having to test at each phase of the process was extremely tedious, but looking back, we were able to course correct and modify so many solutions that would not have worked for our user group. Testing early helped us catch a lot of issues early on. For example, we wanted to present all photographer options on one page like common freelance marketplace platforms. However, early user testing immediately helped us rule out that idea, and many users expressed a feeling of overwhelm when presented with hundreds of options. Photographers were also concerned about the added pressure to stand out from the crowd, especially since clients typically required very standard work.</p>
+
+        <h3>🛣️ Why We Create UX Artifacts</h3>
+        <p>While I had known how to create artifacts like user personas and HMWs, this project highlighted a whole new reason to use them. Beyond just helping me understand the user and problem better, these artifacts also helped align the team and reduce misunderstandings despite our remote work environment. In the era of remote work, the importance of these UX artifacts is so much more apparent.</p>
+
+        <h2>Conclusion</h2>
+        <p>The project received a 93% score and a lot of positive feedback from our professor and TA. As a group, we were extremely proud to have done a project at this scale within 3 months. </p>
+        <h3>If we had more time…</h3>
+        <p>There’s a lot of features we weren’t able to add due to the time constraints, however, in the future, we’d love to speak to more users and expand functionality to make photobooth the one-stop-shop for freelance photography.</p>
+
+
+
+    </section>
+
+    </main>
+    <button class="scroll-to-top" aria-label="Scroll to Top"><span
+            class="material-symbols-outlined">arrow_upward</span></button>
+    <footer-content></footer-content>
+</body>
+
+</html>
