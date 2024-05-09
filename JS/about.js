@@ -1,3 +1,5 @@
+document.getElementById("nav-menu-about").classList.add("active");
+
 window.onload = function() {
     document.body.scrollLeft = 0;
 };
