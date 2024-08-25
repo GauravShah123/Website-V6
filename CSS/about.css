@@ -16,7 +16,7 @@
     --text-color-light: #ddd;
     --text-color-lighter: #aaa;
     --text-color-lightest: #444;
-    --primary: #01e5b4;
+    --primary: #0AEBAF;
     --accent2: #ee8d00;
 } */
 
@@ -33,7 +33,7 @@
     gap: var(--fz-small-body);
     position: relative;
     background-blend-mode: multiply;
-    background-image: linear-gradient(#01e5b43d, #11111100);
+    background-image: linear-gradient(#0AEBAF3d, #11111100);
 
 }
 

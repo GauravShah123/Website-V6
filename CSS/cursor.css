@@ -13,7 +13,7 @@
     --text-color-light: #ddd;
     --text-color-lighter: #aaa;
     --text-color-lightest: #444;
-    --primary: #01e5b4;
+    --primary: #0AEBAF;
     --accent2: #ee8d00;
 } */
 
@@ -45,7 +45,7 @@ Date retrieved: Nov. 18, 2023 */
         margin-top: -50%;
         margin-left: -50%;
         border-radius: 50%;
-        border: solid 1px #01e5b4a3;
+        border: solid 1px #0AEBAFa3;
         transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1),
             background-color 0.3s cubic-bezier(1, 1, 1, 1),
             border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),

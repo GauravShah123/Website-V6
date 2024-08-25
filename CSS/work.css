@@ -15,7 +15,7 @@
     --text-color-light: #ddd;
     --text-color-lighter: #aaa;
     --text-color-lightest: #444;
-    --primary: #01e5b4;
+    --primary: #0AEBAF;
     --accent2: #ee8d00;
 } */
 
@@ -382,7 +382,7 @@ code {
     margin-bottom: var(--fz-small-body);
     display: flex;
     gap: var(--fz-small-body);
-    background-color: #01e5b411;
+    background-color: #0AEBAF11;
     border-radius: 4px;
     padding: var(--fz-big-body);
     border-radius: 4px;
