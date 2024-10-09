@@ -129,7 +129,66 @@
     padding: var(--fz-h3);
 }
 
-.why-pm h1, .gallery h1{
+.endorsements{
+    padding: var(--fz-h3);
+}
+
+.three-grid{
+   gap: 32px; 
+}
+
+.card{
+    color: var(--text-color);
+    border-radius: 8px;
+    padding: var(--fz-big-body);
+    border: 1px solid var(--text-color-lightest);
+    /* background-color: var(--background-light); */
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-content{
+    font-size: var(--fz-body);
+    margin-bottom: var(--fz-h3);
+}
+.card a{
+    color: inherit;
+}
+
+.card a:hover{
+    color: var(--primary)
+}
+
+.card a::after{
+    content: " [↗]";
+}
+
+.card .person-details h3{
+    /* font-weight: normal; */
+}
+
+.card .person-details p{
+    font-size: var(--fz-small-body);
+    color: var(--text-color-lighter);
+}
+
+.card .person{
+    display: flex;
+    gap: var(--fz-small-body);
+    align-items: center;
+}
+
+.card .person img{
+    height: calc(2* var(--fz-big-body));
+}
+
+.card .person-details p{
+    font-weight: normal;
+}
+
+.why-pm h1, .gallery h1, .endorsements h1{
     color: var(--text-color);
     font-size: var(--fz-h2);
     margin-bottom: var(--fz-small-body);
