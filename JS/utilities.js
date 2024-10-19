@@ -71,28 +71,54 @@ class footer extends HTMLElement {
         this.innerHTML = `
         <!-- Footer -->
         <footer>
-            <div class="footer-about">
+        <div class="footer-about">
             <a href="/" class="logo-wapper"><img src="./Images/Logo.svg" alt="Gaurav's Logo"></a>
-                <p>Gaurav Shah, a Global Business and Digital Arts student at the University of Waterloo, is passionate
-                    about product management and creating user-centric experiences that drive business growth.</p>
+            <p>Gaurav Shah, a Global Business and Digital Arts student at the University of Waterloo, is passionate
+                about product management and creating user-centric experiences that drive business growth.</p>
+                <button class="button-flex lets-talk">Let's Talk <span
+                    class="material-symbols-outlined">arrow_forward</span></button>
+        </div>
+        <div class="footer-links-columns-wrapper">
+            <div class="footer-case-studies footer-links-column">
+                <h3>Case Studies</h3>
+                <ul>
+                    <li><a href="/Works/Photobooth/photobooth.html">Photobooth</a></li>
+                    <li><a href="/Works/InvestMint/InvestMint.html">InvestMint</a></li>
+                    <li><a href="/Works/MunchMap/munchmap.html">MunchMap</a></li>
+                    <li><a href="/Works/UWMA/UWMA.html">UW Marketing</a></li>
+
+                </ul>
             </div>
-            <div class="footer-contact">
+            <div class="footer-side-quests footer-links-column">
+                <h3>Side Quests</h3>
+                <ul>
+                    <li><a href="https://www.figma.com/slides/ZZGNo8jGOSPNz2ijmYalzH/The-Art-of-Product-Design-(Starter-Hacks)?node-id=1-294&t=lEXZc0uBZQfRGwej-1" target="_blank">Workshops</a></li>
+                    <li><a href="https://youtube.com/playlist?list=PLQ9o7MQ_dB9h0b-oqIfKf-Zqt4M0w0IVp&si=ACdHhkaMszbmGMu2" target="_blank">GBDAonAir Podcast</a></li>
+                    <li><a href="https://www.figma.com/design/Zxy72zt1k3NyiSI7V3d1ng/Reno-Font-%5BSharable%5D?node-id=0-1&t=HG1Ulr4LHY8ThybN-1" target="_blank">Reno Font</a></li>
+                    <li><a href="https://www.figma.com/design/sUF3K0qORaujpwlfE7M9vx/Posters-%5BSharable%5D?node-id=0-1&t=0xqXOG41Tk3mT3VX-1" target="_blank">Poster Series</a></li>
+                    <li><a href="https://www.figma.com/design/7PvjPswt2MMWZU3XwzddYo/YC-Homepage-Redesigns-%5BSharable%5D?node-id=0-1&t=RavBPAkCheboHRSt-1" target="_blank">YC Redesigns</a></li>
+                    <li><a href="https://www.figma.com/design/iIP2RTL9JAANCg2Fdv6bnn/Jet-Lag%3A-The-Game-%5BSharable%5D?node-id=1-894&t=x97BAVfZxDZWPCo5-1" target="_blank">Jet Lag: The Game</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-contact footer-links-column">
                 <h3>Contact</h3>
                 <ul class="contacts">
                     <li><a href="mailto:gshah@uwaterloo.ca"><span
                                 class="material-icons-outlined">email</span>&nbsp;&nbsp;gshah@uwaterloo.ca</a></li>
-                    <li><a href="https://www.linkedin.com/in/gs336/"><span class="material-icons-outlined">link</span>&nbsp;&nbsp;linkedin.com/in/gs336/</a></li>
+                    <li><a href="https://www.linkedin.com/in/gs336/"><span
+                                class="material-icons-outlined">link</span>&nbsp;&nbsp;linkedin.com/in/gs336/</a></li>
                     <li><span class="material-icons-outlined">location_on</span>&nbsp;&nbsp;Waterloo, Ontario, CA</li>
                 </ul>
-                <button class="button-flex lets-talk">Let's Talk <span
-                        class="material-symbols-outlined">arrow_forward</span></button>
+                
             </div>
-        </footer>
-    
-        <!-- Ending -->
-        <div class="ending">
-            Made with love, fueled by hot cocoa - Gaurav Shah's portfolio.
         </div>
+    </footer>
+
+    <!-- Ending -->
+    <div class="ending">
+        Made with love, fueled by hot cocoa - Gaurav Shah's portfolio.
+    </div>
         `
     }
 }

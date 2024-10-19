@@ -48,6 +48,15 @@ h1 {
 
 .hero-text-p {
     transform: translateY(calc(-1 * var(--fz-small-body)));
+    max-width: 280px;
+}
+
+.hero-text-p a{
+    color: inherit;
+}
+
+.hero-text-p a:hover{
+    color: var(--primary);
 }
 
 .hero-flex {

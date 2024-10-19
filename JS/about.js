@@ -24,12 +24,13 @@ function scrollToPM() {
 const factsInnerElement = document.querySelector('.facts-inner');
 const factsOptions = [
     'wears red jackets.',
-    'does things for the plot.',
+    'loves concerts.',
     'eats a lot of cereal.',
     'loves Bollywood! <3',
-    'overuses Figma.',
+    'overuses autolayout.',
     'lived on 3 continents.',
-    'loves to sing.'
+    'designed a font.',
+    'is a huge Tate Mcrae fan.'
 ];
 
 let previousIndex;
