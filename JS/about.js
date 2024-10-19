@@ -24,13 +24,14 @@ function scrollToPM() {
 const factsInnerElement = document.querySelector('.facts-inner');
 const factsOptions = [
     'wears red jackets.',
-    'loves concerts.',
+    'went to the <a href="https://www.sweat-tour.com/" target="_blank">Sweat tour</a>.',
     'eats a lot of cereal.',
     'loves Bollywood! <3',
     'overuses autolayout.',
     'lived on 3 continents.',
     'designed a font.',
-    'is a huge Tate Mcrae fan.'
+    'is a huge Tate McRae fan.',
+    'made a <a href="https://www.figma.com/design/iIP2RTL9JAANCg2Fdv6bnn/Jet-Lag%3A-The-Game-%5BSharable%5D?node-id=1-894&t=x97BAVfZxDZWPCo5-1" target="_blank">card game</a>.'
 ];
 
 let previousIndex;
@@ -47,7 +48,7 @@ function getRandomIndex() {
 
 setInterval(() => {
     const randomIndex = getRandomIndex();
-    factsInnerElement.textContent = factsOptions[randomIndex];
+    factsInnerElement.innerHTML = factsOptions[randomIndex];
 }, 2500);
 
 function pause(){

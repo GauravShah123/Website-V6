@@ -57,7 +57,7 @@
 .gaurav-wrapper{
     display: flex;
     flex-direction: column;
-    gap: var(--fz-body);
+    gap: var(--fz-h4);
 }
 
 .gaurav-inner-wrapper{
@@ -90,6 +90,14 @@
     font-weight: 300;
     font-size: calc(var(--fz-big-body));
     margin-left: calc(var(--fz-small-body) / 2);
+}
+
+.facts-inner a{
+    color: var(--text-color-lighter);
+}
+
+.facts-inner a:hover{
+    color: var(--primary);
 }
 
 .about-text {
