@@ -6,15 +6,19 @@ class nav extends HTMLElement {
             <a href="/" class="logo-wapper"><img src="./Images/Logo.svg" alt="Gaurav Shah Logo" class="nav-logo"></a>
             <ul>
                 <li>
+                    <p class="hide-desktop">01</p>
                     <a id="nav-menu-home" href="#">Home</a>
                 </li>
-                <li class="hide-desktop">
+                <li class="hide-desktop" style="display: flex;">
+                    <p class="hide-desktop">02</p>
                     <a id="nav-menu-home" href="#selected-works" onclick="toggleNavClassAndNavigate();">Projects</a>
                 </li>
                 <li>
+                    <p class="hide-desktop">03</p>
                     <a id="nav-menu-about" href="/About/about.html">About</a>
                 </li>
                 <li>
+                    <p class="hide-desktop">04</p>
                     <a href="/Resume.pdf" target="_blank" id="nav-menu-resume">Résumé</a>
                 </li>
                 <li class="cta-wrapper">
