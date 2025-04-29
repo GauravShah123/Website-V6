@@ -213,9 +213,9 @@
     .coming-soon{
         flex-direction: column-reverse;
         gap: var(--fz-body);
+        padding: var(--fz-h3);
     }
     .coming-soon img{
-        padding: var(--fz-small-body);
-        margin-top: var(--fz-small-body);
+        width: 98%;
     }
 }
