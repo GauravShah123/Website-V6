@@ -19,7 +19,7 @@ class nav extends HTMLElement {
                 </li>
                 <li>
                     <p class="hide-desktop">04</p>
-                    <a href="/Resume.pdf" target="_blank" id="nav-menu-resume">Résumé</a>
+                    <a href="/Resume.pdf" target="_blank" id="nav-menu-resume">Resume</a>
                 </li>
                 <li class="cta-wrapper">
                     <button class="cta lets-talk">Let's Talk<span class="material-symbols-outlined">arrow_forward</span></button>
