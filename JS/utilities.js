@@ -7,7 +7,7 @@ class nav extends HTMLElement {
             <ul>
                 <li>
                     <p class="hide-desktop">01</p>
-                    <a id="nav-menu-home" href="#">Home</a>
+                    <a id="nav-menu-home" href="/">Home</a>
                 </li>
                 <li class="hide-desktop" style="display: flex;">
                     <p class="hide-desktop">02</p>
@@ -15,7 +15,7 @@ class nav extends HTMLElement {
                 </li>
                 <li>
                     <p class="hide-desktop">03</p>
-                    <a id="nav-menu-about" href="/about/index.html">About</a>
+                    <a id="nav-menu-about" href="/about/">About</a>
                 </li>
                 <li>
                     <p class="hide-desktop">04</p>
@@ -86,10 +86,10 @@ class footer extends HTMLElement {
             <div class="footer-case-studies footer-links-column">
                 <h3>Case Studies</h3>
                 <ul>
-                    <li><a href="/Works/Photobooth/photobooth.html">Photobooth</a></li>
-                    <li><a href="/Works/InvestMint/InvestMint.html">InvestMint</a></li>
-                    <li><a href="/Works/MunchMap/munchmap.html">MunchMap</a></li>
-                    <li><a href="/Works/UWMA/UWMA.html">UW Marketing</a></li>
+                    <li><a href="/works/Photobooth/">Photobooth</a></li>
+                    <li><a href="/works/InvestMint/">InvestMint</a></li>
+                    <li><a href="/works/MunchMap/">MunchMap</a></li>
+                    <li><a href="/works/UWMA/">UW Marketing</a></li>
 
                 </ul>
             </div>

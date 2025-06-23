@@ -26,3 +26,24 @@ main#overview > img:first-child{
         margin-inline: 0;
     }
 }
+
+ul.checkbox li{
+    list-style: none;
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+ul.checkbox ul li{
+    margin-left: calc(1 * var(--fz-big-body));
+    list-style: none;
+    display: flex;
+    gap: 8px;
+}
+
+ul.checkbox ul ul li{
+    margin-left: calc(2 * var(--fz-big-body));
+    list-style: none;
+    display: flex;
+    gap: 8px;
+}

@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/work.css">
     <script src="/JS/utilities.js" defer></script>
-    <script src="/JS/work.js" defer></script>
+    <script src="/JS/blogs.js" defer></script>
     <link rel="stylesheet" href="/CSS/blogs.css">
     <link rel="stylesheet" href="/Blogs/blogs.css">
 
@@ -39,34 +39,165 @@
     <!-- <header>
         <img src="/Blogs/bfepn7Q5QUg.svg" alt="Designing my way into product: The story of how I transitioned from UX to product and the lessons I learnt along the way">
     </header> -->
-    
-    <!-- <h1 class="project-heading">InvestMint</h1> -->
-    <main id="overview">
-        <img src="/Blogs/bfepn7Q5QUg/bfepn7Q5QUg.svg" alt="Designing my way into product: The story of how I transitioned from UX to product and the lessons I learnt along the way">
-        <p>As a UX designer turned product manager, I’ve spent a lot of time figuring out how to balance both worlds. It’s not always clear when to lean into your skills and when to step back. This is a reflection on the lessons I learned by doing, messing up, and trying again.</p>
-        <h2>Lesson 1</h2>
-        <p>When I was building my portfolio for my first co-op, I had no idea how to position myself. I liked UX. I also liked product. But it felt like I had to pick a side. If I wanted to be taken seriously as a PM, I thought I had to drop the design label altogether. At the same time, I was applying to UX jobs. It was confusing. I didn’t know how to talk about myself. <br><br>
-            
-            Then one of my professors said something that completely shifted my mindset. “You sit at the intersection of PM and Design. That’s not a weakness. That’s your edge.” That stuck with me. <br><br>
-            
-            That was lesson 1. Embrace your strengths. Even if they don’t fit neatly into one role.
-            
-            </p>
-        <h2>Solution</h2>
-        <p>To shift users' mindset towards investing, we leveraged their positive association with e-commerce websites.
-            Instead of tying investing to income, we associated it with their spending habits. By asking if they could
-            set aside a small percentage of their planned purchase, we gradually introduced them to investing. Our
-            browser extension allowed users to save while shopping, offering practical application of learned concepts.
-            Our unique value proposition was to help beginners learn and save slowly, ultimately becoming confident
-            investors. The browser extension streamlined the process, linking to a website and app for investment
-            monitoring and financial education.</p>
-        <img src="/Works/InvestMint/Investmint.gif" alt="Browser Extension Demo">
-        <h2>Impact</h2>
-        <p>Our project stood out, being selected in the top 4% worldwide. We achieved an impressive 80% user adoption
-            rate, generated over 20 promising leads, and identified a total available market of $151M. My key takeaways
-            include the significance of process, the nuances of copywriting, and the remarkable benefits of auto-layout
-            in Figma.</p>
 
+    <!-- <h1 class="project-heading">InvestMint</h1> -->
+    <main id="overview" class="content">
+
+        <img src="/Blogs/bfepn7Q5QUg/bfepn7Q5QUg.svg"
+            alt="Designing my way into product: The story of how I transitioned from UX to product and the lessons I learnt along the way">
+
+
+
+        <p>As a UX designer turned product manager, I’ve spent a lot of time figuring out how to balance both worlds.
+            This article is a reflection on the
+            lessons I learned by doing, messing up, and trying again.</p>
+        <h2>Lesson 1</h2>
+        <p>In Fall 2024, I was hired as a UX designer at the WSIB Innovation Lab. One of our projects as a team of developers and designers was an internal tool called the RTW Accommodations Engine. With a brief on the problem statement and a timeline, we got to work. 
+            
+            <br><br>
+            A few weeks into building, the product was going
+            in all kinds of directions. Dev and UX weren’t aligned, and no one had a full picture of what the MVP would look like. For example. devs were building functionality for features that design wasn't even aware of. This chaos felt exactly like a little nudge I needed. Iny my quest to solve this problem, I stepped up to pass along information and made sure people were on the same page.
+            <br><br>
+            Slowly, I started talking to stakeholders more. Over time, I wasn’t
+            just a messenger anymore. I became the guy with the answers. I'd wanted to be a PM for a few years now and working on this
+            tool was the perfect opportunity. This is when I officially began transitioning into the role.<br><br>In this journey of becoming a PM, I made a lot of mistakes. The lessons mentioned in this article are reflections and learnings from those same mistakes. <br><br>
+
+            My first mistake was letting UX take the lead on feature decisions without checking in with dev. As someone
+            from a UX background, I naturally leaned into that side. I trusted that design would make the best product
+            decisions. However, a lot of the time, things didn't make sense to dev or dev didn’t have the
+            capacity to build everything we designed. I remember having a coffee chat
+            with a PM around that time and asking her, “How do I get devs to do what I want them to do?”
+
+            She laughed a bit and said, “You don’t. You bring them into the conversation early and make sure they feel
+            heard.” <br><br>
+
+            That was lesson 1. Zoom out and listen to all perspectives early. Dev needs to be a part of product
+            conversations, not just an after thought. Turns out, our dev team had a lot of good ideas on how the product
+            could serve user needs.
+        </p>
+        <h2>Lesson 2</h2>
+        <p>As we built more of the tool, things got more complicated. There were more features, more edge cases, and
+            more requests from stakeholders. The one-pager we had at the start wasn’t cutting it anymore. So, I  started writing more detailed product requirements. I’d document how each feature worked, how
+            different states should behave, and what the expected user outcomes were. Suddenly, dev had fewer questions and handoff got faster.
+            <br><br>
+            But something else also started to happen. The designers felt boxed in. This was one of my early attempts at
+            being <i>“thorough” </i>:
+        </p> <br>
+        <p>
+        <ul class="checkbox">
+            <li> <input type="checkbox">User is asked to confirm upload </li>
+            <ul>
+                <li> <input type="checkbox">If user selects “redo upload”, they are taken back to the upload dialog</li>
+                <li> <input type="checkbox">If user clicks the X:</li>
+                <ul>
+                    <li> <input type="checkbox">The modal closes</li>
+                    <li> <input type="checkbox">The uploaded file is discarded</li>
+                    <li> <input type="checkbox">A toast with the text “Upload canceled” will show up for 5 seconds</li>
+                </ul>
+                <li> <input type="checkbox">If the user clicks on “Continue to verification”, they will see a loading
+                    animation and then be redirected to the ‘Accommodation Editing’ page</li>
+            </ul>
+            </li>
+        </ul>
+        </p>
+        <br><br>
+        <p> Super helpful for dev. But it left almost nothing for design
+            to figure out. That was lesson 2. Documentation is powerful, but too much of it at the wrong time can take
+            away trust and creative control.</p>
+        <h2>Lesson 3</h2>
+        <p>This is a trap that’s easy to fall into when you come from a design background. You think in screens. So when
+            someone mentions a new feature, your brain already jumps to what it could look like. And so, even though I
+            wasn’t touching a single frame in Figma, I was still designing. I’d write down product decisions that
+            covered user stories, layout, interaction, everything. I didn’t realize I was doing it, but I had taken design decisions
+            away from the team. Add in a strict design system, and the result was mindless work. Designers were just
+            executing, not exploring.
+            <br><br>
+            So I changed the approach again. I stopped giving solutions. Instead, I brought problems.
+
+            We’d go over the user story together. I gave them space to explore and find ideas. Then, once there was a
+            direction, I’d step back in and help with narrowing down the options, refining the user flow, and
+            documenting edge cases.
+
+            That was lesson 3. Let designers own the design process. Your job is to support it, not script it.
+        </p>
+        <h2>Lesson 4</h2>
+        <p>We finally had a rhythm. But it didn’t last for every feature. Sometimes dev needed to prototype first.
+            Sometimes design needed more research. Sometimes a stakeholder needed to sign off before anything moved
+            forward. That’s when I realized that not everything needs the same playbook.
+
+            Some features needed more structure. Others needed more space. I had to ask more questions, gather more
+            input, and then figure out what approach made the most sense.
+
+            <br><br>
+            That was lesson 4. No single strategy works every time. Stay curious, be flexible, and adapt as you go.
+        </p>
+
+        <h2>Lesson 5</h2>
+        <p>After WSIB, I transitioned into a PM role at UW Blueprint on the same project I had been designing for:
+            Extend-A-Family.
+
+            This came with its own challenges.
+
+            <br><br>
+
+            I had helped build the design system. Now I found myself nitpicking if the right components were being used,
+            or if the colour contrast was off. I slipped into low-level feedback without realizing it.
+
+            It felt like I had to defend every detail because I was so close to the work.
+
+            But focusing on the little things meant I stopped asking the big questions. Were we solving the right
+            problem? Was this feature even necessary?
+
+            <br><br>
+
+            So I pulled away. I decided to stop commenting on visual design completely and let the design team lead.
+
+            That seemed like the right move, but it wasn’t.
+
+            Without mentorship, we started shipping work that didn’t meet our standards. I’m not saying I had all the
+            answers, but I did have context. Drawing a hard line between roles meant I wasn’t showing up for the team in
+            the ways I could.
+
+            <br><br>
+            That was lesson 5. You don’t need to shut off your design brain. Use your skills with intention. Respect the
+            team’s decisions, but know when your perspective adds value.
+        </p>
+        <h2>Lesson 6</h2>
+        <p>I’m still learning how to give better design feedback. I don’t want to micromanage or take away ownership,
+            but I can see when something can be better.
+
+            The question is how to share that.
+
+            One thing that helped was something Yuhki Yamashita said: “It’s easy to spot what’s wrong. The hard part is
+            understanding why.”
+
+            So now I try to look at the assumptions behind the design. </p>
+        <br>
+        <ul class="checkbox">
+            <li><input type="checkbox">What info were they working with?</li>
+            <li><input type="checkbox">Were they rushed?</li>
+            <li><input type="checkbox">Did they make a tradeoff to save on dev resources?</li>
+        </ul>
+        <br>
+        <p>By understanding the “why,” we can have a real conversation and figure things out together. I’m not ready to
+            call that a lesson yet. But it’s something I’m working on.</p>
+        <h2>Conclusion</h2>
+        <p>
+            I’m still learning. I’m learning how to support a team without taking control. I’m learning when to lead,
+            when to step back, and how to make space for creativity while still driving clarity. What I’ve come to
+            realize is that the space between design and product is where I feel the most useful. It’s where I’ve had
+            the most impact. I'm grateful to be able to call myself a product manager. It was a dream for so long. I can't belive it's now real.
+
+            <br><br>
+
+            I wouldn’t be here without the mentors who supported me. Dima, Sukhi, Olivia, Gavneet, Brooklyn, and everyone else -
+            thank you
+            for the guidance. And to <a href="https://www.linkedin.com/in/justin-luu-1e44/" target="_blank"> Justin
+                Luu</a>, thank you for being one of the best collaborators I’ve ever worked with. You’ve set the bar
+            high for what great design and even better collaboration looks like. I’m lucky to call you a teammate and a
+            friend.
+        </p> <br>
+        <p>Sincerely, <br>Gaurav</p>
     </main>
     <button class="scroll-to-top" aria-label="Scroll to Top"><span
             class="material-symbols-outlined">arrow_upward</span></button>

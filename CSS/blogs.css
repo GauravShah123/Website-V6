@@ -10,7 +10,7 @@
 
 }
 
-.blogs-cards .card{
+/* .blogs-cards .card{
     position: relative;
 }
 
@@ -34,6 +34,11 @@
     justify-content: end;
     padding: var(--fz-small-body) var(--fz-big-body);
     background: linear-gradient(0deg, #111111f5, #11111166);
+} */
+
+.three-grid ul.tags{
+    margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 .blogs-cards .card .card-content .tag{
@@ -80,4 +85,11 @@ main > h2{
 
 main > h3{
     font-size: var(--fz-big-body);
+}
+
+
+@media (max-width: 900px) {
+    main > h2{
+        font-size: var(--fz-h2);
+    }
 }
