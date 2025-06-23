@@ -1,3 +1,11 @@
+h1{
+    font-family: "General Sans", sans-serif;
+    line-height: 120%;
+    /* letter-spacing: -1px; */
+    /* font-weight: 500; */
+    font-size: calc(var(--fz-h1)/3);
+}
+
 main#overview p{
     font-size: var(--fz-small-body);
     color: var(--text-color-light);
@@ -10,9 +18,13 @@ main#overview{
   margin-top: calc(70px + var(--fz-h3));  
 }
 
-main#overview > img:first-child{
+main#overview > picture{
     margin-bottom: var(--fz-h3);
     margin-top: 0;
+}
+
+main#overview img{
+    margin: 0;
 }
 
 @media (min-width: 900px) {
@@ -22,7 +34,7 @@ main#overview > img:first-child{
     main#overview>p{
         margin-inline: var(--fz-h1);
     }
-    main#overview>img{
+    main#overview>picture{
         margin-inline: 0;
     }
 }
@@ -46,4 +58,68 @@ ul.checkbox ul ul li{
     list-style: none;
     display: flex;
     gap: 8px;
+}
+
+ul.tags{
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+
+.tag{
+    background-color: transparent;
+    /* border: 1px solid var(--text-color-lighter); */
+}
+
+.tags {
+    display: flex;
+    list-style: none;
+    gap: var(--fz-small-body);
+    margin-bottom: var(--fz-small-body);
+    flex-wrap: wrap;
+    /* margin-top: var(--fz-small-body); */
+}
+
+.tag {
+    padding: calc((var(--fz-small-body)) / 2) var(--fz-small-body);
+    /* background-color: #222; */
+    border-radius: 4px;
+    font-size: var(--fz-small-body);
+}
+
+li.tag {
+    padding: 0;
+    color: var(--text-color-lighter);
+    position: relative;
+    margin-left: var(--fz-big-body);
+}
+
+li.tag:not(:first-of-type):after {
+    height: 6px;
+    width: 6px;
+    background-color: var(--text-color-lighter);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(-1 * (var(--fz-big-body)/2));
+    border-radius: 40px;
+    transform: translate(-50%, -50%);
+}
+
+ul.tags {
+    gap: 0;
+    margin-bottom: 12px;
+}
+
+li.tag:first-child {
+    margin-left: 0;
+}
+
+.card-content h4 {
+    font-size: var(--fz-h4);
+    font-weight: bold;
+    font-family: "Clash Display", sans-serif;
+}
+
+.three-grid.card-content p {
+    color: var(--text-color-lighter);
 }
