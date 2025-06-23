@@ -21,7 +21,6 @@
 }
 
 .blogs-cards .card.work img{
-    height: 350px;
     object-fit: cover;
 }
 
@@ -40,4 +39,45 @@
 .blogs-cards .card .card-content .tag{
     background-color: transparent;
     /* border: 1px solid var(--text-color-lighter); */
+}
+
+header{
+    margin: var(--fz-h4) calc(2.5 * var(--fz-h1));
+    margin-top: 150px;
+    overflow: hidden;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--fz-small-body);
+}
+
+h1{
+    font-size: var(--fz-h3);
+}
+
+header > img{
+    height: 400px;
+    border-radius: calc(var(--fz-small-body) * 0.5);
+    margin-bottom: var(--fz-small-body);
+}
+
+main#overview{
+    /* padding: var(--fz-small-body) calc(2.5 * var(--fz-h1)) var(--fz-h2) calc(2.5*var(--fz-h1)); */
+}
+
+main#overview>*{
+    padding: 0;
+    /* margin-inline: var(--fz-h1); */
+}
+
+main#overview>img{
+    margin-inline: 0;
+}
+
+main > h2{
+    font-size: var(--fz-h4);
+}
+
+main > h3{
+    font-size: var(--fz-big-body);
 }

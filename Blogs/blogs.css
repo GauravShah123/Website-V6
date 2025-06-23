@@ -1,0 +1,28 @@
+main#overview p{
+    font-size: var(--fz-small-body);
+    color: var(--text-color-light);
+    line-height: 160% !important;
+    /* margin-inline: var(--fz-h1); */
+
+}
+
+main#overview{
+  margin-top: calc(70px + var(--fz-h3));  
+}
+
+main#overview > img:first-child{
+    margin-bottom: var(--fz-h3);
+    margin-top: 0;
+}
+
+@media (min-width: 900px) {
+    main#overview>*{
+        margin-inline: var(--fz-h1);
+    }
+    main#overview>p{
+        margin-inline: var(--fz-h1);
+    }
+    main#overview>img{
+        margin-inline: 0;
+    }
+}

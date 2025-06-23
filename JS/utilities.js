@@ -15,7 +15,7 @@ class nav extends HTMLElement {
                 </li>
                 <li>
                     <p class="hide-desktop">03</p>
-                    <a id="nav-menu-about" href="/About/about.html">About</a>
+                    <a id="nav-menu-about" href="/about/index.html">About</a>
                 </li>
                 <li>
                     <p class="hide-desktop">04</p>
