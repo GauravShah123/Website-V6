@@ -37,6 +37,21 @@ main#overview img{
     main#overview>picture{
         margin-inline: 0;
     }
+    main#overview img{
+        margin-top: var(--fz-h3);
+    }
+
+    ul.tags{
+        margin-bottom: 8px;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    main#overview h2{
+        font-size: var(--fz-h4);
+        margin-bottom: 0px  ;
+    }
 }
 
 ul.checkbox li{
@@ -58,11 +73,6 @@ ul.checkbox ul ul li{
     list-style: none;
     display: flex;
     gap: 8px;
-}
-
-ul.tags{
-    margin-bottom: 8px;
-    margin-top: 12px;
 }
 
 .tag{
