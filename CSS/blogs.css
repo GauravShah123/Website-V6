@@ -66,9 +66,9 @@ header > img{
     margin-bottom: var(--fz-small-body);
 }
 
-main#overview{
-    /* padding: var(--fz-small-body) calc(2.5 * var(--fz-h1)) var(--fz-h2) calc(2.5*var(--fz-h1)); */
-}
+/* main#overview{
+    padding: var(--fz-small-body) calc(2.5 * var(--fz-h1)) var(--fz-h2) calc(2.5*var(--fz-h1));
+} */
 
 main#overview>*{
     padding: 0;
@@ -90,6 +90,6 @@ main > h3{
 
 @media (max-width: 900px) {
     main > h2{
-        font-size: var(--fz-h2);
+        font-size: var(--fz-h);
     }
 }
