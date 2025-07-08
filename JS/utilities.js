@@ -41,7 +41,7 @@ class nav extends HTMLElement {
                     <button class="email-copy-button" id="email-copy-button">Copy</button>
                 </div>
                 <p>OR</p>
-                <a href="https://calendly.com/gs336/one-on-one"><button class="modal-calendly">Schedule a meeting via Calendly</button></a>
+                <a href="https://calendly.com/gs336/one-on-one" target="_blank"><button class="modal-calendly">Schedule a meeting via Calendly</button></a>
                 
             </div>
             <button class="close-modal"><span class="material-symbols-outlined">close</span></button>

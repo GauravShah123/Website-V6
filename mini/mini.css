@@ -65,7 +65,7 @@ section.button-group{
     padding: 0 10vw;
 }
 
-section.button-group .button{
+.button{
     padding: var(--fz-small-body) calc(var(--fz-small-body) * 1.75);
     width: 100%;
     border-radius: 50px;
@@ -89,7 +89,7 @@ section.button-group .button{
     font-weight: 500;
 }
 
-section.button-group .button img{
+.button img{
     height: var(--fz-body);
 }
 
@@ -123,4 +123,8 @@ section.header img.mini-internships{
     position: absolute;
     top: 80vw;
     left: 30vw;
+}
+
+.meeting{
+    border: 1px solid white;
 }
