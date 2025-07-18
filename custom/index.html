@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Generator</title>
+</head>
+
+<body>
+    <label for="name">Who is this link for?</label>
+    <input type="text" name="name" id="name">
+    <button type="submit" id="submit">Copy link to clipboard</button>
+    <span id="toast" style="display: none;">Link copied to clipboard :)</span>
+
+    <script>
+        document.getElementById('submit').onclick = function () {
+            const name = document.getElementById('name').value.trim().replace(/\s+/g, '-').toLowerCase();
+            const url = `https://gaurav.studio?source=${encodeURIComponent(name)}`;
+            navigator.clipboard.writeText(url);
+            const toast = document.getElementById('toast');
+            toast.style.display = 'inline-block';
+            setTimeout(() => toast.style.display = 'none', 1500);
+        };
+    </script>
+</body>
+
+</html>
