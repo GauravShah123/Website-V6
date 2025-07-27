@@ -2,31 +2,155 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make a custom link for gaurav.studio - Link source tool</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Link Generator for gaurav.studio</title>
 </head>
 
 <body>
-    <label for="name">Who is this link for?</label>
+    <h2>Create a custom link</h2>
     <form id="myForm">
-        <input type="text" name="name" id="name" autofocus autocomplete="off">
-        <button type="submit" id="submit">Copy link to clipboard</button>
+        <label for="name">Who is this link for?</label>
+        <input type="text" id="name" name="name" autocomplete="off" autofocus />
+        <button type="submit">Copy link to clipboard</button>
     </form>
-    <span id="toast" style="display: none;">Link copied to clipboard :)</span>
-    
+
+    <p id="toast" style="display:none; color: green;">Link copied to clipboard ✅</p>
+    <br><br>
+    <button id="export">Export CSV</button>
+
+    <h3>Generated Links</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Source</th>
+                <th>Code</th>
+                <th>Link</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="linkTableBody">
+            <!-- Rows will be inserted here -->
+        </tbody>
+    </table>
+
     <script>
-    document.getElementById('myForm').onsubmit = function(event) {
-        event.preventDefault();
-        const name = document.getElementById('name').value.trim().replace(/\s+/g, '-').toLowerCase();
-        const url = `https://gaurav.studio?source=${encodeURIComponent(name)}`;
-        navigator.clipboard.writeText(url);
-        const toast = document.getElementById('toast');
-        toast.style.display = 'inline-block';
-        setTimeout(() => toast.style.display = 'none', 1500);
-    };
+        function cleanInput(str) {
+            return str.trim().replace(/\s+/g, '').toLowerCase();
+        }
+
+        function generateCode() {
+            return Math.random().toString(36).substring(2, 8);
+        }
+
+        function getLinkData() {
+            return JSON.parse(localStorage.getItem('linkData') || '{}');
+        }
+
+        function saveLinkData(data) {
+            localStorage.setItem('linkData', JSON.stringify(data));
+        }
+
+        function updateTable() {
+            const data = getLinkData();
+            const tbody = document.getElementById('linkTableBody');
+            tbody.innerHTML = '';
+
+            const sortedEntries = Object.entries(data).sort((a, b) => {
+                return new Date(b[1].date) - new Date(a[1].date);
+            });
+
+            for (const [key, entry] of sortedEntries) {
+                const tr = document.createElement('tr');
+
+                const dateTd = document.createElement('td');
+                dateTd.textContent = new Date(entry.date).toLocaleString();
+                tr.appendChild(dateTd);
+
+                const sourceTd = document.createElement('td');
+                sourceTd.textContent = entry.original;
+                tr.appendChild(sourceTd);
+
+                const codeTd = document.createElement('td');
+                codeTd.textContent = entry.code;
+                tr.appendChild(codeTd);
+
+                const linkTd = document.createElement('td');
+                const a = document.createElement('a');
+                a.href = `https://gaurav.studio?source=${entry.code}`;
+                a.target = '_blank';
+                a.textContent = 'Visit';
+                linkTd.appendChild(a);
+                tr.appendChild(linkTd);
+
+                const actionTd = document.createElement('td');
+                const delBtn = document.createElement('button');
+                delBtn.textContent = 'Delete';
+                delBtn.onclick = function () {
+                    const currentData = getLinkData();
+                    delete currentData[key];
+                    saveLinkData(currentData);
+                    updateTable();
+                };
+                actionTd.appendChild(delBtn);
+                tr.appendChild(actionTd);
+
+                tbody.appendChild(tr);
+            }
+        }
+
+        document.getElementById('myForm').onsubmit = function (e) {
+            e.preventDefault();
+            const rawName = document.getElementById('name').value;
+            const cleaned = cleanInput(rawName);
+            if (!cleaned) return;
+
+            let data = getLinkData();
+            let code;
+
+            if (data[cleaned]) {
+                code = data[cleaned].code;
+            } else {
+                code = generateCode();
+                data[cleaned] = {
+                    original: rawName,
+                    code: code,
+                    date: new Date().toISOString()
+                };
+                saveLinkData(data);
+            }
+
+            const url = `https://gaurav.studio?source=${code}`;
+            navigator.clipboard.writeText(url);
+
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => toast.style.display = 'none', 2000);
+
+            updateTable();
+            document.getElementById('myForm').reset();
+        };
+
+        document.getElementById('export').onclick = function () {
+            const data = getLinkData();
+            const rows = [['Date of creation', 'Source', 'Code']];
+
+            Object.values(data).forEach(entry => {
+                rows.push([entry.date, entry.original, entry.code]);
+            });
+
+            const csvContent = rows.map(r => r.map(x => `"${x}"`).join(',')).join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'custom-links.csv';
+            link.click();
+        };
+
+        // Populate the table on initial load
+        updateTable();
     </script>
-    
 </body>
 
 </html>
