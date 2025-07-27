@@ -189,6 +189,7 @@
 .card-content{
     font-size: var(--fz-body);
     margin-bottom: var(--fz-h3);
+    line-height: 140%;
 }
 .card a{
     color: inherit;
@@ -204,6 +205,10 @@
 
 .card .person-details h3{
     /* font-weight: normal; */
+}
+
+.card .person img{
+    border-radius: 5000px;
 }
 
 .card .person-details p{
