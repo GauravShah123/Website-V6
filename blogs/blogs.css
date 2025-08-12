@@ -15,7 +15,14 @@ main#overview p{
 }
 
 main#overview{
-  margin-top: calc(70px + var(--fz-h3));  
+  margin-top: calc(70px + var(--fz-h3)); 
+  grid-template-columns: 1fr;
+  grid-gap: var(--fz-small-body);
+  padding-bottom: var(--fz-h2);
+}
+
+main#overview h2{
+    margin-bottom: 0;
 }
 
 main#overview > picture{
@@ -41,10 +48,10 @@ main#overview img{
         margin-top: var(--fz-h3);
     }
 
-    ul.tags{
+    /* ul.tags{
         margin-bottom: 8px;
         margin-top: 12px;
-    }
+    } */
 }
 
 @media (max-width: 900px) {

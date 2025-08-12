@@ -1,0 +1,19 @@
+.featured-blogs{
+    padding: var(--fz-h3);
+    padding-top: calc(var(--fz-h3) + 70px);
+}
+
+.featured-blogs h1{
+    margin-top: 0;
+    font-size: var(--fz-h2);
+    font-weight: bold;
+}
+
+h1, h2, h3, p{
+    color: white;
+}
+
+.blogs-cards .work.card h4{
+    font-family: 'General Sans', sans-serif;
+    font-size: var(--fz-big-body);
+}

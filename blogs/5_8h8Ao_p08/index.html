@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Template -->
+    <base href="/">
+    <script src="/JS/app.js" defer></script>
+    <link rel="icon" href="/Assets/Images/gaurav-logo.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Images/Favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/work.css">
+    <script src="/JS/utilities.js" defer></script>
+    <script src="/JS/blogs.js" defer></script>
+    <link rel="stylesheet" href="/CSS/blogs.css">
+    <link rel="stylesheet" href="/blogs/blogs.css">
+
+    <title>Article - Design is not a 5 step process</title>
+    <style>
+        header {
+            height: 150px;
+        }
+
+        @media only screen and (min-width: 900px) {
+            header {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav-content></nav-content>
+    <main id="overview" class="content">
+
+        <h1>Design is not a 5 step process</h1>
+        <div class="card-content">
+            <ul class="tags">
+                <li class="tag">4th August 2025</li>
+                <li class="tag">5 min read</li>
+            </ul>
+        </div>
+
+
+        <picture>
+            <source srcset="./blogs/5_8h8Ao_p08/blog-mobile.png" media="(max-width: 800px)">
+            <img src="./blogs/5_8h8Ao_p08/blog-cover.png"
+                alt="When Less Is More: Product Strategy in the Push and Pull of Growth"
+                style="width: 100%; height: auto;">
+        </picture>
+
+
+    </main>
+    <button class="scroll-to-top" aria-label="Scroll to Top"><span
+            class="material-symbols-outlined">arrow_upward</span></button>
+    <footer-content></footer-content>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        fetch('./blogs/5_8h8Ao_p08/article.md')
+            .then(response => response.text())
+            .then(markdown => {
+                document.getElementById('overview').innerHTML += marked.parse(markdown);
+            });
+    </script>
+</body>
+
+</html>

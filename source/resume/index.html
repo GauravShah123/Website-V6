@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Resume Joiner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- PDF-LIB for client-side PDF merging -->
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" defer></script>
+    <style>
+        :root {
+            --gap: 14px;
+            --pad: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 32px;
+            background: #f7f7f9;
+            color: #111;
+        }
+
+        .card {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.07);
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 22px;
+        }
+
+        p.hint {
+            margin: 0 0 20px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap);
+        }
+
+        .controls {
+            display: flex;
+            gap: var(--gap);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: 0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-weight: 600;
+            cursor: pointer;
+            background: #111;
+            color: #fff;
+        }
+
+        button.secondary {
+            background: #f0f0f3;
+            color: #111;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .out {
+            margin-top: 18px;
+            padding: var(--pad);
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .small {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .ok {
+            color: #0a7a28;
+        }
+
+        .err {
+            color: #b00020;
+        }
+
+        .filename-preview {
+            margin-top: 8px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        }
+
+        .spacer {
+            height: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Resume Joiner</h1>
+        <p class="hint">Upload the two PDF pages of your resume. Enter the company name as the suffix. I will sort by
+            filename, merge them, and download the final file.</p>
+
+        <div class="row" style="margin-bottom: 18px;">
+            <div>
+                <label for="files">Resume PDFs (exactly 2 files)</label>
+                <input id="files" type="file" accept="application/pdf" multiple />
+                <div class="small">Tip: name them like <code>01.pdf</code> and <code>02.pdf</code> or similar. I will
+                    sort alphabetically.</div>
+            </div>
+
+            <div>
+                <label for="suffix">Company name suffix</label>
+                <input id="suffix" type="text" placeholder="e.g., Google" />
+                <div class="filename-preview small" id="namePreview"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="mergeBtn">Merge and download resume</button>
+            <button class="secondary" id="clearBtn" type="button">Clear</button>
+        </div>
+
+        <div class="out" id="coverOut" aria-live="polite" style="display:none;"></div>
+        <div class="spacer"></div>
+        <div class="out small" id="status" aria-live="polite"></div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('files');
+        const suffixInput = document.getElementById('suffix');
+        const mergeBtn = document.getElementById('mergeBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const statusEl = document.getElementById('status');
+        const coverOut = document.getElementById('coverOut');
+        const namePreview = document.getElementById('namePreview');
+
+        const resumePrefix = 'Gaurav Shah - Resume - ';
+        const coverPrefix = 'Gaurav Shah - Cover Letter - ';
+
+        function sanitizeFilenamePart(text) {
+            // Remove characters that do not play nice in filenames
+            return text.replace(/[\\/:*?"<>|]/g, '').trim();
+        }
+
+        function updatePreview() {
+            const raw = suffixInput.value || '';
+            const suffix = sanitizeFilenamePart(raw);
+            if (!suffix) {
+                namePreview.textContent = '';
+                return;
+            }
+            namePreview.textContent = `Will save as: ${resumePrefix}${suffix}.pdf`;
+        }
+
+        suffixInput.addEventListener('input', updatePreview);
+
+        function setStatus(msg, type = '') {
+            statusEl.textContent = msg;
+            statusEl.className = `out small ${type}`;
+        }
+
+        function assertTwoPDFs(files) {
+            if (!files || files.length !== 2) {
+                throw new Error('Please select exactly 2 PDF files.');
+            }
+            for (const f of files) {
+                if (f.type !== 'application/pdf' && !f.name.toLowerCase().endsWith('.pdf')) {
+                    throw new Error('Only PDF files are allowed.');
+                }
+            }
+        }
+
+        async function readFileAsArrayBuffer(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onerror = () => reject(new Error(`Failed to read ${file.name}`));
+                reader.onload = () => resolve(reader.result);
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        function downloadBlob(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        }
+
+        function renderCoverBlock(suffix) {
+            coverOut.style.display = 'block';
+            coverOut.innerHTML = '';
+
+            const title = document.createElement('div');
+            title.textContent = `${coverPrefix}${suffix}`;
+            title.style.fontWeight = '600';
+            title.style.wordBreak = 'break-word';
+
+            const row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.gap = '10px';
+            row.style.marginTop = '10px';
+            row.style.flexWrap = 'wrap';
+            const copyBtn = document.createElement('button');
+            copyBtn.textContent = 'Copy cover letter title';
+            copyBtn.type = 'button';
+
+            const msg = document.createElement('span');
+            msg.className = 'small';
+
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    const text = `${coverPrefix}${suffix}`;
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        await navigator.clipboard.writeText(text);
+                    } else {
+                        // Fallback
+                        const ta = document.createElement('textarea');
+                        ta.value = text;
+                        document.body.appendChild(ta);
+                        ta.select();
+                        document.execCommand('copy');
+                        ta.remove();
+                    }
+                    msg.textContent = 'Copied.';
+                    msg.classList.remove('err');
+                    msg.classList.add('ok');
+                } catch {
+                    msg.textContent = 'Could not copy. You can select and copy manually.';
+                    msg.classList.remove('ok');
+                    msg.classList.add('err');
+                }
+            });
+
+            row.appendChild(copyBtn);
+            row.appendChild(msg);
+
+            coverOut.appendChild(title);
+            coverOut.appendChild(row);
+        }
+
+        clearBtn.addEventListener('click', () => {
+            fileInput.value = '';
+            suffixInput.value = '';
+            statusEl.textContent = '';
+            coverOut.style.display = 'none';
+            coverOut.innerHTML = '';
+            namePreview.textContent = '';
+        });
+
+        mergeBtn.addEventListener('click', async () => {
+            setStatus('', '');
+            mergeBtn.disabled = true;
+
+            try {
+                const files = Array.from(fileInput.files || []);
+                assertTwoPDFs(files);
+
+                // Sort alphabetically by filename
+                files.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }));
+
+                const rawSuffix = suffixInput.value || '';
+                const suffix = sanitizeFilenamePart(rawSuffix);
+                if (!suffix) throw new Error('Enter the company name suffix.');
+
+                setStatus('Reading PDFs...', '');
+
+                // Load source PDFs
+                const buffers = await Promise.all(files.map(readFileAsArrayBuffer));
+
+                setStatus('Merging pages...', '');
+
+                const { PDFDocument } = window.PDFLib;
+                const outDoc = await PDFDocument.create();
+
+                for (const buf of buffers) {
+                    const src = await PDFDocument.load(buf, { ignoreEncryption: true });
+                    const pageIndices = src.getPageIndices();
+                    const copied = await outDoc.copyPages(src, pageIndices);
+                    copied.forEach(p => outDoc.addPage(p));
+                }
+
+                const pdfBytes = await outDoc.save();
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                const filename = `${resumePrefix}${suffix}.pdf`;
+
+                downloadBlob(blob, filename);
+                setStatus(`Done. Downloaded: ${filename}`, 'ok');
+
+                // Show cover letter title and copy button
+                renderCoverBlock(suffix);
+
+            } catch (err) {
+                setStatus(err.message || 'Something went wrong.', 'err');
+            } finally {
+                mergeBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
