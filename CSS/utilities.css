@@ -50,7 +50,7 @@ p {
     line-height: 140%;
 }
 
-.small-p{
+.small-p {
     font-size: var(--fz-small-body);
     color: var(--text-color-lighter);
     line-height: 110% !important;
@@ -330,6 +330,7 @@ footer {
     background-color: var(--background);
     padding: var(--fz-h3);
     border-top: 1px solid var(--text-color-lightest);
+    margin-top: calc(1 * var(--fz-h3));
 }
 
 .footer-about p {
@@ -343,7 +344,7 @@ footer {
     height: var(--fz-h3);
 }
 
-.footer-links-columns-wrapper{
+.footer-links-columns-wrapper {
     display: flex;
     gap: var(--fz-h3);
 }
@@ -383,7 +384,7 @@ footer {
     align-items: center
 }
 
-.footer-links-column ul li a:hover{
+.footer-links-column ul li a:hover {
     color: var(--primary);
     text-decoration: underline;
 }
@@ -392,7 +393,7 @@ footer {
     font-size: calc(var(--fz-body) * .8) !important
 }
 
-.footer-case-studies{
+.footer-case-studies {
     padding-right: var(--fz-big-body);
 }
 
@@ -403,7 +404,7 @@ footer button {
     justify-content: center;
     gap: calc(var(--fz-small-body) / 2);
     margin-top: var(--fz-h4);
-    
+
 }
 
 footer button:hover {
@@ -439,6 +440,80 @@ footer button:hover {
 }
 
 
+.endorsements .three-grid {
+    gap: 32px;
+    padding: 0;
+}
+
+
+.endorsements .card {
+    color: var(--text-color);
+    border-radius: 8px;
+    padding: var(--fz-big-body);
+    border: 1px solid var(--text-color-lightest);
+    /* background-color: var(--background-light); */
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.endorsements .card-content.card-content {
+    font-size: var(--fz-body);
+    margin: 0;
+    padding: 0;
+    margin-bottom: var(--fz-h3);
+    line-height: 140%;
+}
+
+.endorsements .card a {
+    color: inherit;
+}
+
+
+.endorsements .card a:hover {
+    color: var(--primary)
+}
+
+
+.endorsements .card a::after {
+    content: " [↗]";
+}
+
+
+.endorsements .card .person-details h3 {
+    /* font-weight: normal; */
+}
+
+
+.endorsements .card .person img {
+    border-radius: 5000px;
+}
+
+
+.endorsements .card .person-details p {
+    font-size: var(--fz-small-body);
+    color: var(--text-color-lighter);
+}
+
+
+.endorsements .card .person {
+    display: flex;
+    gap: var(--fz-small-body);
+    align-items: center;
+}
+
+.endorsements .card .person img {
+    height: calc(2* var(--fz-big-body));
+}
+
+
+.endorsements .card .person-details p {
+    font-weight: normal;
+}
+
+
 @media (min-width: 800px) {
     .hide-desktop {
         display: none !important;
@@ -446,7 +521,7 @@ footer button:hover {
 }
 
 
-@media (max-width: 1100px){
+@media (max-width: 1100px) {
     .footer-case-studies {
         display: none;
     }
@@ -483,11 +558,11 @@ footer button:hover {
 
     /* SIX */
 
-    .hamburger{
+    .hamburger {
         scale: 0.4;
     }
 
-    .hamburger .line{
+    .hamburger .line {
         width: 50px;
         height: 5px;
         background-color: #ecf0f1;
@@ -497,11 +572,11 @@ footer button:hover {
         -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         border-radius: 4px;
-      }
-      
-      .hamburger:hover{
+    }
+
+    .hamburger:hover {
         cursor: pointer;
-      }
+    }
 
     #hamburger-6.is-active {
         -webkit-transition: all 0.3s ease-in-out;
@@ -590,7 +665,7 @@ footer button:hover {
 
     }
 
-    nav ul li p{
+    nav ul li p {
         font-weight: 100;
         opacity: 0.5;
         margin-bottom: 20px;
@@ -621,6 +696,7 @@ footer button:hover {
     }
 
     footer {
+        margin-top: calc(2 * var(--fz-h3));
         flex-direction: column;
         padding: var(--fz-h3);
     }
@@ -637,7 +713,7 @@ footer button:hover {
         width: 100%;
     }
 
-    .hide-on-mobile{
+    .hide-on-mobile {
         display: none !important;
     }
 }
@@ -662,7 +738,7 @@ footer button:hover {
         --accent2: #ee8d00;
     }
 
-    .footer-links-columns-wrapper{
+    .footer-links-columns-wrapper {
         flex-direction: column;
     }
 }

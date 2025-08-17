@@ -90,6 +90,7 @@ class footer extends HTMLElement {
                     <li><a href="/works/InvestMint/">InvestMint</a></li>
                     <li><a href="/works/MunchMap/">MunchMap</a></li>
                     <li><a href="/works/UWMA/">UW Marketing</a></li>
+                    <li><a href="/works/NavMenu/">Nav Menu</a></li>
 
                 </ul>
             </div>

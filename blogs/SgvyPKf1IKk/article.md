@@ -1,40 +1,47 @@
-Over the past few months, working with designers and designing myself, I’ve constantly asked: what makes a good designer?
+Design in early-stage teams often gets reduced to visuals. The assumption is that a designer spends their days in Figma, adjusting layouts or colors. In practice, design in a lean startup is far broader. In my experience, visual design took up only around 30% of the role. The rest was about shaping product direction, talking to users, and keeping engineering unblocked. 
 
-After a lot of thought, I think the answer is adaptability.
+In this article, I want to explore how the role of a designer is different in lean product teams.
 
-Some of the best designers I’ve worked with know how to flex their process when resources, timelines, or roles shift. In this article, I want to break down three insights on the design process, based on my own experience as a product designer.
+## Designers as product builders
 
-## Use tools when you need them
+When a team doesn’t have a PM, the designer naturally absorbs parts of that role. They run user interviews, look at churn data, and map competitors to understand gaps. These activities are not side projects. They are extensions of the design process, because building the right product is inseparable from building the right interface.
 
-In early-stage startups or scrappy teams, you rarely get the luxury of a full textbook design process. And honestly, even when you do have the time and resources, maybe you still shouldn’t follow it to the letter. I’ve joked before that I’m the PM who “doesn’t believe in lo-fi.” But the truth is, it’s not that lo-fi is bad; it’s that the way we teach the design process is a bit broken.
+In small teams, design often becomes the primary alignment tool. Founders may have an abstract strategy in their head. Engineers may know what’s technically feasible. But until someone translates that into flows and prototypes, there’s no shared picture of the product. Designers provide that bridge. A single mockup can turn a vague strategy into something a team can rally behind. In lean teams, this ability to communicate visually and strategically is often as valuable as the interface itself.
 
-Over the years, I’ve started thinking of design steps like lo-fi mockups or crazy 8s not as mandatory checkpoints, but as tools. You pull them out when they’re useful. This shift actually started during a consulting course I took, where I noticed something interesting. Consultants don’t solve problems by rigidly sticking to one process. They draw from a toolbox of frameworks (Porter’s Five Forces, SWOT, AIDA) and apply the right one based on the problem. That idea stuck with me. Maybe design should work the same way.
+## Knowing where polish matters
 
-Let’s say you’re building a complex product and need stakeholder alignment before investing weeks into a polished flow. Sure, lo-fi is perfect for that. But if you’re working on a simple error modal, maybe you don’t need to waste time aligning grey rectangles in Figma. Use the right tool for the job. Nothing more, nothing less.
+In lean teams, polish is a resource. It cannot be applied everywhere, and the judgment of when to invest becomes one of the most important design calls.
 
-## Research as a proxy for exploration
+Here, the distinction between bets and core flows is useful. Bets are experiments: new functionality where adoption is uncertain. Bets should move quickly. Their value is in the signal they give about adoption, not in their refinement. Core flows, on the other hand, demand trust. Transactions in fintech, onboarding in enterprise software, or outputs in AI products. These are the places where polish is not cosmetic. It shapes whether a user believes the product is competent, safe, and worth returning to.
 
-As much as we hate to admit it, a lot of design problems aren’t new. Many of them are solved. Login flows, onboarding patterns, empty states. They’ve all been done a hundred times. So instead of reinventing the wheel, it’s often smarter to start with research. Use it to figure out what already works, and build from there.
+Unlike larger teams where bets are tested before release, the benefit of a lean team is that you can test value in production. You get significantly better data with a lower churn risk. The value in lean teams is the speed of the engineering team. If they can build quickly, you can test directly with customers. This is where product polish has to take a back seat.  
 
-This doesn’t mean we shouldn’t explore. It just means we should be strategic about where we do it. For most products, I’d argue the majority of a designer’s time should go toward refining and improving the main value prop. That’s where deep thinking and iteration matter most. By applying best practices to the more routine flows, you free up time and energy to go deeper on the parts that truly differentiate your product.
+This judgment is harder than it looks. A designer who polishes everything will slow the team down. A designer who polishes nothing will erode user trust. The skill is in spotting which flows carry disproportionate weight and allocating energy accordingly.
 
-Of course, if your app is doing something completely new or the existing patterns just don’t fit, then go ahead and explore. The point isn’t to avoid exploration. The point is to be intentional about it. Every minute you spend redesigning a login screen is a minute you could have used improving the core experience. Make sure the tradeoff is worth it.
+## Working across zoom levels
 
-## Prioritization
+Design requires shifting between different zoom levels. At the lowest, it’s typography and layouts. At the middle, functionality and flows. Even higher, decisions about product strategy.
 
-I first learned this as a PM, but it’s made me a better designer too. You’re not evaluated by how well you follow a process. You’re evaluated by how effectively you solve the user’s problem. If you’re cutting steps, that’s fine, but only if you’re staying laser-focused on the user’s pain points. Every decision you make should tie back to that.
+The trap is getting stuck. Designers who never leave the low zoom can create beautiful but irrelevant work. Designers who never drop down from the high zoom can make decisions that don’t hold up under real use. The effectiveness comes not from being great at one zoom, but from moving fluidly between them.
 
-There are two areas where prioritization really matters: how much time you spend on each feature or flow, and how much time you spend on each step in the process. For the first one, focus on the flows that deliver your core value prop or the parts of the product where users spend most of their time. That’s where you get the most return on your effort. For the second, identify what you actually need to get the job done. If a problem is well-defined and straightforward, maybe you don’t need extensive discovery or multiple rounds of wireframes. Maybe you just need to execute.
+The cost of switching levels is real. Research and strategy demand a different mode of thinking than pixel-level execution. Mixing both in the same hour is expensive. Structuring work so each level has its own space allows for sharper output at all three.
 
-Being ruthless with prioritization doesn’t mean your work gets sloppy. Even without detailed research or polished UX deliverables, you can still build great products. Validate through internal testing, gather quick feedback, and constantly check alignment with the problem you’re solving. That’s more valuable than a beautifully crafted persona doc that nobody uses.
+## Avoiding the bottleneck
+
+In most lean teams, designers are outnumbered by engineers. The risk of becoming a bottleneck is high. A single feature left undefined can hold back multiple engineers.
+
+The real bottleneck isn’t the ratio itself but the lack of clarity. When engineers are unsure what to build, or when requirements shift midstream, velocity collapses. The role of design here is less about supplying perfect mockups and more about removing ambiguity. The sooner engineers can act with confidence, the more the team maintains momentum.
+
+This is why some designers push work into rough wireframes, written specs, or quick calls rather than waiting for polished flows. The goal is not to replace quality with speed but to unblock progress while quality catches up.
+
+## A broader definition of design
+
+The contribution of design in lean teams often happens in spaces where no UI is involved. It might be reframing a user complaint into a problem statement that engineering can solve. It might be spotting that churn isn’t driven by missing features but by confusion in an existing one. It might be simplifying a proposed flow so that it can ship in two days instead of two weeks.
+
+Design in this environment is less about decoration and more about leverage. It’s about making choices that unlock progress, whether through clarity, alignment, or user trust. The Figma file is only one of many tools used to get there.
 
 ## Conclusion
 
-Even if you’re not doing lo-fis or crazy 8s every time, the key beats of a design thinking process—empathize, ideate, define, prototype and test—still matter. What this article argues is that your design process shouldn’t be fixed. It should evolve depending on what the project demands.
+In lean teams, design is not a support function. It is a core part of building the product. The real value comes from navigating the balance between speed and trust, detail and strategy, polish and pragmatism. It comes from moving between levels of zoom and deciding where attention matters most.
 
-And this isn’t a radical idea. In iterative product work (say, optimizing an existing feature) we already think this way. We adjust based on context. So why not take the same approach for 0-to-1 products?
-
-Instead of starting with a fixed process, start with the user and their problem. Let the process emerge from there. If you’re solving a complex, ambiguous problem, do user interviews. If you’re stuck and need ideas, try crazy 8s. Build your process as you go, using only what you need. And at every step, ask yourself: does this still tie back to the problem we set out to solve?
-
-If the answer is yes, you’re on the right track.
-
+The work is messier and broader than most people assume. But that breadth is also what makes design indispensable in small teams.
