@@ -153,6 +153,10 @@ section {
         height: fit-content;
     }
 
+    .projects-hero#first{
+        flex-direction: column;
+    }
+
     .projects-hero#investmint {
         flex-direction: column;
     }

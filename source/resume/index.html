@@ -7,104 +7,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- PDF-LIB for client-side PDF merging -->
     <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" defer></script>
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Satoshi font -->
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
     <style>
         :root {
-            --gap: 14px;
-            --pad: 16px;
+            --brand: #8F4C34;
+            --brand-50: #FFF3EF;
+            --text: #221915;
+            --muted: #6b6b6b;
+            --ring: rgba(143, 76, 52, 0.32);
+            --gap: 12px;
+            --radius: 8px;
         }
 
         * {
             box-sizing: border-box;
+            font-family: 'Satoshi', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
         }
 
         body {
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            font-family: 'Satoshi', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
             margin: 0;
             padding: 32px;
-            background: #f7f7f9;
-            color: #111;
+            background: #fff;
+            color: var(--text);
         }
 
-        .card {
-            max-width: 720px;
+        .wrap {
+            max-width: 560px;
             margin: 0 auto;
-            background: #fff;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.07);
         }
 
         h1 {
-            margin: 0 0 8px;
-            font-size: 22px;
+            font-size: 20px;
+            margin: 0 0 24px;
+            font-weight: 800;
+            letter-spacing: .2px;
+            text-align: center;
         }
 
         p.hint {
-            margin: 0 0 20px;
-            color: #555;
-            font-size: 14px;
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 13px;
         }
 
         label {
-            font-weight: 600;
             display: block;
             margin-bottom: 6px;
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 400;
         }
 
-        input[type="file"],
         input[type="text"] {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid #e7dfdc;
             border-radius: 8px;
+            padding: 12px 14px;
             font-size: 14px;
+            outline: none;
             background: #fff;
         }
 
-        .row {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--gap);
+        input[type="text"]:focus {
+            border-color: var(--brand);
+            box-shadow: 0 0 0 3px var(--ring);
         }
 
-        .controls {
+        .dropzone {
+            position: relative;
+            padding: 16px;
+            background: var(--brand-50);
+            transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+            min-height: 250px;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%238F4C34FF' stroke-width='2' stroke-dasharray='4%2c 6' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+            border-radius: 8px;
+
             display: flex;
-            gap: var(--gap);
+            flex-direction: column;
             align-items: center;
-            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        button {
+        .dropzone.dragover {
+            box-shadow: 0 0 0 4px var(--ring);
+        }
+
+        .dz-top {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .dz-help {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .filechips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            border: 1px solid #eeddd7;
+            background: var(--brand-50);
+            font-size: 13px;
+        }
+
+        .chip svg.lucide {
+            height: 14px;
+            width: 14px;
+        }
+
+        .chip .del {
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+        }
+
+        .filename-preview {
+            margin-top: 8px;
+            font-family: "Satoshi", ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .btn {
+            width: 100%;
             border: 0;
             border-radius: 8px;
-            padding: 12px 16px;
+            padding: 12px 14px;
             font-weight: 600;
             cursor: pointer;
-            background: #111;
+            background: var(--brand);
             color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 6px 20px rgba(143, 76, 52, .22);
         }
 
-        button.secondary {
-            background: #f0f0f3;
-            color: #111;
-        }
-
-        button:disabled {
-            opacity: 0.6;
+        .btn:disabled {
+            opacity: .65;
             cursor: not-allowed;
+            box-shadow: none;
         }
 
-        .out {
-            margin-top: 18px;
-            padding: var(--pad);
-            background: #fafafa;
-            border: 1px solid #eee;
+        .btn-secondary {
+            width: 100%;
+            border: 0;
             border-radius: 8px;
+            padding: 12px 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--brand);
+            color: var(--brand);
+            background-color: transparent;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .btn-text {
+            background: transparent;
+            border: 0;
+            color: var(--brand);
+            padding: 8px 0;
+            cursor: pointer;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .small {
             font-size: 12px;
-            color: #666;
+            color: var(--muted);
         }
 
         .ok {
@@ -115,50 +217,102 @@
             color: #b00020;
         }
 
-        .filename-preview {
-            margin-top: 8px;
-            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        .out {
+            margin-top: 14px;
+            padding: 12px;
+            background: #fff;
+            border: 1px solid #efe8e5;
+            border-radius: 8px;
+            font-size: 12px;
         }
 
-        .spacer {
-            height: 8px;
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Lucide icon sizing */
+        svg.lucide {
+            width: 16px;
+            height: 16px;
+        }
+
+        #coverOut>div:nth-child(1)>strong {
+            font-size: 16px;
+        }
+
+        .large-icon{
+            margin-bottom: 20px;
+        }
+
+        .dropzone svg.lucide {
+            width: 24px;
+            height: 24px;
         }
     </style>
 </head>
 
 <body>
-    <div class="card">
+    <a class="sr-only" href="#main">Skip to content</a>
+    <div class="wrap" id="main">
         <h1>Resume Joiner</h1>
-        <p class="hint">Upload the two PDF pages of your resume. Enter the company name as the suffix. I will sort by
-            filename, merge them, and download the final file.</p>
+        <!-- <p class="hint">Drop two PDF pages, enter the company name, then merge. I sort files alphabetically.</p> -->
 
-        <div class="row" style="margin-bottom: 18px;">
-            <div>
-                <label for="files">Resume PDFs (exactly 2 files)</label>
-                <input id="files" type="file" accept="application/pdf" multiple />
-                <div class="small">Tip: name them like <code>01.pdf</code> and <code>02.pdf</code> or similar. I will
-                    sort alphabetically.</div>
-            </div>
+        <div>
+            <!-- <label for="files">Resume PDFs</label> -->
+            <div class="dropzone" id="dropzone" tabindex="0" aria-describedby="dz-help">
+                <i data-lucide="upload" class="large-icon"></i>
+                <div class="dz-top">
+                    <strong>Drag and drop resume pages here</strong>
+                </div>
+                <div id="dz-help" class="dz-help">Filetype: PDF, Will be sorted alphabetically</div>
+                <input id="files" type="file" accept="application/pdf" multiple class="sr-only" />
 
-            <div>
-                <label for="suffix">Company name suffix</label>
-                <input id="suffix" type="text" placeholder="e.g., Google" />
-                <div class="filename-preview small" id="namePreview"></div>
             </div>
+            <div class="filechips" id="fileChips" aria-live="polite"></div>
         </div>
 
-        <div class="controls">
-            <button id="mergeBtn">Merge and download resume</button>
-            <button class="secondary" id="clearBtn" type="button">Clear</button>
+        <div style="margin-top: 14px;">
+            <label for="suffix">Company name</label>
+            <input id="suffix" type="text" placeholder="Acme Inc." autocomplete="organization" />
+            <div class="filename-preview" id="namePreview"></div>
+        </div>
+
+        <div style="margin-top: 14px;">
+            <button id="mergeBtn" class="btn"><i data-lucide="download"></i>Merge and download</button>
+            <div><button id="clearBtn" class="btn-secondary" type="button" style="display:none;"><i
+                        data-lucide="trash-2"></i>Clear</button></div>
         </div>
 
         <div class="out" id="coverOut" aria-live="polite" style="display:none;"></div>
-        <div class="spacer"></div>
-        <div class="out small" id="status" aria-live="polite"></div>
+        <div class="out" id="status" aria-live="polite"></div>
+
+        <details style="margin-top: 12px;">
+            <summary class="small"><strong>Keyboard shortcuts</strong> (press Ctrl + Shift + ?)</summary>
+            <div class="small" style="margin-top: 6px; display: grid; gap: 6px;">
+                <div><strong>Ctrl + O</strong> open file picker</div>
+                <div><strong>Ctrl + M</strong> merge and download</div>
+                <div><strong>Ctrl + Backspace</strong> clear</div>
+                <div><strong>Ctrl + Shift + ?</strong> toggle this help</div>
+            </div>
+        </details>
     </div>
 
     <script>
+        // Icons
+        lucide.createIcons();
+
+        // Elements
         const fileInput = document.getElementById('files');
+        const dropzone = document.getElementById('dropzone');
+        const fileChips = document.getElementById('fileChips');
         const suffixInput = document.getElementById('suffix');
         const mergeBtn = document.getElementById('mergeBtn');
         const clearBtn = document.getElementById('clearBtn');
@@ -169,36 +323,20 @@
         const resumePrefix = 'Gaurav Shah - Resume - ';
         const coverPrefix = 'Gaurav Shah - Cover Letter - ';
 
-        function sanitizeFilenamePart(text) {
-            // Remove characters that do not play nice in filenames
-            return text.replace(/[\\/:*?"<>|]/g, '').trim();
-        }
+        function sanitizeFilenamePart(text) { return (text || '').replace(/[\/:*?"<>|]/g, '').trim(); }
+
+        function setStatus(msg, type = '') { statusEl.textContent = msg; statusEl.className = `out ${type}`; }
 
         function updatePreview() {
-            const raw = suffixInput.value || '';
-            const suffix = sanitizeFilenamePart(raw);
-            if (!suffix) {
-                namePreview.textContent = '';
-                return;
-            }
-            namePreview.textContent = `Will save as: ${resumePrefix}${suffix}.pdf`;
-        }
-
-        suffixInput.addEventListener('input', updatePreview);
-
-        function setStatus(msg, type = '') {
-            statusEl.textContent = msg;
-            statusEl.className = `out small ${type}`;
+            const suffix = sanitizeFilenamePart(suffixInput.value);
+            namePreview.textContent = suffix ? `Will save as: ${resumePrefix}${suffix}.pdf` : '';
         }
 
         function assertTwoPDFs(files) {
-            if (!files || files.length !== 2) {
-                throw new Error('Please select exactly 2 PDF files.');
-            }
+            if (!files || files.length !== 2) throw new Error('Please select exactly 2 PDF files.');
             for (const f of files) {
-                if (f.type !== 'application/pdf' && !f.name.toLowerCase().endsWith('.pdf')) {
-                    throw new Error('Only PDF files are allowed.');
-                }
+                const ok = f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf');
+                if (!ok) throw new Error('Only PDF files are allowed.');
             }
         }
 
@@ -214,11 +352,7 @@
         function downloadBlob(blob, filename) {
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
+            a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
             URL.revokeObjectURL(url);
         }
 
@@ -227,18 +361,15 @@
             coverOut.innerHTML = '';
 
             const title = document.createElement('div');
-            title.textContent = `${coverPrefix}${suffix}`;
-            title.style.fontWeight = '600';
+            title.innerHTML = `<strong>${coverPrefix}${suffix}</strong>`;
             title.style.wordBreak = 'break-word';
 
             const row = document.createElement('div');
-            row.style.display = 'flex';
-            row.style.gap = '10px';
-            row.style.marginTop = '10px';
-            row.style.flexWrap = 'wrap';
+            row.style.display = 'flex'; row.style.gap = '8px'; row.style.marginTop = '8px'; row.style.flexWrap = 'wrap';
             const copyBtn = document.createElement('button');
-            copyBtn.textContent = 'Copy cover letter title';
+            copyBtn.className = 'btn-text';
             copyBtn.type = 'button';
+            copyBtn.innerHTML = '<i data-lucide="copy"></i>Copy cover letter title';
 
             const msg = document.createElement('span');
             msg.className = 'small';
@@ -249,21 +380,12 @@
                     if (navigator.clipboard && navigator.clipboard.writeText) {
                         await navigator.clipboard.writeText(text);
                     } else {
-                        // Fallback
                         const ta = document.createElement('textarea');
-                        ta.value = text;
-                        document.body.appendChild(ta);
-                        ta.select();
-                        document.execCommand('copy');
-                        ta.remove();
+                        ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
                     }
-                    msg.textContent = 'Copied.';
-                    msg.classList.remove('err');
-                    msg.classList.add('ok');
+                    msg.textContent = 'Copied.'; msg.classList.remove('err'); msg.classList.add('ok');
                 } catch {
-                    msg.textContent = 'Could not copy. You can select and copy manually.';
-                    msg.classList.remove('ok');
-                    msg.classList.add('err');
+                    msg.textContent = 'Could not copy. You can select and copy manually.'; msg.classList.remove('ok'); msg.classList.add('err');
                 }
             });
 
@@ -272,65 +394,145 @@
 
             coverOut.appendChild(title);
             coverOut.appendChild(row);
+            lucide.createIcons();
         }
 
-        clearBtn.addEventListener('click', () => {
-            fileInput.value = '';
-            suffixInput.value = '';
-            statusEl.textContent = '';
-            coverOut.style.display = 'none';
-            coverOut.innerHTML = '';
-            namePreview.textContent = '';
+        function refreshFileChips(files) {
+            fileChips.innerHTML = '';
+            (files || []).forEach((f, idx) => {
+                const el = document.createElement('span');
+                el.className = 'chip';
+                el.innerHTML = `<i data-lucide="file"></i><span>${f.name}</span>`;
+                const del = document.createElement('button');
+                del.className = 'del'; del.type = 'button'; del.innerHTML = '<i data-lucide="x"></i>';
+                del.addEventListener('click', () => {
+                    const next = Array.from(fileInput.files || []);
+                    next.splice(idx, 1);
+                    setFileList(next);
+                });
+                el.appendChild(del);
+                fileChips.appendChild(el);
+            });
+            lucide.createIcons();
+        }
+
+        function setFileList(arr) {
+            const dt = new DataTransfer();
+            arr.forEach(f => dt.items.add(f));
+            fileInput.files = dt.files;
+            refreshFileChips(arr);
+            clearBtn.style.display = (arr.length > 0) ? 'inline-flex' : 'none';
+
+            if (arr.length > 0) {
+                suffixInput.focus();
+            }
+        }
+
+        suffixInput.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                mergeBtn.click(); // same as clicking the button
+            }
         });
 
+
+        function sortFilesAlpha(files) { return Array.from(files).sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' })); }
+
+        function clearAll() {
+            fileInput.value = '';
+            refreshFileChips([]);
+            suffixInput.value = '';
+            setStatus('', '');
+            coverOut.style.display = 'none'; coverOut.innerHTML = '';
+            namePreview.textContent = '';
+            clearBtn.style.display = 'none';
+        }
+
+        // Input events
+        suffixInput.addEventListener('input', updatePreview);
+
+        // Clicking the zone opens picker
+        dropzone.addEventListener('click', () => fileInput.click());
+
+        // Drag and drop
+        ['dragenter', 'dragover'].forEach(evt => dropzone.addEventListener(evt, e => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); }));
+        ;['dragleave', 'dragend', 'drop'].forEach(evt => dropzone.addEventListener(evt, e => { if (evt !== 'drop') { dropzone.classList.remove('dragover'); } }));
+        dropzone.addEventListener('drop', e => {
+            e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover');
+            const dropped = Array.from(e.dataTransfer.files || []).filter(f => f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'));
+            if (!dropped.length) { setStatus('Drop PDFs only.', 'err'); return; }
+            const next = sortFilesAlpha(dropped);
+            setFileList(next);
+            setStatus(`${next.length} file${next.length === 1 ? '' : 's'} selected.`, '');
+        });
+
+        // File picker change
+        fileInput.addEventListener('change', () => {
+            const current = Array.from(fileInput.files || []);
+            const sorted = sortFilesAlpha(current);
+            setFileList(sorted);
+            setStatus(`${sorted.length} file${sorted.length === 1 ? '' : 's'} selected.`, '');
+        });
+
+        // Windows-friendly shortcuts only (Ctrl)
+        window.addEventListener('keydown', e => {
+            // Shift + ? toggles help
+            if (e.shiftKey && e.key === '?') {
+                e.preventDefault();
+                const det = document.querySelector('details');
+                det.open = !det.open;
+            }
+            if (e.ctrlKey && !e.shiftKey) {
+                // Ctrl + O
+                if (e.key.toLowerCase() === 'o') { e.preventDefault(); fileInput.click(); }
+                // Ctrl + M
+                if (e.key.toLowerCase() === 'm') { e.preventDefault(); mergeBtn.click(); }
+                // Ctrl + Backspace/Delete
+                if (e.key === 'Backspace' || e.key === 'Delete') { e.preventDefault(); clearAll(); }
+            }
+        });
+
+        clearBtn.addEventListener('click', clearAll);
+
+        // Merge
         mergeBtn.addEventListener('click', async () => {
             setStatus('', '');
             mergeBtn.disabled = true;
-
             try {
                 const files = Array.from(fileInput.files || []);
                 assertTwoPDFs(files);
-
-                // Sort alphabetically by filename
                 files.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }));
 
-                const rawSuffix = suffixInput.value || '';
-                const suffix = sanitizeFilenamePart(rawSuffix);
-                if (!suffix) throw new Error('Enter the company name suffix.');
+                const suffix = sanitizeFilenamePart(suffixInput.value);
+                if (!suffix) throw new Error('Enter the company name.');
 
-                setStatus('Reading PDFs...', '');
-
-                // Load source PDFs
+                setStatus('Reading PDFs...');
                 const buffers = await Promise.all(files.map(readFileAsArrayBuffer));
 
-                setStatus('Merging pages...', '');
-
+                setStatus('Merging pages...');
                 const { PDFDocument } = window.PDFLib;
                 const outDoc = await PDFDocument.create();
-
                 for (const buf of buffers) {
                     const src = await PDFDocument.load(buf, { ignoreEncryption: true });
-                    const pageIndices = src.getPageIndices();
-                    const copied = await outDoc.copyPages(src, pageIndices);
+                    const copied = await outDoc.copyPages(src, src.getPageIndices());
                     copied.forEach(p => outDoc.addPage(p));
                 }
-
                 const pdfBytes = await outDoc.save();
                 const blob = new Blob([pdfBytes], { type: 'application/pdf' });
                 const filename = `${resumePrefix}${suffix}.pdf`;
-
                 downloadBlob(blob, filename);
                 setStatus(`Done. Downloaded: ${filename}`, 'ok');
-
-                // Show cover letter title and copy button
                 renderCoverBlock(suffix);
-
             } catch (err) {
                 setStatus(err.message || 'Something went wrong.', 'err');
             } finally {
                 mergeBtn.disabled = false;
             }
         });
+
+        // Initial
+        function init() { updatePreview(); clearBtn.style.display = 'none'; }
+        init();
     </script>
 </body>
 

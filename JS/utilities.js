@@ -86,6 +86,7 @@ class footer extends HTMLElement {
             <div class="footer-case-studies footer-links-column">
                 <h3>Case Studies</h3>
                 <ul>
+                    <li><a href="/works/AI-Startup/">Stealth Startup</a></li>
                     <li><a href="/works/Photobooth/">Photobooth</a></li>
                     <li><a href="/works/InvestMint/">InvestMint</a></li>
                     <li><a href="/works/MunchMap/">MunchMap</a></li>
@@ -190,3 +191,40 @@ function copyTexttoNormal() {
 let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
 document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+(function () {
+    const STORAGE_KEY = "hasConfidentialAccess";
+
+    // Check if there are any query parameters
+    function hasAnyQueryParams() {
+        const params = new URLSearchParams(window.location.search);
+        for (const _ of params) return true;
+        return false;
+    }
+
+    function setVisibility(hasAccess) {
+        document.querySelectorAll(".confidential").forEach(el => {
+            el.style.display = hasAccess ? "" : "none";
+        });
+        document.querySelectorAll(".unconfidential").forEach(el => {
+            el.style.display = hasAccess ? "none" : "";
+        });
+    }
+
+    const stored = localStorage.getItem(STORAGE_KEY) === "true";
+
+    if (hasAnyQueryParams()) {
+        localStorage.setItem(STORAGE_KEY, "true");
+        setVisibility(true);
+    } else if (stored) {
+        setVisibility(true);
+    } else {
+        setVisibility(false);
+    }
+
+    // Optional: keep in sync on history navigation
+    window.addEventListener("popstate", () => {
+        const canSee = localStorage.getItem(STORAGE_KEY) === "true";
+        setVisibility(canSee);
+    });
+})();

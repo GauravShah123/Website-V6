@@ -405,6 +405,10 @@ code {
     font-weight: 600;
 }
 
+.callout-content a{
+    color: var(--text-color);
+}
+
 .impact-wrapper {
     border-radius: calc(var(--fz-small-body) / 2);
     /* border: 1px solid var(--dark-alt); */
