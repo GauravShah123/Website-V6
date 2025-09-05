@@ -194,6 +194,8 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 (function () {
     const STORAGE_KEY = "hasConfidentialAccess";
+    console.log(STORAGE_KEY);
+    console.log(localStorage.getItem(STORAGE_KEY) === "true");
 
     // Check if there are any query parameters
     function hasAnyQueryParams() {
@@ -214,6 +216,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
     const stored = localStorage.getItem(STORAGE_KEY) === "true";
 
     if (hasAnyQueryParams()) {
+        console.log("HAS QUERY PARAMS")
         localStorage.setItem(STORAGE_KEY, "true");
         setVisibility(true);
     } else if (stored) {
