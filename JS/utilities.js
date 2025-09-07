@@ -86,7 +86,7 @@ class footer extends HTMLElement {
             <div class="footer-case-studies footer-links-column">
                 <h3>Case Studies</h3>
                 <ul>
-                    <li class="confidential"><a href="/works/AI-Startup/">Stealth Startup</a></li>
+                    <li class="confidential"><a href="/works/AI-Startup/" class="confidential">Stealth Startup</a></li>
                     <li><a href="/works/Photobooth/">Photobooth</a></li>
                     <li><a href="/works/InvestMint/">InvestMint</a></li>
                     <li><a href="/works/MunchMap/">MunchMap</a></li>
