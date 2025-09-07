@@ -441,7 +441,7 @@ footer button:hover {
 
 
 .endorsements .three-grid {
-    gap: 32px;
+    gap: var(--fz-h3);
     padding: 0;
 }
 
@@ -465,6 +465,7 @@ footer button:hover {
     padding: 0;
     margin-bottom: var(--fz-h3);
     line-height: 140%;
+    color: var(--text-color-light);
 }
 
 .endorsements .card a {

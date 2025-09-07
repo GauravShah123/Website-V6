@@ -24,13 +24,13 @@ Of course, if your app is doing something completely new or the existing pattern
 
 I first learned this as a PM, but it’s made me a better designer too. You’re not evaluated by how well you follow a process. You’re evaluated by how effectively you solve the user’s problem. If you’re cutting steps, that’s fine, but only if you’re staying laser-focused on the user’s pain points. Every decision you make should tie back to that.
 
-There are two areas where prioritization really matters: how much time you spend on each feature or flow, and how much time you spend on each step in the process. For the first one, focus on the flows that deliver your core value prop or the parts of the product where users spend most of their time. That’s where you get the most return on your effort. For the second, identify what you actually need to get the job done. If a problem is well-defined and straightforward, maybe you don’t need extensive discovery or multiple rounds of wireframes. Maybe you just need to execute.
+There are two areas where prioritization really matters: how much time you spend on each feature or flow, and how much time you spend on each step in the process. For the first one, focus on the flows that are critical in product activation, deliver your core value prop or the parts of the product where users spend most of their time. That’s usually where you get the most return on your effort. For the second, identify what you actually need to get the job done. If a problem is well-defined and straightforward, maybe you don’t need extensive discovery or multiple rounds of wireframes. Maybe you just need to execute.
 
 Being ruthless with prioritization doesn’t mean your work gets sloppy. Even without detailed research or polished UX deliverables, you can still build great products. Validate through internal testing, gather quick feedback, and constantly check alignment with the problem you’re solving. That’s more valuable than a beautifully crafted persona doc that nobody uses.
 
 ## Conclusion
 
-Even if you’re not doing lo-fis or crazy 8s every time, the key beats of a design thinking process—empathize, ideate, define, prototype and test—still matter. What this article argues is that your design process shouldn’t be fixed. It should evolve depending on what the project demands.
+Even if you’re not doing lo-fis or crazy 8s every time, the key beats of a design thinking process (empathize, ideate, define, prototype and test) still matter. What this article argues is that your design process shouldn’t be fixed. It should evolve depending on what the project demands.
 
 And this isn’t a radical idea. In iterative product work (say, optimizing an existing feature) we already think this way. We adjust based on context. So why not take the same approach for 0-to-1 products?
 

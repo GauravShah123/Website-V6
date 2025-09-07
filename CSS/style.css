@@ -153,6 +153,24 @@ section {
         height: fit-content;
     }
 
+    .projects-hero p{
+        margin: 8px 0;
+        font-size: var(--fz-small-body);
+    }
+
+    .project-hero-content .case-study.case-study{
+        font-size: var(--fz-body);
+        width: 100%;
+    }
+
+    .endorsements .card-content.card-content{
+        font-size: var(--fz-small-body);
+    }
+
+    section > div > div > div > h3{
+        font-size: var(--fz-body);
+    }
+
     .projects-hero#first{
         flex-direction: column;
     }
