@@ -44,14 +44,14 @@
         <div class="gaurav-wrapper">
             <h1> Gaurav Shah</h1>
             <div class="gaurav-inner-wrapper">
-                <span class="seeking">Seeking full-time roles for Jan 2026</span>
+                <span class="seeking">Seeking roles for Jan 2026</span>
 
                 <p class="facts-inner">eats a lot of cereal.</p>
             </div>
         </div>
     </section>
     <section class="about-text">Gaurav Shah is a <span class="highlight" onclick="scrollToPM()"
-            cursor-class="find-out-why-pm">product manager & designer</span> who loves working in small and scrappy teams to help them build great products and grow.</section>
+            cursor-class="find-out-why-pm">product manager & designer</span> who loves working in lean teams to build great products.</section>
        
         <!-- <section class="about-text">Gaurav Shah is a <span class="highlight" onclick="scrollToPM()"
             cursor-class="find-out-why-pm">product manager & designer</span> currently studying <span class="GBDA">GBDA</span> at the University of
@@ -221,13 +221,15 @@
     </section>
     <section class="why-pm" id="why-pm">
         <h1>Why Product?</h1>
-        <p>I want to work in product because it feels like the place where everything I care about comes together. I love understanding users, solving real problems, and figuring out how to take messy, complicated ideas and turn them into something that actually works for people. Being able to go from talking to a customer one day to shaping a roadmap the next is exciting to me. It makes the work feel alive.
-<br><br>
-            Product pulls from every part of how I think. I love digging into the details, but I also love stepping back and asking if we are solving the right problem in the first place. It is one of the few roles where you get to care about the user, the business, and the team all at once. That balance is something I am genuinely excited to take on.
-            
-<br><br>
-            With my background across UX, business, and tech, it feels natural to want to build things that are not just functional, but thoughtful. I want to work in product because I love creating things that make people’s lives better in small but real ways. And because I know there is nothing better than seeing an idea come to life and realizing it actually made a difference.
-        </p>
+    <p>I like to joke that I chose product because I don’t already have enough problems in life. What actually drew me to this field is how it merges everything I love.
+
+    </p><br><p>I started designing logos in grade 8, then websites in grade 10, and coding in grade 11. I loved building things. It was almost addictive. I once stayed up for 24 hours straight coding an OCR tool that would help me take notes in econ class. At the same time, I was deep into business. I competed in the WGHS investment competition all through high school and decided to specialize in business. My mom is a chartered accountant. Finance is in my blood. Design, tech, and business were all running in parallel for me, and I never wanted to pick just one.
+        
+    </p><br><p>When I moved to solving problems that impacted more than one person, I fell in love with the messiness that came with it. Talking to customers, planning features, figuring out monetization strategies. Then I discovered the PM role. It was the perfect blend of business, design, and technology, and I had never been more excited about my career.
+        
+    </p><br><p>In my first co-op, I was hired as a designer but quickly took on a leadership role and moved to PM for the project. Since then, I’ve worked in both design and PM contexts, often blending the two.
+        
+    </p><br><p>Product is where I get to keep building, keep designing, and keep solving business problems that matter. What excites me most is knowing there will always be bigger, messier problems to take on, and I get to use everything I’ve learned to tackle them.</p>
     </section>
     <!-- <section class="endorsements">
         <h1>Endorsements</h1>
@@ -285,9 +287,64 @@
     </section> -->
     <section class="why-pm">
         <h1>What is Gaurav upto?</h1>
-        <p>Right now, I'm diving into growth and business strategy. I want to work on small, scrappy teams, so I’m learning how early products grow, how to pick the right problems to solve, and how to keep moving when things are messy. If you want to read more about what I'm learning, check out <a href="/#blogs"> my blog articles</a> :D</p>
+        <p>Apart from the hunt for my next role, I’ve been diving into <b>data driven design</b>. I’m learning how to set the right success metrics and how to analyze data in funnels to make better design decisions. I’ve made a lot of design calls based on qualitative data (ex. user interviews), but I know that quantitative data can be just as useful, if not more, while costing significantly less. If you want to read more about what I'm learning, check out <a href="/#blogs" title="Blogs section on the home page"> my blog articles</a> :D</p>
     </section>
     <footer-content></footer-content>
+
+    <style>
+        .custom-tooltip {
+          position: absolute;
+          background: #222;
+          color: #fff;
+          padding: 6px 10px;
+          border-radius: 4px;
+          font-size: 14px;
+          pointer-events: none;
+          white-space: nowrap;
+          z-index: 9999;
+          opacity: 0;
+          transition: opacity 0.1s ease-in-out;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+      </style>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          // Create tooltip element
+          const tooltip = document.createElement("div");
+          tooltip.className = "custom-tooltip";
+          document.body.appendChild(tooltip);
+      
+          // Attach tooltip to all elements with a title attribute
+          document.querySelectorAll("[title]").forEach(el => {
+            const titleText = el.getAttribute("title");
+      
+            el.addEventListener("mouseenter", e => {
+              tooltip.textContent = titleText;
+              tooltip.style.opacity = "1";
+              positionTooltip(e);
+            });
+      
+            el.addEventListener("mousemove", e => {
+              positionTooltip(e);
+            });
+      
+            el.addEventListener("mouseleave", () => {
+              tooltip.style.opacity = "0";
+            });
+      
+            // Prevent default browser tooltip
+            el.addEventListener("mousedown", () => el.blur());
+            el.removeAttribute("title");
+          });
+      
+          function positionTooltip(e) {
+            const offset = 12;
+            tooltip.style.left = e.pageX + offset + "px";
+            tooltip.style.top = e.pageY + offset + "px";
+          }
+        });
+      </script>
 </body>
 
 </html>

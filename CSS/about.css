@@ -266,7 +266,7 @@
 }
 
 .why-pm p{
-    width: 75%;
+    width:65%;
 }
 
 .marquee-content {
@@ -306,6 +306,12 @@ p.caption{
 
 .side-quests{
     padding: var(--fz-h3);
+}
+
+
+.why-pm p{
+    font-size: var(--fz-body);
+    color: var(--text-color-light);
 }
 
 

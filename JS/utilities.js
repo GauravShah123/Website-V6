@@ -19,7 +19,7 @@ class nav extends HTMLElement {
                 </li>
                 <li>
                     <p class="hide-desktop">04</p>
-                    <a href="/Resume.pdf" target="_blank" id="nav-menu-resume">Resume</a>
+                    <a href="/Gaurav-Shah-Resume.pdf" target="_blank" id="nav-menu-resume">Resume</a>
                 </li>
                 <li class="cta-wrapper">
                     <button class="cta lets-talk">Let's Talk<span class="material-symbols-outlined">arrow_forward</span></button>
@@ -86,7 +86,7 @@ class footer extends HTMLElement {
             <div class="footer-case-studies footer-links-column">
                 <h3>Case Studies</h3>
                 <ul>
-                    <li><a href="/works/AI-Startup/">Stealth Startup</a></li>
+                    <li class="confidential"><a href="/works/AI-Startup/">Stealth Startup</a></li>
                     <li><a href="/works/Photobooth/">Photobooth</a></li>
                     <li><a href="/works/InvestMint/">InvestMint</a></li>
                     <li><a href="/works/MunchMap/">MunchMap</a></li>
@@ -194,8 +194,6 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 (function () {
     const STORAGE_KEY = "hasConfidentialAccess";
-    console.log(STORAGE_KEY);
-    console.log(localStorage.getItem(STORAGE_KEY) === "true");
 
     // Check if there are any query parameters
     function hasAnyQueryParams() {
@@ -205,18 +203,27 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
     function setVisibility(hasAccess) {
+        // Confidential vs unconfidential
         document.querySelectorAll(".confidential").forEach(el => {
             el.style.display = hasAccess ? "" : "none";
         });
         document.querySelectorAll(".unconfidential").forEach(el => {
             el.style.display = hasAccess ? "none" : "";
         });
+
+        // Resume link swap
+        const resumeLink = document.querySelector("#nav-menu-resume");
+        if (resumeLink) {
+            resumeLink.setAttribute(
+                "href",
+                hasAccess ? "/about/Resume.pdf" : "/Gaurav-Shah-Resume.pdf"
+            );
+        }
     }
 
     const stored = localStorage.getItem(STORAGE_KEY) === "true";
 
     if (hasAnyQueryParams()) {
-        console.log("HAS QUERY PARAMS")
         localStorage.setItem(STORAGE_KEY, "true");
         setVisibility(true);
     } else if (stored) {
