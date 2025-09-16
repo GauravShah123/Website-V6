@@ -144,7 +144,7 @@ section {
 }
 
 @media only screen and (max-width: 900px) {
-    .hero-text-p {
+    .header-text {
         display: none;
     }
 

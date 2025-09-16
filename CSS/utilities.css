@@ -50,10 +50,18 @@ p {
     line-height: 140%;
 }
 
+.header-text{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    transform: translateY(calc(-0.5 * var(--fz-small-body)))
+}
+
 .small-p {
     font-size: var(--fz-small-body);
     color: var(--text-color-lighter);
-    line-height: 110% !important;
+    width: 100%;
+    max-width: 280px;
     font-family: 'General Sans', sans-serif !important;
 }
 
