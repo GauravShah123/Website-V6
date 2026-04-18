@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'General Sans', sans-serif;
+    font-family: 'Wingdings 3', 'Wingdings3', 'Zapf Dingbats', 'Symbol', fantasy !important;
     letter-spacing: 0.03rem;
     /* font-weight: 400; */
     transition: 0.2s ease-out;
