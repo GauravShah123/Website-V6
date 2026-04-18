@@ -1,3 +1,20 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const STORAGE_KEY = 'fontUnlocked';
+
+  if (sessionStorage.getItem(STORAGE_KEY)) {
+    // User already clicked this session — use normal font
+    document.documentElement.style.setProperty('font-family', "'General Sans', sans-serif", 'important');
+  }
+  // else: CSS already applies Wingdings 3 on load, do nothing
+
+  document.addEventListener('click', () => {
+    if (!sessionStorage.getItem(STORAGE_KEY)) {
+      sessionStorage.setItem(STORAGE_KEY, 'true');
+      document.documentElement.style.setProperty('font-family', "'General Sans', sans-serif", 'important');
+    }
+  }, { once: true });
+});
+
 class nav extends HTMLElement {
     constructor() {
         super()
