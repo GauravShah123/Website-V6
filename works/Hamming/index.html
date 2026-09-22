@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Template -->
+    <base href="/">
+    <script src="/JS/app.js" defer></script>
+    <link rel="icon" href="/Assets/Images/gaurav-logo.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Images/Favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/work.css">
+    <script src="/JS/utilities.js" defer></script>
+    <script src="/JS/work.js" defer></script>
+
+    <title>Case Study - Hamming 2.0</title>
+    <style>
+        header {
+            height: 150px;
+        }
+
+        @media only screen and (min-width: 900px) {
+            header {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Customize Path -->
+    <nav-content></nav-content>
+    <header>
+        <img src="/works/Hamming/header.png" alt="Hamming 2.0 - Simplifying AI voice agent testing">
+    </header>
+
+    <section class="details">
+        <div class="detail"><b>Role:</b> Product Manager and Designer</div>
+        <div class="detail"><b>Timeline:</b> April 2025, 3 weeks</div>
+        <div class="detail"><b>Software:</b> v0, Dovetail & Figma</div>
+    </section>
+    <main id="overview" class="hide">
+
+    </main>
+    <main id="case-study">
+        <aside></aside>
+        <section class="content">
+
+            <h2>Context & Stakes</h2>
+
+            <h3>Where we started</h3>
+            <img src="/works/Hamming/customer-churn-message.png" alt="Slack message: a customer tells our CEO they're switching to a competitor because of too many UX issues, and the CEO asks Gaurav Shah to look into it.">
+            <p>I joined Hamming AI as the first product hire. The product had been built for a year without a designer, which left us with heavy UX debt: inconsistent UI, messy workflows, and no design system to hold it together. Customers were starting to churn. The breaking point came when one told our CEO they were leaving for a competitor because of "too many UX issues."</p>
+
+            <h3>The market we were in</h3>
+            <p>AI was moving fast. Competitors had already cloned our product and were racing to add features. In that environment, shipping new functionality was critical. Growth was the metric that mattered for raising the next round. But churn was just as dangerous. In early-stage startups, your best sales channel is word of mouth. If existing customers left unhappy, we weren't just losing revenue, we were losing our loudest advocates.</p>
+            <img src="/works/Hamming/growth-vs-retention-fork.png" alt="A fork in the road: one path leads to shipping features for growth, the other to fixing UX for retention.">
+
+            <h3>The stakes with enterprise</h3>
+            <p>At the same time, we were negotiating with Cisco. Enterprise buyers don't sign deals because of great UX. But they can walk away if the product feels confusing or unpolished. Testing AI voice agents is already complex. If we made it harder than it needed to be, we risked being dismissed. With competitors priced similarly, usability could tip the scales. Churn threatened our base. Usability threatened our biggest deal.</p>
+
+            <h3>The paradox</h3>
+            <p>This put us in a bind. To land Cisco, the product had to become more powerful. To keep current users, it had to feel simpler. More capability usually means more complexity. Our challenge was to deliver both at once, without breaking the product or the team.</p>
+            <img src="/works/Hamming/paradox-loop.png" alt="A loop diagram: adding features to land enterprise customers makes the product feel too complex, so features get removed to simplify it, which then makes it less powerful for enterprise customers, and the cycle repeats.">
+
+            <h3>Constraints on execution</h3>
+            <p>The design team was two people, including me. Engineering was stretched thin across backend work, bug fixes, and a new marketing site. There was no official deadline, but everyone felt the clock ticking. Founder-led sales meant product tradeoffs had direct revenue impact. Nobody debated whether UX debt existed. The question was how much to fix now versus how much to ship. My role was to make the tradeoffs clear and set a path forward that didn't sacrifice growth or retention.</p>
+
+            <h3>Why this mattered now</h3>
+            <p>Doing nothing wasn't an option. Ignore UX and we lose trust, slow deals, and fuel churn. Ignore velocity and we fall behind competitors shipping faster. The stakes were high on both sides. The only path forward was a strategy that balanced speed with simplification.</p>
+
+            <h2>Framing the Challenge</h2>
+
+            <h3>Different lenses, different truths</h3>
+            <p>Designers saw inconsistent UI. Engineers pointed to tech debt and slow load times. Leadership worried about churn and growth. Every perspective was valid, but nobody had a full 360° view of the product. Even as someone inside the company, I found myself struggling to connect features into a coherent mental model. If I felt lost after months of immersion, what chance did a new customer have?</p>
+
+            <h3>Shifting priorities</h3>
+            <p>Before this churn moment, our energy was focused on building new features. The churn message forced us to stop and ask: are we building on a shaky foundation? It wasn't clear what "fixing UX" even meant, but it was clear we needed data before making tradeoffs. Churn became the top priority, and feature velocity slipped into a close second.</p>
+
+            <h3>The call for research</h3>
+            <p>That ambiguity was the challenge. We could guess at problems forever, but without clarity we risked fixing the wrong things. What does "UX issues" actually mean to customers? Where in the workflows do they get stuck? What feels unnecessarily complex? We decided the only way forward was to talk to users directly. This wasn't just about identifying issues. It was also a way to show customers that we cared, and to keep them engaged while we improved.</p>
+
+            <h2>How We Approached It</h2>
+            <p>My co-designer and I built a lightweight research protocol. We chose an unstructured format because we wanted to hear people's biggest problems in their own words, not funnel them into ours. Everyone we spoke to worked in tech and had strong opinions, so we knew they would fill the space. But we still carried a guide to fall back on if a conversation needed direction. Our method was simple: a screenshare, show-and-tell walkthrough of their workflow, starting from before they even opened our platform.</p>
+            <p>We began each session by making participants feel comfortable. We told them we were here to listen, not to judge, and that we would handle the prioritization on our end. Then we asked them to walk us through their process: what are their goals, their context, and their motivations? Who else in their org uses the tool, and how? Where do they get stuck? At the end, we'd share early patterns from other interviews and invite them to react or add new context.</p>
+
+            <h3>The product flow in theory</h3>
+            <img src="/works/Hamming/product-flow-diagram.png" alt="How our product is supposed to work (simplified): Scenario Collections, Custom Metrics, and Phone Numbers all feed into an AI Voice Agent Test.">
+            <p>To understand why users struggled, it helps to explain the basics of how Hamming worked at the time. Testing an AI voice agent required three separate pieces:</p>
+            <ul>
+                <li><strong>Scenario Collections</strong>: sets of test cases.</li>
+                <li><strong>Custom Metrics</strong>: alongside standard metrics like latency, users could define their own. For example, a "frustration checker" powered by an LLM would rate call transcripts on a custom scale.</li>
+                <li><strong>Phone Numbers</strong>: inbound tests required users to provide a number; outbound tests required calling a number we provided.</li>
+            </ul>
+            <p>In theory, once you combined the three, you could run a test. In practice, these inputs lived on different tabs. Running a test happened through a button on the Scenarios tab. The setup was scattered and the logic was opaque.</p>
+
+            <h3>What we observed in practice</h3>
+            <p>Users regularly got lost connecting the dots. They struggled to understand how Scenario Collections, Custom Metrics, and Phone Numbers fit together. Incompatible metrics were hidden in the UI, leaving users confused about why they couldn't find what they needed. They often didn't know what to change to make a test run.</p>
+            <img src="/works/Hamming/interview-quotes.png" alt="Quotes from user interviews, including: There is no clear connection between the different concepts you use. To test one agent, I need to go to so many different tabs. It takes too long to run a test.">
+            <p>Interviews revealed something deeper: this wasn't just about clunky navigation. It was a mismatch in mental models. Users didn't think in terms of scenarios, metrics, and phone numbers as independent objects. They thought in terms of <em>voice agents</em>. For them, a voice agent was the central thread, and everything else belonged to it. That framing was missing entirely from the product.</p>
+
+            <h3>The consequences</h3>
+            <p>The result was unnecessary training, patchwork workarounds, and a steep learning curve for every new team member. Customers hacked together their own methods to extract value from what was, on paper, a technically powerful tool. Our core value prop, AI agent testing, was strong. But if customers couldn't unlock that value without friction, the business was at risk. The research validated what we had suspected: the product wasn't just messy. It was actively pushing people away.</p>
+            <img src="/works/Hamming/powerful-not-usable.png" alt="Statement card: Technically powerful ≠ Usable.">
+
+            <h2>Workshops: Making the Product Understandable</h2>
+
+            <h3>The complexity problem</h3>
+            <p>A theme that came up again and again in interviews was that everything felt too complicated. Something as simple as running a test often took ten steps spread across three different pages. Step 1–3 lived on page one, 4–6 on page six, and 7–10 on page four. Users didn't just find the process long; they found it disorienting.</p>
+            <p>To fix this, we needed more than just design tweaks. We needed engineering and product context. What did it actually take to run a test? How did these objects connect to each other? Which attributes were essential, and which were noise? That understanding was the foundation for eliminating clutter and building a mental model that matched how our users thought.</p>
+
+            <h3>Object mapping workshop</h3>
+            <p>We gathered the team for a workshop to map out the product's core objects. The goal was to get everyone (design and engineering) on the same page about what exists in the system and how it should behave.</p>
+            <p>We worked through a series of questions together:</p>
+            <ul>
+                <li>Who are our different user types, and what are their roles?</li>
+                <li>What goals does each user have when testing?</li>
+                <li>What are the necessary objects to achieve those goals?</li>
+                <li>What attributes does each object need?</li>
+                <li>How should users engage with each object?</li>
+                <li>Where should these objects live in the product?</li>
+            </ul>
+            <p>One example: Product Managers cared about tracking quality over time, monitoring KPIs, and quickly spotting when something broke. Their needs were very different from developers, who cared about debugging specific test cases. Mapping these differences gave us clarity about what objects needed to exist and what each user expected from them.</p>
+            <img src="/works/Hamming/object-mapping-workshop.png" alt="Object-oriented UX in action: each block maps a single object, its attributes, and its actions, connecting objects like Scenario Collections and Scenarios.">
+            <p>Each block here is a single object with its attributes and actions. The team mapped over 20 of these to align design and engineering on a shared model.</p>
+
+            <h4>Understanding our users deeply</h4>
+            <p>Something that was absolutely critical for us was understanding our users deeply. With an enterprise product, there's so much more nuance that needs to be understood. Who is the buyer? Who is the user? How can the user successfully advocate for your product at their company? Here is an example of the depth to which we understood one of our user groups.</p>
+            <p>For product managers, the platform needed to answer one core question: <em>is something broken, and what's the business impact?</em></p>
+            <p>PMs live and die by KPIs like success rates, latency, and overall response quality. Their performance is often tied directly to these metrics, promotions, credibility, and even job security can hinge on them. They don't want raw data; they want clear, visual insights they can act on quickly.</p>
+            <p>When something goes wrong, they need to know <em>why</em>. Which flow failed? Where did users drop off? How is quality trending over time? These insights allow them to prioritize the roadmap, justify tradeoffs, and show impact across the company.</p>
+            <p>Sharing context is also critical. PMs are the connective tissue between leadership and engineers, so they need lightweight ways to package insights into screenshots, reports, or links. They're comfortable in tools like Figma, Linear, and Notion, and expect the same ease of collaboration here.</p>
+            <p>In short: PMs work in impact mode. They need to see when things break, understand the root cause, and translate those insights into business outcomes and roadmap decisions.</p>
+
+            <h3>Key takeaways from object mapping</h3>
+            <ul>
+                <li>The <strong>Customer Voice Agent</strong> was the central object missing in our model. Everything (scenarios, metrics, phone numbers) should connect back to it.</li>
+                <li>Different archetypes had very different needs, so flexibility was essential.</li>
+                <li>We could finally see how pieces connected across the system instead of treating them as silos.</li>
+            </ul>
+            <p>This led us to a clearer organizational model:</p>
+            <ul>
+                <li><strong>Global level</strong> (all agents)</li>
+                <li><strong>Agent level</strong> (a specific voice agent)</li>
+                <li><strong>Node level</strong> (parts of a conversational flow)</li>
+                <li><strong>Individual call level</strong> (test runs)</li>
+            </ul>
+            <p>This layering aligned with how customers actually thought, matched industry shifts toward conversational pathways, and set us up to scale in the future.</p>
+
+            <h3>Customer journey workshop</h3>
+            <p>Of course, reorganizing information wasn't enough. We also needed to simplify the <em>process</em>. So we ran a second workshop to map the current and future workflows.</p>
+            <p>We broke it down step by step:</p>
+            <ul>
+                <li>Current jobs-to-be-done and user actions</li>
+                <li>Their goals, thoughts, and pain points at each step</li>
+                <li>Opportunities to automate, set defaults, or cut steps entirely</li>
+                <li>A future-state process diagram that reflected what we wanted users to experience</li>
+            </ul>
+            <p>From this, we prioritized three focus areas. The biggest insight was that we could (and should) do far more to hand-hold users through pre-deployment testing. The workshops also helped us turn customer insights into actionable items instead of just a laundry list of complaints.</p>
+            <img src="/works/Hamming/customer-journey-workshop.png" alt="Customer journey mapping workshop board, organized by jobs-to-be-done, user actions, goals and experiences, feelings and thoughts, pain points, and opportunities.">
+
+            <h3>Shared vision</h3>
+            <p>With this foundation, we drafted mocks that showed how the product might look if split across multiple "zoom levels." This gave the team a concrete vision of the future product. For the first time, we weren't just fixing surface-level problems, we were aligning on how the system should work at its core.</p>
+
+            <h2>Strategic Trade-offs & Design Strategy</h2>
+
+            <h3>A moment for big change</h3>
+            <p>The scope of what we were tackling felt like a Hamming 2.0. We weren't just reorganizing flows. We were rethinking the product's foundation and how it presented itself. The redesign gave us an opening to update our design language and system. This mattered not only for usability, but for how we looked to customers like Cisco. A more polished, cohesive product would help us land enterprise trust.</p>
+
+            <h3>Why a design system mattered now</h3>
+            <p>We had been pushing for a design system for months. With only two designers, consistency was a constant challenge. Standardizing our work would make us faster and reduce errors. On the surface, the new system didn't radically change how the product looked. Typography and colors were the most visible shifts. But the underlying consistency meant we could design, test, and ship at a higher quality bar. Eventually, we hoped to evolve it into Storybook components so the frontend could fully reflect the new language.</p>
+            <p>This was the right moment to roll it out because:</p>
+            <ul>
+                <li>We needed polish for enterprise prospects like Cisco.</li>
+                <li>We were already redesigning core information architecture and processes, so using the new system in Figma aligned design and engineering.</li>
+                <li>The team was energized. Seeing a refreshed product boosted morale and gave everyone a sense of progress.</li>
+            </ul>
+            <img src="/works/Hamming/design-system.png" alt="Our new and updated Hamming 2.0 design system: buttons, sidebar navigation, upload inputs, and modals built on top of Flowbite.">
+
+            <h3>Building on top of Flowbite</h3>
+            <p>We built the system on top of Flowbite, which was already part of our codebase. That gave us two advantages:</p>
+            <ol>
+                <li>It was fast. Flowbite components were familiar to engineering and easy to extend.</li>
+                <li>It was practical. We were already mixing Flowbite with Shadcn and custom components, so it fit naturally.</li>
+            </ol>
+            <p>From there, we created what the product actually needed. Tables were core to our workflows, so we built robust table and cell components. We refined dropdowns, notifications, and charts to match real-world usage. Smaller pieces (atoms) combined into larger, reusable molecules. The system gave us speed, consistency, and a shared foundation.</p>
+
+            <h3>Quality over novelty</h3>
+            <p>This wasn't about inventing new features. It was about polishing the bets we had already made. We knew customers were using these capabilities. The problem was how they were organized, presented, and connected. A design system gave us the leverage to deliver quality faster and the credibility we needed with both current customers and future ones.</p>
+
+            <h2>Execution Highlights</h2>
+
+            <h3>Mini Case Study: NavBar Redesign</h3>
+            <p>Our redesign began with something small: the navigation bar. Even this simple change carried very specific UX and business goals.</p>
+            <p>The old navigation took up too much space without giving much back. It had a separate top bar just to hold account details. As the product grew, new tabs piled on until users with smaller screens actually had to scroll just to see all their options. That kind of friction wasn't sustainable, especially as we kept adding features.</p>
+            <img src="/works/Hamming/navbar-old-issues.png" alt="Annotated screenshot of the previous navigation menu, flagging awkward alignment, a too-subtle active state with no hover state, missing breadcrumbs, and unused space at the top of the page.">
+            <p>The new design addressed these issues directly:</p>
+            <ol>
+                <li><strong>Condensed layout:</strong> created room to add new features without clutter.</li>
+                <li><strong>Smarter active states:</strong> used color strategically instead of heavy drop shadows, making it easier to scan with less visual noise.</li>
+                <li><strong>Integrated account settings:</strong> placed at the bottom of the nav, eliminating the top bar entirely and freeing up space for core actions.</li>
+                <li><strong>Repurposed top bar:</strong> now used for page titles, breadcrumbs, and page-specific actions, helping users stay oriented while working across multiple tables and data views.</li>
+            </ol>
+            <img src="/works/Hamming/navbar-new.png" alt="Simplified mockup of the redesigned Hamming AI sidebar navigation, condensed and organized by Scenarios, Monitoring, Custom Metrics, Prompts, and Chat Agents.">
+            <img src="/works/Hamming/navbar-announcement-1.png" alt="Marketing card announcing the navigation update to users: 'Our sidebar has a new look,' with a refreshed, cleaner, more polished sidebar for smoother navigation.">
+            <img src="/works/Hamming/navbar-announcement-2.png" alt="Marketing card announcing the navigation update to users: 'All your preferences, now in one place,' letting users update theme, workspace, and credits from their profile.">
+            <p>For our users, who spent most of their time cross-referencing tables and analyzing data, the cleaner layout made a real difference. It kept their workspace focused, reduced distractions, and made new features easier to discover.</p>
+            <p>The impact wasn't just external. This navbar redesign was the first thing we shared with the engineering team. It created energy and buy-in for the broader UI 2.0 effort. Sometimes, a small, tangible win is the best way to get momentum for a big change.</p>
+
+            <div class="callout heads-up-callout">
+                <div class="callout-emoji">💡</div>
+                <div class="callout-content">
+                    <p class="heads-up">While I can't share much of the solution due to my NDA, we worked hard on a lot of big changes to how we structure and organize concepts on our platform. The navbar was just the beginning, and as time moved on, it was clear that our work brought the platform closer to what users expected and needed from us.</p>
+                </div>
+            </div>
+
+            <h2>Impact & Outcomes</h2>
+            <ul>
+                <li><strong>Retention of key customers:</strong> We stabilized churn by addressing the biggest workflow pain points quickly. This gave our highest-value customers confidence to stay with us instead of leaving for competitors.</li>
+                <li><strong>Landing Cisco:</strong> The redesign played a pivotal role in securing Cisco as a client. A cleaner, more cohesive UI showed that we could meet enterprise expectations and compete seriously in the market.</li>
+                <li><strong>Team learning and motivation:</strong> Bringing new hires into the workshops helped them ramp up faster and see how different parts of the product connected. Documenting the work gave us a shared vision and bonded the team around building something better.</li>
+                <li><strong>Foundation for the future:</strong> This wasn't just a surface-level refresh. The redesign erased a year of UX debt and gave users a far more understandable foundation, one we could confidently scale and build on.</li>
+            </ul>
+
+            <h2>Reflection & Learnings</h2>
+
+            <h3>What I'd do differently</h3>
+            <ol>
+                <li><strong>Empathize more with the business.</strong> Once you get deep into a redesign, it's easy to stay at the low zoom level. Colors, type, components, screens. What I've learned since is to keep business goals front and center. Design isn't just about what feels best to me as a designer, it's about aligning with where the company needs to go.</li>
+                <li><strong>Align earlier on strategy.</strong> The paradox kept coming up: to land Cisco, the product needed to become more powerful; to keep current customers, it needed to feel simpler. More power usually means more complexity. I wish I had documented these debates and maintained a decision log early on. It would have helped the team align faster and reduced the feeling that we were constantly picking the wrong battle.</li>
+                <li><strong>Use data better.</strong> I became confident in running interviews and gathering rich qualitative insights, but I didn't have strong quantitative data to balance against. If I could redo it, I'd push harder on usage data so we had a more holistic view of what mattered most.</li>
+            </ol>
+
+            <h3>What I'm proud of</h3>
+            <ul>
+                <li><strong>Owning a product pillar.</strong> I took end-to-end ownership of post-deployment monitoring, from the first bet to a polished version with an execution plan.</li>
+                <li><strong>Empathy for engineering.</strong> I learned how to deliver designs engineers could actually use. Ones that explained themselves clearly and didn't just look good in Figma. That collaboration made me far better at communicating across design and engineering.</li>
+                <li><strong>High-stakes communication.</strong> I presented product and design updates directly to customers and investors. These conversations carry risk; one misstep can erode trust. I handled them well and built confidence in both our team and our product.</li>
+            </ul>
+
+            <h2>Personal Growth</h2>
+            <p>Working at Hamming blurred the line between design and product management. I came in as a designer, but I left with a stronger sense of experimentation, momentum, and ownership. I learned how to balance "bets" versus "features," how to advocate for engineering time, and how to make decisions with business outcomes in mind, not just design craft.
+                <br><br>
+                The team itself was highly experimental. We loved trying new tools and new ways of working, and I had the unique experience of being on the buyer side for many of them. Sitting in on sales calls and deciding whether to purchase tools like Dovetail or BuildBetter gave me an unexpected crash course in B2B sales. It was eye-opening to see how sales teams frame value, and it sparked a personal interest in working more closely with sales and customer support as a future "voice of the customer."
+                <br><br>
+                This experience showed me how much I value ownership and impact. If your team sounds like it could value that, I'm open to roles starting January 2026.</p>
+
+        </section>
+    </main>
+    <button class="scroll-to-top" aria-label="Scroll to Top"><span
+            class="material-symbols-outlined">arrow_upward</span></button>
+    <footer-content></footer-content>
+
+    <style>
+        .custom-tooltip {
+          position: absolute;
+          background: #222;
+          color: #fff;
+          padding: 6px 10px;
+          border-radius: 4px;
+          font-size: 14px;
+          pointer-events: none;
+          white-space: nowrap;
+          z-index: 9999;
+          opacity: 0;
+          transition: opacity 0.1s ease-in-out;
+        }
+      </style>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          // Create tooltip element
+          const tooltip = document.createElement("div");
+          tooltip.className = "custom-tooltip";
+          document.body.appendChild(tooltip);
+
+          // Attach tooltip to all elements with a title attribute
+          document.querySelectorAll("[title]").forEach(el => {
+            const titleText = el.getAttribute("title");
+
+            el.addEventListener("mouseenter", e => {
+              tooltip.textContent = titleText;
+              tooltip.style.opacity = "1";
+              positionTooltip(e);
+            });
+
+            el.addEventListener("mousemove", e => {
+              positionTooltip(e);
+            });
+
+            el.addEventListener("mouseleave", () => {
+              tooltip.style.opacity = "0";
+            });
+
+            // Prevent default browser tooltip
+            el.addEventListener("mousedown", () => el.blur());
+            el.removeAttribute("title");
+          });
+
+          function positionTooltip(e) {
+            const offset = 12;
+            tooltip.style.left = e.pageX + offset + "px";
+            tooltip.style.top = e.pageY + offset + "px";
+          }
+        });
+      </script>
+
+</body>
+
+</html>
