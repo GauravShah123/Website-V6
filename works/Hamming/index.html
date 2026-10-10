@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <!-- Template -->
     <base href="/">
     <script src="/JS/app.js" defer></script>
@@ -39,13 +40,22 @@
            Bump --regular-img-width if a future image still looks oversized. */
         .content {
             --regular-img-width: 640px;
+            /* Body text is inset by --page-inset inside the content box;
+               images and captions need the same inset to line up with it. */
+            --text-indent: var(--page-inset);
+        }
+
+        @media (max-width: 700px) {
+            .content {
+                --text-indent: 0px;
+            }
         }
 
         .content img.img-regular {
             width: 100%;
             max-width: var(--regular-img-width);
             display: block;
-            margin-left: 0;
+            margin-left: var(--text-indent);
             margin-right: auto;
         }
 
@@ -55,8 +65,9 @@
            the caption's box to the image so the two stay aligned. */
         .content img.img-regular + p.caption {
             max-width: var(--regular-img-width);
-            margin-left: 0;
+            margin-left: var(--text-indent);
             margin-right: auto;
+            padding-inline: 0;
         }
 
         /* Captions are auto-generated site-wide from each image's alt text
@@ -82,17 +93,56 @@
             margin-bottom: var(--fz-big-body);
         }
 
-        /* The NDA disclaimer needs to actually stand out, not blend into the
-           dark background like a regular callout. */
+        /* NDA disclaimer: a documentation-style callout (tinted panel, accent
+           bar, icon chip and a small label) so it reads as a deliberate note
+           rather than body copy. Scoped to this page. */
         .content .heads-up-callout.callout {
-            background-color: #1E3A8A;
-            border: none;
+            --callout-accent: #60A5FA;
+            align-items: flex-start;
+            gap: 16px;
+            margin-block: calc(var(--fz-h3) * 0.9);
+            padding: 20px 24px;
+            background-color: rgba(96, 165, 250, 0.08);
+            border: 1px solid rgba(96, 165, 250, 0.28);
+            border-left: 4px solid var(--callout-accent);
+            border-radius: 8px;
         }
 
-        .content .heads-up-callout .callout-content,
-        .content .heads-up-callout .callout-content p,
+        .content .heads-up-callout .callout-icon {
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(96, 165, 250, 0.16);
+            color: #93C5FD;
+        }
+
+        .content .heads-up-callout .callout-icon .material-symbols-outlined {
+            font-size: 20px !important;
+        }
+
+        .content .heads-up-callout .callout-content {
+            gap: 6px;
+        }
+
+        .content .heads-up-callout .callout-content p.heads-up {
+            font-size: var(--fz-small-body);
+            line-height: 1.6;
+            color: var(--text-color-light);
+        }
+
+        /* "Heads up:" label (injected by work.js) becomes a small eyebrow. */
         .content .heads-up-callout .callout-content b {
-            color: #fff;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #93C5FD;
         }
     </style>
 </head>
@@ -278,7 +328,7 @@
             <p>The impact wasn't just external. This navbar redesign was the first thing we shared with the engineering team. It created energy and buy-in for the broader UI 2.0 effort. Sometimes, a small, tangible win is the best way to get momentum for a big change.</p>
 
             <div class="callout heads-up-callout">
-                <div class="callout-emoji">💡</div>
+                <div class="callout-icon"><span class="material-symbols-outlined" aria-hidden="true">lock</span></div>
                 <div class="callout-content">
                     <p class="heads-up">While I can't share much of the solution due to my NDA, we worked hard on a lot of big changes to how we structure and organize concepts on our platform. The navbar was just the beginning, and as time moved on, it was clear that our work brought the platform closer to what users expected and needed from us.</p>
                 </div>
