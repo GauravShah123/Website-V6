@@ -14,13 +14,16 @@
 }
 
 :root {
-    --fz-h1: 10vw;
-    --fz-h2: 5vw;
-    --fz-h3: 3.25vw;
-    --fz-h4: 2vw;
-    --fz-big-body: 22px;
-    --fz-body: 18px;
-    --fz-small-body: 16px;
+    /* Fluid type scale: scales smoothly with viewport width but is capped
+       at both ends so headings stay readable on small screens and don't
+       balloon on large/wide monitors. */
+    --fz-h1: clamp(2.5rem, 1.6rem + 3.5vw, 5rem);
+    --fz-h2: clamp(1.75rem, 1.2rem + 2.2vw, 3.25rem);
+    --fz-h3: clamp(1.375rem, 1.05rem + 1.2vw, 2.125rem);
+    --fz-h4: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+    --fz-big-body: 18px;
+    --fz-body: 16px;
+    --fz-small-body: 14px;
 
     --background: #111;
     --background-light: #222;
@@ -44,6 +47,14 @@ body {
     max-width: 100vw;
     overflow-x: hidden;
     min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Pins the footer to the bottom of the viewport on short pages instead of
+   leaving a gap of bare body background below it. */
+footer-content {
+    margin-top: auto;
 }
 
 p {
@@ -67,7 +78,9 @@ p {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
     font-family: 'Clash Display', sans-serif;
 }
 
@@ -730,13 +743,8 @@ footer button:hover {
 
 @media only screen and (max-width: 600px) {
     :root {
-        --fz-h1: 18vw;
-        --fz-h2: 10vw;
-        --fz-h3: 7.5vw;
-        --fz-h4: 5vw;
-        --fz-big-body: 20px;
-        --fz-body: 16px;
-        --fz-small-body: 14px;
+        /* Font sizes are handled by the fluid clamp() values in the base
+           :root above, which already scale down appropriately here. */
 
         --background: #111;
         --background-light: #222;
