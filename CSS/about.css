@@ -263,8 +263,10 @@
     border: none;
 }
 
+/* Body copy shares the name's width (--name-width, ~60% of the page, set in
+   JS/about.js) so the headline, intro and both sections end on one right edge. */
 .why-pm p{
-    width: 50%;
+    width: var(--name-width, 60%);
 }
 
 .marquee-content {
