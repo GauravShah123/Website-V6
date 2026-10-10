@@ -1,7 +1,5 @@
 .projects-hero {
     display: flex;
-    /* gap: var(--fz-h3); */
-    /* border: 1px solid var(--text-color-lightest); */
     background-color: var(--background-light);
     margin: var(--fz-h3);
     padding: 0;
@@ -73,18 +71,17 @@
     gap: var(--fz-small-body);
     margin-bottom: var(--fz-small-body);
     flex-wrap: wrap;
-    /* margin-top: var(--fz-small-body); */
 }
 
 .tag {
     padding: calc((var(--fz-small-body)) / 2) var(--fz-small-body);
-    /* background-color: #222; */
+
     border-radius: 4px;
     font-size: var(--fz-small-body);
 }
 
 .project-hero-content h2 {
-    font-size: var(--fz-h2);
+    font-size: var(--fz-card-title);
     font-weight: bold;
 }
 
@@ -95,10 +92,8 @@
 .card.work {
     border-radius: 8px;
     overflow: hidden;
-    /* border: 1px solid var(--text-color-lightest); */
     text-decoration: none;
     color: var(--text-color);
-    /* padding: var(--fz-small-body); */
 }
 
 .three-grid .card.work:hover {
@@ -114,7 +109,6 @@
 
 .three-grid .card-content {
     margin-top: 4px;
-    /* padding: var(--fz-small-body); */
     padding-top: 8px;
     width: 100%;
 }
@@ -173,7 +167,6 @@
     margin-top: var(--fz-body);
     padding: var(--fz-small-body);
 }
-
 
 .coming-soon{
     margin: var(--fz-h3);

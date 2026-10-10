@@ -1,5 +1,5 @@
 .compass-points{
-    /* margin-top: var(--fz-small-body); */
+
     margin-bottom: var(--fz-h3);
 }
 
@@ -20,6 +20,6 @@
 
 .compass-point p{
     margin-top: 8px;
-    font-size: var(--fz-small-body);
+    font-size: var(--fz-body);
     color: var(--text-color-lighter);
 }

@@ -1,4 +1,4 @@
-/* Utilities CSS*/
+/* Shared tokens, base and components */
 @import url("./utilities.css");
 @import url("./title.css");
 @import url("./cursor.css");
@@ -9,48 +9,24 @@
 @import url("./blogs.css");
 @import url("./product-compass.css");
 
-/* :root {
-    --fz-h1: 10vw;
-    --fz-h2: 5vw;
-    --fz-h3: 3.25vw;
-    --fz-h4: 2vw;
-    --fz-big-body: 22px;
-    --fz-body: 18px;
-    --fz-small-body: 16px;
-
-    --background: #111;
-    --background-light: #222;
-    --text-color: #fff;
-    --text-color-light: #ddd;
-    --text-color-lighter: #aaa;
-    --text-color-lightest: #444;
-    --primary: #0AEBAF;
-    --accent2: #ee8d00;
-} */
-
-/* *{
-    outline: 1px solid greenyellow;
-} */
-
 section {
     padding: 0 var(--fz-h3);
 }
 
 
-.project-hero-image{
+.project-hero-image {
     position: relative;
     width: 50%;
 }
 
-.project-hero-content{
+.project-hero-content {
     width: 50%;
 }
 
-#photobooth-project-hero-image{
+#photobooth-project-hero-image {
     object-fit: cover;
     height: 100%;
     width: 100%;
-    /* object-position: left; */
 }
 
 .project-hero-image #investmint-gif{
@@ -70,10 +46,8 @@ section {
 .big-footer {
     padding: var(--fz-h2) var(--fz-h3);
     display: block;
-    /* background-color: #000; */
     border: none;
     position: relative;
-    /* padding-bottom: var(--fz-small-body); */
     border-top: 1px solid var(--text-color-lightest);
 }
 
@@ -183,31 +157,12 @@ section {
        display: none;
     }
 
-    .project-hero-content{
+    .project-hero-content {
         width: 100%;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    :root {
-        --fz-h1: 18vw;
-        --fz-h2: 10vw;
-        --fz-h3: 7.5vw;
-        --fz-h4: 5vw;
-        --fz-big-body: 20px;
-        --fz-body: 16px;
-        --fz-small-body: 14px;
-
-        --background: #111;
-        --background-light: #222;
-        --text-color: #f5f5f5;
-        --text-color-light: #ddd;
-        --text-color-lighter: #999;
-        --text-color-lightest: #444;
-        --accent: #f7ce4d;
-        --accent2: #ee8d00;
-    }
-
     .about-text {
         color: var(--text-color-lighter) !important;
         font-size: var(--fz-h3);
@@ -230,7 +185,7 @@ section {
         display: block;
         width: 100%;
         height: fit-content;
-     }
+    }
 
      .project-hero-image #laptop{
         position: relative;

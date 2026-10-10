@@ -1,0 +1,62 @@
+/* Endorsement cards (homepage). */
+
+.endorsements .three-grid {
+    gap: var(--fz-h3);
+    padding: 0;
+}
+
+.endorsements .card {
+    color: var(--text-color);
+    border-radius: 8px;
+    padding: var(--fz-big-body);
+    border: 1px solid var(--text-color-lightest);
+
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.endorsements .card-content.card-content {
+    font-size: var(--fz-body);
+    margin: 0;
+    padding: 0;
+    margin-bottom: var(--fz-h3);
+    line-height: 140%;
+    color: var(--text-color-light);
+}
+
+.endorsements .card a {
+    color: inherit;
+}
+
+.endorsements .card a:hover {
+    color: var(--primary)
+}
+
+.endorsements .card a::after {
+    content: " [↗]";
+}
+
+.endorsements .card .person img {
+    border-radius: 5000px;
+}
+
+.endorsements .card .person-details p {
+    font-size: var(--fz-small-body);
+    color: var(--text-color-lighter);
+}
+
+.endorsements .card .person {
+    display: flex;
+    gap: var(--fz-small-body);
+    align-items: center;
+}
+
+.endorsements .card .person img {
+    height: calc(2* var(--fz-big-body));
+}
+
+.endorsements .card .person-details p {
+    font-weight: normal;
+}

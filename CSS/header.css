@@ -110,3 +110,18 @@ h1 {
         font-size: calc(var(--fz-h2) * 1.15);
     }
 }
+
+.header-text {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    transform: translateY(calc(-0.5 * var(--fz-small-body)));
+}
+
+.small-p {
+    font-size: var(--fz-small-body);
+    color: var(--text-color-lighter);
+    width: 100%;
+    max-width: 280px;
+    font-family: 'General Sans', sans-serif !important;
+}

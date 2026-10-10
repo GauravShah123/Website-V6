@@ -1,0 +1,146 @@
+/* Site footer, "made with love" bar and scroll-to-top button. */
+
+.ending {
+    color: var(--text-color);
+    background-color: var(--background-light);
+    padding: var(--fz-big-body);
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--fz-h3);
+    color: var(--white);
+    background-color: var(--background);
+    padding: var(--fz-h3);
+    border-top: 1px solid var(--text-color-lightest);
+    margin-top: calc(1 * var(--fz-h3));
+}
+
+.footer-about p {
+    font-size: var(--fz-small-body);
+    width: 400px;
+    color: var(--text-color-lighter);
+}
+
+.footer-about img {
+    margin-bottom: var(--fz-small-body);
+    height: var(--fz-h3);
+}
+
+.footer-links-columns-wrapper {
+    display: flex;
+    gap: var(--fz-h3);
+}
+
+.footer-links-column {
+    font-size: var(--fz-body);
+    display: flex;
+    justify-content: start;
+    gap: var(--fz-small-body);
+    align-items: start;
+    flex-direction: column;
+    color: var(--text-color-lighter);
+}
+
+.footer-links-column h3 {
+    font-size: var(--fz-body);
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.footer-links-column ul {
+    list-style: none;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links-column ul li a {
+    display: flex;
+    align-items: center
+}
+
+.footer-links-column ul li a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.footer-links-column ul li a span.material-icons-outlined {
+    font-size: calc(var(--fz-body) * .8) !important
+}
+
+.footer-case-studies {
+    padding-right: var(--fz-big-body);
+}
+
+footer button {
+    display: flex;
+    font-size: var(--fz-body);
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--fz-small-body) / 2);
+    margin-top: var(--fz-h4);
+}
+
+footer button:hover {
+    background-color: var(--p);
+}
+
+.footer-links-column ul li a {
+    text-decoration: none;
+    color: inherit
+}
+
+.footer-links-column li,
+.footer-links-column li span {
+    font-size: var(--fz-small-body);
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: var(--fz-h3);
+    right: var(--fz-h3);
+    height: calc(var(--fz-big-body) * 2);
+    width: calc(var(--fz-big-body) * 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-light);
+    backdrop-filter: blur(15px);
+    color: var(--text-color);
+}
+
+@media (max-width: 1100px) {
+    .footer-case-studies {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    footer {
+        margin-top: calc(2 * var(--fz-h3));
+        flex-direction: column;
+        padding: var(--fz-h3);
+    }
+
+    footer .ending {
+        padding: var(--fz-big-body) var(--fz-h1);
+    }
+
+    footer .footer-contact {
+        gap: var(--fz-small-body);
+    }
+
+    footer .footer-about p {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-links-columns-wrapper {
+        flex-direction: column;
+    }
+}

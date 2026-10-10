@@ -1,24 +1,15 @@
 @import url("./utilities.css");
 @import url("./cursor.css");
 
-/* :root {
-    --fz-h1: 10vw;
-    --fz-h2: 5vw;
-    --fz-h3: 3.25vw;
-    --fz-h4: 2vw;
-    --fz-big-body: 22px;
-    --fz-body: 18px;
-    --fz-small-body: 16px;
-
-    --background: #111;
-    --background-light: #222;
-    --text-color: #fff;
-    --text-color-light: #ddd;
-    --text-color-lighter: #aaa;
-    --text-color-lightest: #444;
-    --primary: #0AEBAF;
-    --accent2: #ee8d00;
-} */
+/* The About page is type-led: keep its headline and intro at the original
+   large scale (still capped on very wide screens). Mobile keeps the shared
+   scale from utilities.css. */
+@media (min-width: 601px) {
+    :root {
+        --fz-h1: clamp(3rem, 10vw, 9rem);
+        --fz-h2: clamp(2rem, 5vw, 4.5rem);
+    }
+}
 
 .facts {
     height: 70vh;
@@ -126,7 +117,7 @@
 .apart {
     padding: var(--fz-h3);
     background-color: var(--text-color);
-    margin-top: calc(var(--fz-h1) * 2);
+    margin-top: calc(var(--page-inset) * 2);
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -135,7 +126,7 @@
 .apart::before {
     content: "";
     width: 150%;
-    height: calc(var(--fz-h1) * 10);
+    height: calc(var(--page-inset) * 10);
     background-color: var(--text-color);
     position: absolute;
     left: 50%;

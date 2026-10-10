@@ -7,7 +7,6 @@
     padding: var(--fz-small-body) 4px;
     margin: var(--fz-h3);
     border-bottom: 1px solid var(--text-color-lightest);
-    /* margin-bottom: var(--fz-h4); */
 }
 
 .title-section .title {
@@ -28,4 +27,8 @@
 
 .title-section .cta:hover {
     opacity: 1;
+}
+
+.title-section#compass {
+    margin-bottom: var(--fz-h4);
 }

@@ -1,21 +1,18 @@
 h1{
     font-family: "General Sans", sans-serif;
     line-height: 120%;
-    /* letter-spacing: -1px; */
-    /* font-weight: 500; */
-    font-size: calc(var(--fz-h1)/3);
+
+    font-size: var(--fz-h3);
 }
 
 main#overview p{
     font-size: var(--fz-small-body);
     color: var(--text-color-light);
     line-height: 160% !important;
-    /* margin-inline: var(--fz-h1); */
-
 }
 
 main#overview{
-  margin-top: calc(70px + var(--fz-h3)); 
+  margin-top: calc(70px + var(--fz-h3));
   grid-template-columns: 1fr;
   grid-gap: var(--fz-small-body);
   padding-bottom: var(--fz-h2);
@@ -36,10 +33,10 @@ main#overview img{
 
 @media (min-width: 900px) {
     main#overview>*{
-        margin-inline: var(--fz-h1);
+        margin-inline: var(--page-inset);
     }
     main#overview>p{
-        margin-inline: var(--fz-h1);
+        margin-inline: var(--page-inset);
     }
     main#overview>picture{
         margin-inline: 0;
@@ -47,11 +44,6 @@ main#overview img{
     main#overview img{
         margin-top: var(--fz-h3);
     }
-
-    /* ul.tags{
-        margin-bottom: 8px;
-        margin-top: 12px;
-    } */
 }
 
 @media (max-width: 900px) {
@@ -84,7 +76,6 @@ ul.checkbox ul ul li{
 
 .tag{
     background-color: transparent;
-    /* border: 1px solid var(--text-color-lighter); */
 }
 
 .tags {
@@ -93,12 +84,11 @@ ul.checkbox ul ul li{
     gap: var(--fz-small-body);
     margin-bottom: var(--fz-small-body);
     flex-wrap: wrap;
-    /* margin-top: var(--fz-small-body); */
 }
 
 .tag {
     padding: calc((var(--fz-small-body)) / 2) var(--fz-small-body);
-    /* background-color: #222; */
+
     border-radius: 4px;
     font-size: var(--fz-small-body);
 }

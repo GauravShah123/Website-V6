@@ -7,7 +7,6 @@
     width: 66%;
     color: var(--text-color-lighter);
     display: none;
-
 }
 
 .blogs-cards .card {
@@ -32,29 +31,6 @@
     }
 }
 
-/* 
-.blogs-cards .card{
-    padding: 0;
-    border: none;
-    height: 350px;
-}
-
-.blogs-cards .card.work img{
-    object-fit: cover;
-}
-
-.blogs-cards .card .card-content{
-    position: absolute;
-    left: 0;
-    top: -4px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    padding: var(--fz-small-body) var(--fz-big-body);
-    background: linear-gradient(0deg, #111111f5, #11111166);
-} */
-
 .three-grid ul.tags {
     margin-bottom: 8px;
     margin-top: 8px;
@@ -62,11 +38,10 @@
 
 .blogs-cards .card .card-content .tag {
     background-color: transparent;
-    /* border: 1px solid var(--text-color-lighter); */
 }
 
 header {
-    margin: var(--fz-h4) calc(2.5 * var(--fz-h1));
+    margin: var(--fz-h4) calc(2.5 * var(--page-inset));
     margin-top: 150px;
     overflow: hidden;
     color: var(--text-color);
@@ -85,13 +60,8 @@ header>img {
     margin-bottom: var(--fz-small-body);
 }
 
-/* main#overview{
-    padding: var(--fz-small-body) calc(2.5 * var(--fz-h1)) var(--fz-h2) calc(2.5*var(--fz-h1));
-} */
-
 main#overview>* {
     padding: 0;
-    /* margin-inline: var(--fz-h1); */
 }
 
 main#overview>img {
@@ -105,7 +75,6 @@ main>h2 {
 main>h3 {
     font-size: var(--fz-big-body);
 }
-
 
 @media (max-width: 900px) {
     main>h2 {

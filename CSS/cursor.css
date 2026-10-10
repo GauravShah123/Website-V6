@@ -1,22 +1,3 @@
-/* :root {
-    --fz-h1: 10vw;
-    --fz-h2: 5vw;
-    --fz-h3: 3.25vw;
-    --fz-h4: 2vw;
-    --fz-big-body: 22px;
-    --fz-body: 18px;
-    --fz-small-body: 16px;
-
-    --background: #111;
-    --background-light: #222;
-    --text-color: #fff;
-    --text-color-light: #ddd;
-    --text-color-lighter: #aaa;
-    --text-color-lightest: #444;
-    --primary: #0AEBAF;
-    --accent2: #ee8d00;
-} */
-
 /* Code copied from: https://codepen.io/yp786/pen/MWodGVr
 Author: yash
 Name: Custom Cursor - Circle Follows The Mouse Pointer
@@ -137,3 +118,9 @@ Date retrieved: Nov. 18, 2023 */
 }
 
 /* Copied code ends */
+
+@media (max-width: 800px) {
+    #cursor {
+        display: none;
+    }
+}
