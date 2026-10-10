@@ -8,7 +8,6 @@
     font-weight: lighter;
     font-family: "General Sans", sans-serif;
     font-size: var(--fz-h3);
-    line-height: 1;
     margin-top: 0;
     margin-bottom: var(--fz-body);
 }
@@ -17,12 +16,10 @@
     color: var(--text-color);
     font-weight: bold;
     font-size: var(--fz-h4);
-    line-height: 1.2;
 }
 
 .compass-point p {
     margin-top: 12px;
     font-size: var(--fz-body);
-    line-height: var(--lh-long);
     color: var(--text-color-lighter);
 }

@@ -16,10 +16,7 @@
     --fz-small-body: 16px;
     --fz-card-title: clamp(2rem, 5vw, 4.5rem);
 
-    /* Reading rhythm: ~1.6 line height for short copy, a little more for
-       long-form, and a paragraph gap of about one line. */
-    --lh-body: 1.6;
-    --lh-long: 1.7;
+    /* Gap between paragraphs, about one line. */
     --space-para: 1.25rem;
 
     /* Horizontal page gutter for long-form pages (case studies, blogs).

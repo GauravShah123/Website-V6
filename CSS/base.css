@@ -35,7 +35,7 @@ section {
 
 p {
     color: var(--text-color);
-    line-height: var(--lh-body);
+    line-height: 140%;
     font-size: var(--fz-big-body);
 }
 

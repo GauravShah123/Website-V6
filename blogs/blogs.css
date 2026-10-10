@@ -8,7 +8,7 @@ h1{
 main#overview p{
     font-size: var(--fz-small-body);
     color: var(--text-color-light);
-    line-height: var(--lh-long) !important;
+    line-height: 160% !important;
 }
 
 main#overview{
