@@ -44,14 +44,14 @@
         <div class="gaurav-wrapper">
             <h1> Gaurav Shah</h1>
             <div class="gaurav-inner-wrapper">
-                <span class="seeking">Seeking roles for Jan 2026</span>
+                <span class="seeking">Seeking roles for Jan 2027</span>
 
                 <p class="facts-inner">eats a lot of cereal.</p>
             </div>
         </div>
     </section>
     <section class="about-text">Gaurav Shah is a <span class="highlight" onclick="scrollToPM()"
-            cursor-class="find-out-why-pm">product manager & designer</span> who loves working in lean teams to build great products.</section>
+            cursor-class="find-out-why-pm">builder</span> who loves working in lean teams to solve complex problems.</section>
        
         <!-- <section class="about-text">Gaurav Shah is a <span class="highlight" onclick="scrollToPM()"
             cursor-class="find-out-why-pm">product manager & designer</span> currently studying <span class="GBDA">GBDA</span> at the University of
@@ -287,8 +287,26 @@
     </section> -->
     <section class="why-pm">
         <h1>What is Gaurav upto?</h1>
-        <p>Apart from the hunt for my next role, I’ve been diving into <b>data driven design</b>. I’m learning how to set the right success metrics and how to analyze data in funnels to make better design decisions. I’ve made a lot of design calls based on qualitative data (ex. user interviews), but I know that quantitative data can be just as useful, if not more, while costing significantly less. If you want to read more about what I'm learning, check out <a href="/#blogs" title="Blogs section on the home page"> my blog articles</a> :D</p>
+        <p id="grad-status">I'm <b id="grad-countdown">60 days</b> away from graduating university (December 8, 2026).</p><br>
+        <p>I'm looking for my next role as a designer, product manager, or deployed engineer. I like sitting where research, strategy, and craft meet: turning usage data into prioritized bets, running experiments to de-risk them, and shipping fast with tools like Figma, v0, SQL, and Python along the way.</p><br>
+        <p>I recently wrapped up my time at BetterUp as a product manager, and it was an incredible experience. It taught me a lot about diving deeper into data, running experiments, and building under ambiguity in a B2B2C environment. Right now, I'm working on getting more technical and getting better at risk management: naming my hypotheses and risks earlier, and building while the environment is still ambiguous.</p><br>
+        <p>If you want to read more about what I'm doing, check out <a href="/#blogs" title="Blogs section on the home page"> my blog articles</a> :D</p>
     </section>
+    <script>
+        // Live countdown to graduation; swaps to a past-tense line once the date passes.
+        (function () {
+            var graduationDate = new Date('2026-12-08T00:00:00');
+            var statusEl = document.getElementById('grad-status');
+            if (!statusEl) return;
+            var msPerDay = 24 * 60 * 60 * 1000;
+            var daysLeft = Math.ceil((graduationDate - new Date()) / msPerDay);
+            if (daysLeft > 0) {
+                document.getElementById('grad-countdown').textContent = daysLeft + (daysLeft === 1 ? ' day' : ' days');
+            } else {
+                statusEl.textContent = "I've graduated from university!";
+            }
+        })();
+    </script>
     <footer-content></footer-content>
 
     <style>

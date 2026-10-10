@@ -28,6 +28,58 @@
                 height: 400px;
             }
         }
+
+        /* Page-only layout fixes for Hamming 2.0. Scoped under .content so
+           nothing here touches the shared work.css used by other case studies. */
+
+        /* Some source screenshots (Slack message, meme, small diagrams) were
+           sized for a normal reading width, not the full content column.
+           Cap them at a regular reading width instead of the site-wide
+           "img { width: 100% }" stretch, which blew them up edge to edge.
+           Bump --regular-img-width if a future image still looks oversized. */
+        .content {
+            --regular-img-width: 640px;
+        }
+
+        .content img.img-regular {
+            width: 100%;
+            max-width: var(--regular-img-width);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Unordered lists didn't get the same indent/spacing as ordered lists,
+           so bullets sat flush against the edge and felt cramped. Match them,
+           and give both list types breathing room before the next element. */
+        .content ul li,
+        .content ol li {
+            font-size: var(--fz-body);
+            line-height: 150%;
+        }
+
+        .content ul li {
+            margin-left: var(--fz-big-body);
+            margin-top: var(--fz-small-body);
+        }
+
+        .content ul,
+        .content ol {
+            margin-bottom: var(--fz-big-body);
+        }
+
+        /* The NDA disclaimer needs to actually stand out, not blend into the
+           dark background like a regular callout. */
+        .content .heads-up-callout.callout {
+            background-color: #2F6FED;
+            border: none;
+        }
+
+        .content .heads-up-callout .callout-content,
+        .content .heads-up-callout .callout-content p,
+        .content .heads-up-callout .callout-content b {
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -53,19 +105,19 @@
             <h2>Context & Stakes</h2>
 
             <h3>Where we started</h3>
-            <img src="/works/Hamming/customer-churn-message.png" alt="Slack message: a customer tells our CEO they're switching to a competitor because of too many UX issues, and the CEO asks Gaurav Shah to look into it.">
+            <img class="img-regular" src="/works/Hamming/customer-churn-message.png" alt="Slack message: a customer tells our CEO they're switching to a competitor because of too many UX issues, and the CEO asks Gaurav Shah to look into it.">
             <p>I joined Hamming AI as the first product hire. The product had been built for a year without a designer, which left us with heavy UX debt: inconsistent UI, messy workflows, and no design system to hold it together. Customers were starting to churn. The breaking point came when one told our CEO they were leaving for a competitor because of "too many UX issues."</p>
 
             <h3>The market we were in</h3>
             <p>AI was moving fast. Competitors had already cloned our product and were racing to add features. In that environment, shipping new functionality was critical. Growth was the metric that mattered for raising the next round. But churn was just as dangerous. In early-stage startups, your best sales channel is word of mouth. If existing customers left unhappy, we weren't just losing revenue, we were losing our loudest advocates.</p>
-            <img src="/works/Hamming/growth-vs-retention-fork.png" alt="A fork in the road: one path leads to shipping features for growth, the other to fixing UX for retention.">
+            <img class="img-regular" src="/works/Hamming/growth-vs-retention-fork.png" alt="A fork in the road: one path leads to shipping features for growth, the other to fixing UX for retention.">
 
             <h3>The stakes with enterprise</h3>
             <p>At the same time, we were negotiating with Cisco. Enterprise buyers don't sign deals because of great UX. But they can walk away if the product feels confusing or unpolished. Testing AI voice agents is already complex. If we made it harder than it needed to be, we risked being dismissed. With competitors priced similarly, usability could tip the scales. Churn threatened our base. Usability threatened our biggest deal.</p>
 
             <h3>The paradox</h3>
             <p>This put us in a bind. To land Cisco, the product had to become more powerful. To keep current users, it had to feel simpler. More capability usually means more complexity. Our challenge was to deliver both at once, without breaking the product or the team.</p>
-            <img src="/works/Hamming/paradox-loop.png" alt="A loop diagram: adding features to land enterprise customers makes the product feel too complex, so features get removed to simplify it, which then makes it less powerful for enterprise customers, and the cycle repeats.">
+            <img class="img-regular" src="/works/Hamming/paradox-loop.png" alt="A loop diagram: adding features to land enterprise customers makes the product feel too complex, so features get removed to simplify it, which then makes it less powerful for enterprise customers, and the cycle repeats.">
 
             <h3>Constraints on execution</h3>
             <p>The design team was two people, including me. Engineering was stretched thin across backend work, bug fixes, and a new marketing site. There was no official deadline, but everyone felt the clock ticking. Founder-led sales meant product tradeoffs had direct revenue impact. Nobody debated whether UX debt existed. The question was how much to fix now versus how much to ship. My role was to make the tradeoffs clear and set a path forward that didn't sacrifice growth or retention.</p>
@@ -89,7 +141,7 @@
             <p>We began each session by making participants feel comfortable. We told them we were here to listen, not to judge, and that we would handle the prioritization on our end. Then we asked them to walk us through their process: what are their goals, their context, and their motivations? Who else in their org uses the tool, and how? Where do they get stuck? At the end, we'd share early patterns from other interviews and invite them to react or add new context.</p>
 
             <h3>The product flow in theory</h3>
-            <img src="/works/Hamming/product-flow-diagram.png" alt="How our product is supposed to work (simplified): Scenario Collections, Custom Metrics, and Phone Numbers all feed into an AI Voice Agent Test.">
+            <img class="img-regular" src="/works/Hamming/product-flow-diagram.png" alt="How our product is supposed to work (simplified): Scenario Collections, Custom Metrics, and Phone Numbers all feed into an AI Voice Agent Test.">
             <p>To understand why users struggled, it helps to explain the basics of how Hamming worked at the time. Testing an AI voice agent required three separate pieces:</p>
             <ul>
                 <li><strong>Scenario Collections</strong>: sets of test cases.</li>
@@ -100,12 +152,12 @@
 
             <h3>What we observed in practice</h3>
             <p>Users regularly got lost connecting the dots. They struggled to understand how Scenario Collections, Custom Metrics, and Phone Numbers fit together. Incompatible metrics were hidden in the UI, leaving users confused about why they couldn't find what they needed. They often didn't know what to change to make a test run.</p>
-            <img src="/works/Hamming/interview-quotes.png" alt="Quotes from user interviews, including: There is no clear connection between the different concepts you use. To test one agent, I need to go to so many different tabs. It takes too long to run a test.">
+            <img class="img-regular" src="/works/Hamming/interview-quotes.png" alt="Quotes from user interviews, including: There is no clear connection between the different concepts you use. To test one agent, I need to go to so many different tabs. It takes too long to run a test.">
             <p>Interviews revealed something deeper: this wasn't just about clunky navigation. It was a mismatch in mental models. Users didn't think in terms of scenarios, metrics, and phone numbers as independent objects. They thought in terms of <em>voice agents</em>. For them, a voice agent was the central thread, and everything else belonged to it. That framing was missing entirely from the product.</p>
 
             <h3>The consequences</h3>
             <p>The result was unnecessary training, patchwork workarounds, and a steep learning curve for every new team member. Customers hacked together their own methods to extract value from what was, on paper, a technically powerful tool. Our core value prop, AI agent testing, was strong. But if customers couldn't unlock that value without friction, the business was at risk. The research validated what we had suspected: the product wasn't just messy. It was actively pushing people away.</p>
-            <img src="/works/Hamming/powerful-not-usable.png" alt="Statement card: Technically powerful ≠ Usable.">
+            <img class="img-regular" src="/works/Hamming/powerful-not-usable.png" alt="Statement card: Technically powerful ≠ Usable.">
 
             <h2>Workshops: Making the Product Understandable</h2>
 
@@ -206,8 +258,8 @@
                 <li><strong>Repurposed top bar:</strong> now used for page titles, breadcrumbs, and page-specific actions, helping users stay oriented while working across multiple tables and data views.</li>
             </ol>
             <img src="/works/Hamming/navbar-new.png" alt="Simplified mockup of the redesigned Hamming AI sidebar navigation, condensed and organized by Scenarios, Monitoring, Custom Metrics, Prompts, and Chat Agents.">
-            <img src="/works/Hamming/navbar-announcement-1.png" alt="Marketing card announcing the navigation update to users: 'Our sidebar has a new look,' with a refreshed, cleaner, more polished sidebar for smoother navigation.">
-            <img src="/works/Hamming/navbar-announcement-2.png" alt="Marketing card announcing the navigation update to users: 'All your preferences, now in one place,' letting users update theme, workspace, and credits from their profile.">
+            <img class="img-regular" src="/works/Hamming/navbar-announcement-1.png" alt="Marketing card announcing the navigation update to users: 'Our sidebar has a new look,' with a refreshed, cleaner, more polished sidebar for smoother navigation.">
+            <img class="img-regular" src="/works/Hamming/navbar-announcement-2.png" alt="Marketing card announcing the navigation update to users: 'All your preferences, now in one place,' letting users update theme, workspace, and credits from their profile.">
             <p>For our users, who spent most of their time cross-referencing tables and analyzing data, the cleaner layout made a real difference. It kept their workspace focused, reduced distractions, and made new features easier to discover.</p>
             <p>The impact wasn't just external. This navbar redesign was the first thing we shared with the engineering team. It created energy and buy-in for the broader UI 2.0 effort. Sometimes, a small, tangible win is the best way to get momentum for a big change.</p>
 
