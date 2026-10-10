@@ -13,7 +13,7 @@ h4.not-bold-heading {
 }
 
 main p {
-    margin-bottom: var(--fz-small-body);
+    margin-bottom: var(--space-para);
 }
 
 header {
@@ -191,7 +191,7 @@ h3.list-h3 {
 
 p {
     font-size: var(--fz-body);
-    line-height: 150%;
+    line-height: var(--lh-long);
 }
 
 .callout.no-top-margin,

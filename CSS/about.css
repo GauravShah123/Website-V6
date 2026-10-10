@@ -302,6 +302,7 @@ p.caption{
 
 .why-pm p{
     font-size: var(--fz-body);
+    line-height: var(--lh-long);
     color: var(--text-color-light);
 }
 

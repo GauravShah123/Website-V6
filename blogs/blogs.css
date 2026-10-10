@@ -8,13 +8,13 @@ h1{
 main#overview p{
     font-size: var(--fz-small-body);
     color: var(--text-color-light);
-    line-height: 160% !important;
+    line-height: var(--lh-long) !important;
 }
 
 main#overview{
   margin-top: calc(70px + var(--fz-h3));
   grid-template-columns: 1fr;
-  grid-gap: var(--fz-small-body);
+  grid-gap: var(--space-para);
   padding-bottom: var(--fz-h2);
 }
 
