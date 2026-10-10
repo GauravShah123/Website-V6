@@ -99,6 +99,13 @@
     padding: var(--fz-h3);
 }
 
+/* Intro line matches the name's width (--name-width is set in JS/about.js). */
+@media (min-width: 768px) {
+    .about-text {
+        max-width: calc(var(--name-width, 55vw) + 2 * var(--fz-h3));
+    }
+}
+
 .about-text:hover{
     color: var(--text-color-lightest);
 }
@@ -257,7 +264,7 @@
 }
 
 .why-pm p{
-    width:65%;
+    width: 50%;
 }
 
 .marquee-content {
