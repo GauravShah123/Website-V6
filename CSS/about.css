@@ -99,6 +99,13 @@
     padding: var(--fz-h3);
 }
 
+/* Intro line matches the name's width (--name-width is set in JS/about.js). */
+@media (min-width: 768px) {
+    .about-text {
+        max-width: calc(var(--name-width, 55vw) + 2 * var(--fz-h3));
+    }
+}
+
 .about-text:hover{
     color: var(--text-color-lightest);
 }
@@ -256,8 +263,10 @@
     border: none;
 }
 
+/* Body copy shares the name's width (--name-width, ~60% of the page, set in
+   JS/about.js) so the headline, intro and both sections end on one right edge. */
 .why-pm p{
-    width:65%;
+    width: var(--name-width, 60%);
 }
 
 .marquee-content {

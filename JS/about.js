@@ -16,6 +16,16 @@ document.querySelector(".about-text").addEventListener("mousemove", function (ev
     }
 })
 
+// Share the name's width with the intro line below it, so both end on the same right edge.
+const nameWrapper = document.querySelector('.gaurav-wrapper');
+function syncNameWidth() {
+    document.documentElement.style.setProperty('--name-width', nameWrapper.offsetWidth + 'px');
+}
+syncNameWidth();
+window.addEventListener('resize', syncNameWidth);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncNameWidth);
+new ResizeObserver(syncNameWidth).observe(nameWrapper);
+
 function scrollToPM() {
     let yPos = document.getElementById('why-pm').getBoundingClientRect().top + window.scrollY - 70;
     window.scrollTo({ top: yPos, behavior: 'smooth' });

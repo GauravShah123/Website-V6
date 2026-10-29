@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <!-- Template -->
     <base href="/">
     <script src="/JS/app.js" defer></script>
@@ -32,36 +33,28 @@
         /* Page-only layout fixes for Hamming 2.0. Scoped under .content so
            nothing here touches the shared work.css used by other case studies. */
 
-        /* Some source screenshots (Slack message, meme, small diagrams) were
-           sized for a normal reading width, not the full content column.
-           Cap them at a regular reading width instead of the site-wide
-           "img { width: 100% }" stretch, which blew them up edge to edge.
-           Bump --regular-img-width if a future image still looks oversized. */
+        /* Body text is inset by --page-inset inside the content box. Images,
+           captions and the note below use the same inset, so every block
+           shares the exact same left and right edges as the text. */
         .content {
-            --regular-img-width: 640px;
+            --text-indent: var(--page-inset);
         }
 
-        .content img.img-regular {
-            width: 100%;
-            max-width: var(--regular-img-width);
+        @media (max-width: 700px) {
+            .content {
+                --text-indent: 0px;
+            }
+        }
+
+        .content img {
             display: block;
-            margin-left: 0;
-            margin-right: auto;
+            width: calc(100% - 2 * var(--text-indent));
+            margin-inline: var(--text-indent);
         }
 
-        /* The caption JS/work.js inserts after each image spans the full
-           content column by default, which centers its text under the wrong
-           box once the image above it is capped to a regular width. Match
-           the caption's box to the image so the two stay aligned. */
-        .content img.img-regular + p.caption {
-            max-width: var(--regular-img-width);
-            margin-left: 0;
-            margin-right: auto;
-        }
-
-        /* Captions are auto-generated site-wide from each image's alt text
-           (see JS/work.js), which is written long for accessibility. Swap in
-           a short, page-authored caption via data-caption where one is set. */
+        /* Captions are generated from each image's alt text (JS/work.js), which
+           is written long for accessibility. The script at the bottom of this
+           page swaps in the short data-caption instead (empty = no caption). */
 
         /* Unordered lists didn't get the same indent/spacing as ordered lists,
            so bullets sat flush against the edge and felt cramped. Match them,
@@ -82,17 +75,38 @@
             margin-bottom: var(--fz-big-body);
         }
 
-        /* The NDA disclaimer needs to actually stand out, not blend into the
-           dark background like a regular callout. */
-        .content .heads-up-callout.callout {
-            background-color: #1E3A8A;
-            border: none;
+        /* NDA note: a quiet neutral panel with a small icon beside a bold
+           title and muted body, the pattern dark-mode products (Vapi, Open)
+           use for notices, instead of loud colour. */
+        .content .nda-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: calc(var(--fz-h3) * 0.9) var(--text-indent);
+            padding: 16px 20px;
+            background-color: var(--background-light);
+            border: 1px solid #333;
+            border-radius: 8px;
         }
 
-        .content .heads-up-callout .callout-content,
-        .content .heads-up-callout .callout-content p,
-        .content .heads-up-callout .callout-content b {
-            color: #fff;
+        .content .nda-note .nda-note-icon {
+            flex: none;
+            margin-top: 1px;
+            font-size: 20px !important;
+            color: var(--text-color-lighter);
+        }
+
+        .content .nda-note p {
+            margin: 0;
+            font-size: var(--fz-small-body);
+            line-height: 150%;
+            color: var(--text-color-lighter);
+        }
+
+        .content .nda-note p.nda-note-title {
+            margin-bottom: 4px;
+            font-weight: 600;
+            color: var(--text-color);
         }
     </style>
 </head>
@@ -119,19 +133,19 @@
             <h2>Context & Stakes</h2>
 
             <h3>Where we started</h3>
-            <img class="img-regular" data-caption="" src="/works/Hamming/customer-churn-message.png" alt="Slack message: a customer tells our CEO they're switching to a competitor because of too many UX issues, and the CEO asks Gaurav Shah to look into it.">
+            <img data-caption="" src="/works/Hamming/customer-churn-message.png" alt="Slack message: a customer tells our CEO they're switching to a competitor because of too many UX issues, and the CEO asks Gaurav Shah to look into it.">
             <p>I joined Hamming AI as the first product hire. The product had been built for a year without a designer, which left us with heavy UX debt: inconsistent UI, messy workflows, and no design system to hold it together. Customers were starting to churn. The breaking point came when one told our CEO they were leaving for a competitor because of "too many UX issues."</p>
 
             <h3>The market we were in</h3>
             <p>AI was moving fast. Competitors had already cloned our product and were racing to add features. In that environment, shipping new functionality was critical. Growth was the metric that mattered for raising the next round. But churn was just as dangerous. In early-stage startups, your best sales channel is word of mouth. If existing customers left unhappy, we weren't just losing revenue, we were losing our loudest advocates.</p>
-            <img class="img-regular" data-caption="" src="/works/Hamming/growth-vs-retention-fork.png" alt="A fork in the road: one path leads to shipping features for growth, the other to fixing UX for retention.">
+            <img data-caption="Growth or retention?" src="/works/Hamming/growth-vs-retention-fork.png" alt="A fork in the road: one path leads to shipping features for growth, the other to fixing UX for retention.">
 
             <h3>The stakes with enterprise</h3>
             <p>At the same time, we were negotiating with Cisco. Enterprise buyers don't sign deals because of great UX. But they can walk away if the product feels confusing or unpolished. Testing AI voice agents is already complex. If we made it harder than it needed to be, we risked being dismissed. With competitors priced similarly, usability could tip the scales. Churn threatened our base. Usability threatened our biggest deal.</p>
 
             <h3>The paradox</h3>
             <p>This put us in a bind. To land Cisco, the product had to become more powerful. To keep current users, it had to feel simpler. More capability usually means more complexity. Our challenge was to deliver both at once, without breaking the product or the team.</p>
-            <img class="img-regular" data-caption="" src="/works/Hamming/paradox-loop.png" alt="A loop diagram: adding features to land enterprise customers makes the product feel too complex, so features get removed to simplify it, which then makes it less powerful for enterprise customers, and the cycle repeats.">
+            <img data-caption="The paradox: power vs. simplicity" src="/works/Hamming/paradox-loop.png" alt="A loop diagram: adding features to land enterprise customers makes the product feel too complex, so features get removed to simplify it, which then makes it less powerful for enterprise customers, and the cycle repeats.">
 
             <h3>Constraints on execution</h3>
             <p>The design team was two people, including me. Engineering was stretched thin across backend work, bug fixes, and a new marketing site. There was no official deadline, but everyone felt the clock ticking. Founder-led sales meant product tradeoffs had direct revenue impact. Nobody debated whether UX debt existed. The question was how much to fix now versus how much to ship. My role was to make the tradeoffs clear and set a path forward that didn't sacrifice growth or retention.</p>
@@ -155,7 +169,7 @@
             <p>We began each session by making participants feel comfortable. We told them we were here to listen, not to judge, and that we would handle the prioritization on our end. Then we asked them to walk us through their process: what are their goals, their context, and their motivations? Who else in their org uses the tool, and how? Where do they get stuck? At the end, we'd share early patterns from other interviews and invite them to react or add new context.</p>
 
             <h3>The product flow in theory</h3>
-            <img class="img-regular" data-caption="How our product is supposed to work (simplified)" src="/works/Hamming/product-flow-diagram.png" alt="How our product is supposed to work (simplified): Scenario Collections, Custom Metrics, and Phone Numbers all feed into an AI Voice Agent Test.">
+            <img data-caption="How the product works, simplified" src="/works/Hamming/product-flow-diagram.png" alt="How our product is supposed to work (simplified): Scenario Collections, Custom Metrics, and Phone Numbers all feed into an AI Voice Agent Test.">
             <p>To understand why users struggled, it helps to explain the basics of how Hamming worked at the time. Testing an AI voice agent required three separate pieces:</p>
             <ul>
                 <li><strong>Scenario Collections</strong>: sets of test cases.</li>
@@ -166,12 +180,12 @@
 
             <h3>What we observed in practice</h3>
             <p>Users regularly got lost connecting the dots. They struggled to understand how Scenario Collections, Custom Metrics, and Phone Numbers fit together. Incompatible metrics were hidden in the UI, leaving users confused about why they couldn't find what they needed. They often didn't know what to change to make a test run.</p>
-            <img class="img-regular" data-caption="Quotes from user interviews" src="/works/Hamming/interview-quotes.png" alt="Quotes from user interviews, including: There is no clear connection between the different concepts you use. To test one agent, I need to go to so many different tabs. It takes too long to run a test.">
+            <img data-caption="What users told us" src="/works/Hamming/interview-quotes.png" alt="Quotes from user interviews, including: There is no clear connection between the different concepts you use. To test one agent, I need to go to so many different tabs. It takes too long to run a test.">
             <p>Interviews revealed something deeper: this wasn't just about clunky navigation. It was a mismatch in mental models. Users didn't think in terms of scenarios, metrics, and phone numbers as independent objects. They thought in terms of <em>voice agents</em>. For them, a voice agent was the central thread, and everything else belonged to it. That framing was missing entirely from the product.</p>
 
             <h3>The consequences</h3>
             <p>The result was unnecessary training, patchwork workarounds, and a steep learning curve for every new team member. Customers hacked together their own methods to extract value from what was, on paper, a technically powerful tool. Our core value prop, AI agent testing, was strong. But if customers couldn't unlock that value without friction, the business was at risk. The research validated what we had suspected: the product wasn't just messy. It was actively pushing people away.</p>
-            <img class="img-regular" data-caption="" src="/works/Hamming/powerful-not-usable.png" alt="Statement card: Technically powerful ≠ Usable.">
+            <img data-caption="" src="/works/Hamming/powerful-not-usable.png" alt="Statement card: Technically powerful ≠ Usable.">
 
             <h2>Workshops: Making the Product Understandable</h2>
 
@@ -227,7 +241,7 @@
                 <li>A future-state process diagram that reflected what we wanted users to experience</li>
             </ul>
             <p>From this, we prioritized three focus areas. The biggest insight was that we could (and should) do far more to hand-hold users through pre-deployment testing. The workshops also helped us turn customer insights into actionable items instead of just a laundry list of complaints.</p>
-            <img data-caption="Customer journey mapping workshop" src="/works/Hamming/customer-journey-workshop.png" alt="Customer journey mapping workshop board, organized by jobs-to-be-done, user actions, goals and experiences, feelings and thoughts, pain points, and opportunities.">
+            <img data-caption="Customer journey workshop board" src="/works/Hamming/customer-journey-workshop.png" alt="Customer journey mapping workshop board, organized by jobs-to-be-done, user actions, goals and experiences, feelings and thoughts, pain points, and opportunities.">
 
             <h3>Shared vision</h3>
             <p>With this foundation, we drafted mocks that showed how the product might look if split across multiple "zoom levels." This gave the team a concrete vision of the future product. For the first time, we weren't just fixing surface-level problems, we were aligning on how the system should work at its core.</p>
@@ -263,7 +277,7 @@
             <h3>Mini Case Study: NavBar Redesign</h3>
             <p>Our redesign began with something small: the navigation bar. Even this simple change carried very specific UX and business goals.</p>
             <p>The old navigation took up too much space without giving much back. It had a separate top bar just to hold account details. As the product grew, new tabs piled on until users with smaller screens actually had to scroll just to see all their options. That kind of friction wasn't sustainable, especially as we kept adding features.</p>
-            <img data-caption="Issues with the old navigation" src="/works/Hamming/navbar-old-issues.png" alt="Annotated screenshot of the previous navigation menu, flagging awkward alignment, a too-subtle active state with no hover state, missing breadcrumbs, and unused space at the top of the page.">
+            <img data-caption="Problems with the old navigation" src="/works/Hamming/navbar-old-issues.png" alt="Annotated screenshot of the previous navigation menu, flagging awkward alignment, a too-subtle active state with no hover state, missing breadcrumbs, and unused space at the top of the page.">
             <p>The new design addressed these issues directly:</p>
             <ol>
                 <li><strong>Condensed layout:</strong> created room to add new features without clutter.</li>
@@ -271,16 +285,17 @@
                 <li><strong>Integrated account settings:</strong> placed at the bottom of the nav, eliminating the top bar entirely and freeing up space for core actions.</li>
                 <li><strong>Repurposed top bar:</strong> now used for page titles, breadcrumbs, and page-specific actions, helping users stay oriented while working across multiple tables and data views.</li>
             </ol>
-            <img data-caption="The redesigned navbar" src="/works/Hamming/navbar-new.png" alt="Simplified mockup of the redesigned Hamming AI sidebar navigation, condensed and organized by Scenarios, Monitoring, Custom Metrics, Prompts, and Chat Agents.">
-            <img class="img-regular" data-caption="Announcing the update (1/2)" src="/works/Hamming/navbar-announcement-1.png" alt="Marketing card announcing the navigation update to users: 'Our sidebar has a new look,' with a refreshed, cleaner, more polished sidebar for smoother navigation.">
-            <img class="img-regular" data-caption="Announcing the update (2/2)" src="/works/Hamming/navbar-announcement-2.png" alt="Marketing card announcing the navigation update to users: 'All your preferences, now in one place,' letting users update theme, workspace, and credits from their profile.">
+            <img data-caption="The redesigned navigation" src="/works/Hamming/navbar-new.png" alt="Simplified mockup of the redesigned Hamming AI sidebar navigation, condensed and organized by Scenarios, Monitoring, Custom Metrics, Prompts, and Chat Agents.">
+            <img data-caption="Announcement: the new sidebar" src="/works/Hamming/navbar-announcement-1.png" alt="Marketing card announcing the navigation update to users: 'Our sidebar has a new look,' with a refreshed, cleaner, more polished sidebar for smoother navigation.">
+            <img data-caption="Announcement: preferences in one place" src="/works/Hamming/navbar-announcement-2.png" alt="Marketing card announcing the navigation update to users: 'All your preferences, now in one place,' letting users update theme, workspace, and credits from their profile.">
             <p>For our users, who spent most of their time cross-referencing tables and analyzing data, the cleaner layout made a real difference. It kept their workspace focused, reduced distractions, and made new features easier to discover.</p>
             <p>The impact wasn't just external. This navbar redesign was the first thing we shared with the engineering team. It created energy and buy-in for the broader UI 2.0 effort. Sometimes, a small, tangible win is the best way to get momentum for a big change.</p>
 
-            <div class="callout heads-up-callout">
-                <div class="callout-emoji">💡</div>
-                <div class="callout-content">
-                    <p class="heads-up">While I can't share much of the solution due to my NDA, we worked hard on a lot of big changes to how we structure and organize concepts on our platform. The navbar was just the beginning, and as time moved on, it was clear that our work brought the platform closer to what users expected and needed from us.</p>
+            <div class="nda-note" role="note">
+                <span class="material-symbols-outlined nda-note-icon" aria-hidden="true">info</span>
+                <div>
+                    <p class="nda-note-title">Heads up</p>
+                    <p>While I can't share much of the solution due to my NDA, we worked hard on a lot of big changes to how we structure and organize concepts on our platform. The navbar was just the beginning, and as time moved on, it was clear that our work brought the platform closer to what users expected and needed from us.</p>
                 </div>
             </div>
 
